@@ -11,6 +11,8 @@
 		9769B8D02538FF7D0037AF24 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8CF2538FF7D0037AF24 /* Car.swift */; };
 		9769B8D32538FF920037AF24 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8D22538FF920037AF24 /* Body.swift */; };
 		9769B8D6253900330037AF24 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8D5253900330037AF24 /* MessageManager.swift */; };
+		9769B8D9253900710037AF24 /* CarCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8D8253900710037AF24 /* CarCreator.swift */; };
+		9769B8DC2539008C0037AF24 /* BodySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8DB2539008C0037AF24 /* BodySelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,8 @@
 		9769B8CF2538FF7D0037AF24 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		9769B8D22538FF920037AF24 /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
 		9769B8D5253900330037AF24 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		9769B8D8253900710037AF24 /* CarCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCreator.swift; sourceTree = "<group>"; };
+		9769B8DB2539008C0037AF24 /* BodySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				9769B8CF2538FF7D0037AF24 /* Car.swift */,
 				9769B8D22538FF920037AF24 /* Body.swift */,
 				9769B8D5253900330037AF24 /* MessageManager.swift */,
+				9769B8D8253900710037AF24 /* CarCreator.swift */,
+				9769B8DB2539008C0037AF24 /* BodySelector.swift */,
 			);
 			path = FocusStartHomeworks;
 			sourceTree = "<group>";
@@ -128,9 +134,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9769B8D9253900710037AF24 /* CarCreator.swift in Sources */,
 				9769B8D32538FF920037AF24 /* Body.swift in Sources */,
 				9769B8D02538FF7D0037AF24 /* Car.swift in Sources */,
 				9769B8C72538FE940037AF24 /* main.swift in Sources */,
+				9769B8DC2539008C0037AF24 /* BodySelector.swift in Sources */,
 				9769B8D6253900330037AF24 /* MessageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
