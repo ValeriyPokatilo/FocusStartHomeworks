@@ -7,5 +7,8 @@
 
 import Foundation
 
-print("Hello, World!")
+var cars = [Car]()
 
+MessageManager.shared.welcomeMessage()
+
+Process.shared.process()
