@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9769B8C72538FE940037AF24 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8C62538FE940037AF24 /* main.swift */; };
-		9769B8D02538FF7D0037AF24 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8CF2538FF7D0037AF24 /* Car.swift */; };
-		9769B8D32538FF920037AF24 /* Body.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8D22538FF920037AF24 /* Body.swift */; };
-		9769B8D6253900330037AF24 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8D5253900330037AF24 /* MessageManager.swift */; };
-		9769B8D9253900710037AF24 /* CarCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8D8253900710037AF24 /* CarCreator.swift */; };
-		9769B8DC2539008C0037AF24 /* BodySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8DB2539008C0037AF24 /* BodySelector.swift */; };
-		9769B8DF253900DD0037AF24 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8DE253900DD0037AF24 /* CommandManager.swift */; };
-		9769B8E2253901060037AF24 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8E1253901060037AF24 /* Process.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,13 +25,6 @@
 /* Begin PBXFileReference section */
 		9769B8C32538FE940037AF24 /* FocusStartHomeworks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FocusStartHomeworks; sourceTree = BUILT_PRODUCTS_DIR; };
 		9769B8C62538FE940037AF24 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		9769B8CF2538FF7D0037AF24 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
-		9769B8D22538FF920037AF24 /* Body.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Body.swift; sourceTree = "<group>"; };
-		9769B8D5253900330037AF24 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
-		9769B8D8253900710037AF24 /* CarCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCreator.swift; sourceTree = "<group>"; };
-		9769B8DB2539008C0037AF24 /* BodySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySelector.swift; sourceTree = "<group>"; };
-		9769B8DE253900DD0037AF24 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
-		9769B8E1253901060037AF24 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,13 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				9769B8C62538FE940037AF24 /* main.swift */,
-				9769B8E1253901060037AF24 /* Process.swift */,
-				9769B8CF2538FF7D0037AF24 /* Car.swift */,
-				9769B8D22538FF920037AF24 /* Body.swift */,
-				9769B8D5253900330037AF24 /* MessageManager.swift */,
-				9769B8DE253900DD0037AF24 /* CommandManager.swift */,
-				9769B8D8253900710037AF24 /* CarCreator.swift */,
-				9769B8DB2539008C0037AF24 /* BodySelector.swift */,
 			);
 			path = FocusStartHomeworks;
 			sourceTree = "<group>";
@@ -140,14 +119,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9769B8D9253900710037AF24 /* CarCreator.swift in Sources */,
-				9769B8D32538FF920037AF24 /* Body.swift in Sources */,
-				9769B8D02538FF7D0037AF24 /* Car.swift in Sources */,
 				9769B8C72538FE940037AF24 /* main.swift in Sources */,
-				9769B8DC2539008C0037AF24 /* BodySelector.swift in Sources */,
-				9769B8DF253900DD0037AF24 /* CommandManager.swift in Sources */,
-				9769B8D6253900330037AF24 /* MessageManager.swift in Sources */,
-				9769B8E2253901060037AF24 /* Process.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
