@@ -13,4 +13,9 @@ struct Car {
 	let body: Body
 	let yearOfIssue: Int?
 	let carNumber: String?
+
+	func newCarPrint() {
+		print("\(self.manufacturer) \(self.model) успешно добавлен в базу.")
+		print("В базе \(cars.count) автомобилей.")
+	}
 }

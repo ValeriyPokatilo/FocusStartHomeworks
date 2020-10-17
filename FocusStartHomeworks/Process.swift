@@ -8,7 +8,6 @@
 import Foundation
 
 class Process {
-
 	static let shared = Process()
 
 	func process() {
@@ -16,13 +15,12 @@ class Process {
 		var currentCommand: String?
 
 		while currentCommand != "exit" {
-
 			currentCommand = readLine()
 
 			switch currentCommand {
 			case "help": CommandManager.shared.help()
-			case "ls": CommandManager.shared.ls()
-			case "ls -body": CommandManager.shared.lsFilter()
+			case "list": CommandManager.shared.ls()
+			case "list -body": CommandManager.shared.lsFilter()
 			case "add": CommandManager.shared.add()
 			case "exit": MessageManager.shared.exitMessage()
 			default: CommandManager.shared.unknown()

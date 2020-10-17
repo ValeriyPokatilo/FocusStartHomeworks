@@ -8,31 +8,26 @@
 import Foundation
 
 class CommandManager {
-
 	static let shared = CommandManager()
 
 	func add() {
-
 		let car = CarCreator.shared.addCar()
 		cars.append(car)
-		MessageManager.shared.carAddedMessage(manufactirer: car.manufacturer, model: car.model)
+		car.newCarPrint()
 		MessageManager.shared.separator()
 	}
 
 	func unknown() {
-
 		MessageManager.shared.unknownCommandMessage()
 		MessageManager.shared.separator()
 	}
 
 	func help() {
-
 		MessageManager.shared.helpMessages()
 		MessageManager.shared.separator()
 	}
 
 	func ls() {
-
 		if cars.count != 0 {
 			for car in cars {
 				MessageManager.shared.carShowMessage(car: car)
@@ -44,7 +39,6 @@ class CommandManager {
 	}
 
 	func lsFilter() {
-
 		let body = BodySelector.shared.enterBodyType()
 
 		var counter = 0

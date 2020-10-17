@@ -8,11 +8,9 @@
 import Foundation
 
 class CarCreator {
-
 	static let shared = CarCreator()
 
 	func addCar() -> Car {
-
 		MessageManager.shared.separator()
 		print("Добавление нового автомобиля")
 
@@ -26,7 +24,6 @@ class CarCreator {
 	}
 
 	func enterStringData(field: String) -> String {
-
 		var value = ""
 
 		while value.isEmpty {
@@ -38,7 +35,6 @@ class CarCreator {
 	}
 
 	func enterOptStringData(field: String) -> String? {
-
 		print("Введите \(field) автомобиля")
 		let carNumber = readLine()
 
@@ -50,7 +46,6 @@ class CarCreator {
 	}
 
 	func enterIntData(field: String) -> Int? {
-
 		print("Введите \(field) автомобиля")
 		let yearOfIssue = readLine()
 

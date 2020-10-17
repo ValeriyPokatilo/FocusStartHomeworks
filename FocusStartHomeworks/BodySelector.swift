@@ -8,11 +8,9 @@
 import Foundation
 
 class BodySelector {
-
 	static let shared = BodySelector()
 
 	func enterBodyType() -> Body {
-
 		var bodyNumber: String!
 		var body = Body.Unknow
 

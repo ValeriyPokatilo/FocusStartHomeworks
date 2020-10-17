@@ -8,7 +8,6 @@
 import Foundation
 
 class MessageManager {
-
 	static let shared = MessageManager()
 
 	func separator() {
@@ -16,7 +15,6 @@ class MessageManager {
 	}
 
 	func welcomeMessage() {
-
 		separator()
 		print("Добро пожаловать!")
 		print("Наберите help для получения справки по командам.")
@@ -24,7 +22,6 @@ class MessageManager {
 	}
 
 	func exitMessage() {
-
 		separator()
 		print("Сеанс окончен.")
 		print("Спасибо что используете наше приложение!")
@@ -32,22 +29,20 @@ class MessageManager {
 	}
 
 	func helpMessages() {
-
 		print("Список команд:")
 		print("help - справка по командам")
-		print("ls - список автомобилей")
-		print("ls -body - список автомобилей с фильром по типу кузова")
+		print("list - список автомобилей")
+		print("list -body - список автомобилей с фильром по типу кузова")
 		print("add - добавить автомобиль")
+		print("exit - выход их приложения")
 	}
 
 	func unknownCommandMessage() {
-
 		print("Неверная команда!")
 		print("Наберите help для получения справки по командам.")
 	}
 
 	func carShowMessage(car: Car) {
-
 		MessageManager.shared.separator()
 		print("Производитель: \(car.manufacturer)")
 		print("Модель:        \(car.model)")
@@ -63,18 +58,15 @@ class MessageManager {
 	}
 
 	func carEmptyMessage() {
-
 		print("В базе пока нет ни одного автомобиля.")
 		print("Для добавления автомобиля введите add.")
 	}
 
 	func carEmptyBodyFilterMessage() {
-
 		print("По заданным параметрам автомобилей не найдено.")
 	}
 
 	func bodyTypeList() {
-
 		print("Выберите тип кузова")
 		print("1 - Седан")
 		print("2 - Кроссовер")
@@ -83,13 +75,6 @@ class MessageManager {
 	}
 
 	func wrongBodyNumber() {
-
 		print("Неверный тип кузова, введите еще раз")
-	}
-
-	func carAddedMessage(manufactirer: String, model: String) {
-
-		print("\(manufactirer) \(model) успешно добавлен в базу.")
-		print("В базе \(cars.count) автомобилей.")
 	}
 }
