@@ -13,6 +13,7 @@
 		9736D2C525420E260031BFA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9736D2C325420E260031BFA7 /* Main.storyboard */; };
 		9736D2C725420E2A0031BFA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9736D2C625420E2A0031BFA7 /* Assets.xcassets */; };
 		9736D2CA25420E2A0031BFA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9736D2C825420E2A0031BFA7 /* LaunchScreen.storyboard */; };
+		9736D2D425420F680031BFA7 /* ThreadSafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9736D2D325420F680031BFA7 /* ThreadSafeArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9736D2C625420E2A0031BFA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9736D2C925420E2A0031BFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9736D2CB25420E2A0031BFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9736D2D325420F680031BFA7 /* ThreadSafeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ThreadSafeArray.swift; path = "/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-2/HomeWork-2/ThreadSafeArray.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				9736D2BD25420E260031BFA7 /* AppDelegate.swift */,
 				9736D2BF25420E260031BFA7 /* SceneDelegate.swift */,
 				9736D2C125420E260031BFA7 /* ViewController.swift */,
+				9736D2D325420F680031BFA7 /* ThreadSafeArray.swift */,
 				9736D2C325420E260031BFA7 /* Main.storyboard */,
 				9736D2C625420E2A0031BFA7 /* Assets.xcassets */,
 				9736D2C825420E2A0031BFA7 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				9736D2C225420E260031BFA7 /* ViewController.swift in Sources */,
 				9736D2BE25420E260031BFA7 /* AppDelegate.swift in Sources */,
+				9736D2D425420F680031BFA7 /* ThreadSafeArray.swift in Sources */,
 				9736D2C025420E260031BFA7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
