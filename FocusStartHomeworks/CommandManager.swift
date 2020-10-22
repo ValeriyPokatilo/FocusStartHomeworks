@@ -5,55 +5,68 @@
 //  Created by Valeriy Pokatilo on 16.10.2020.
 //
 
-import Foundation
-
-class CommandManager {
-	static let shared = CommandManager()
-
-	func add() {
-		let car = CarCreator.shared.addCar()
+final class CommandManager {
+	static func add() {
+		let car = CarCreator.addCar()
 		cars.append(car)
 		car.newCarPrint()
-		MessageManager.shared.separator()
+		MessageManager.separator()
 	}
 
-	func unknown() {
-		MessageManager.shared.unknownCommandMessage()
-		MessageManager.shared.separator()
+	static func unknown() {
+		MessageManager.unknownCommandMessage()
+		MessageManager.separator()
 	}
 
-	func help() {
-		MessageManager.shared.helpMessages()
-		MessageManager.shared.separator()
+	static func help() {
+		MessageManager.helpMessages()
+		MessageManager.separator()
 	}
 
-	func ls() {
+	static func list() {
 		if cars.count != 0 {
 			for car in cars {
-				MessageManager.shared.carShowMessage(car: car)
+				MessageManager.carShowMessage(car: car)
 			}
 		} else {
-			MessageManager.shared.carEmptyMessage()
+			MessageManager.carEmptyMessage()
 		}
-		MessageManager.shared.separator()
+		MessageManager.separator()
 	}
 
-	func lsFilter() {
-		let body = BodySelector.shared.enterBodyType()
+	static func filteredList() {
+		let body = BodySelector.enterBodyType()
 
+
+		let filtredCars = cars.filter {
+			$0.body == body
+		}
+
+		if filtredCars.count == 0 {
+			MessageManager.carEmptyBodyFilterMessage()
+		} else {
+			for car in filtredCars {
+				MessageManager.carShowMessage(car: car)
+			}
+		}
+
+		MessageManager.separator()
+
+		/*
 		var counter = 0
 
 		for car in cars {
 			if car.body == body {
-				MessageManager.shared.carShowMessage(car: car)
+				MessageManager.carShowMessage(car: car)
 				counter += 1
 			}
 		}
 
 		if counter == 0 {
-			MessageManager.shared.carEmptyBodyFilterMessage()
+			MessageManager.carEmptyBodyFilterMessage()
 		}
 
-		MessageManager.shared.separator()
+		MessageManager.separator()
+*/
 	}
 }

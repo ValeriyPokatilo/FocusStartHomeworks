@@ -5,45 +5,41 @@
 //  Created by Valeriy Pokatilo on 16.10.2020.
 //
 
-import Foundation
-
-class MessageManager {
-	static let shared = MessageManager()
-
-	func separator() {
+struct MessageManager {
+	static func separator() {
 		print("-------------------------------------------------------")
 	}
 
-	func welcomeMessage() {
+	static func welcomeMessage() {
 		separator()
 		print("Добро пожаловать!")
 		print("Наберите help для получения справки по командам.")
 		separator()
 	}
 
-	func exitMessage() {
+	static func exitMessage() {
 		separator()
 		print("Сеанс окончен.")
 		print("Спасибо что используете наше приложение!")
 		separator()
 	}
 
-	func helpMessages() {
+	static func helpMessages() {
 		print("Список команд:")
 		print("help - справка по командам")
 		print("list - список автомобилей")
-		print("list -body - список автомобилей с фильром по типу кузова")
+		print("filter - список автомобилей с фильром по типу кузова")
 		print("add - добавить автомобиль")
 		print("exit - выход их приложения")
 	}
 
-	func unknownCommandMessage() {
+	static func unknownCommandMessage() {
 		print("Неверная команда!")
 		print("Наберите help для получения справки по командам.")
 	}
 
-	func carShowMessage(car: Car) {
-		MessageManager.shared.separator()
+	static func carShowMessage(car: Car) {
+		separator()
 		print("Производитель: \(car.manufacturer)")
 		print("Модель:        \(car.model)")
 		print("Тип кузова:    \(car.body)")
@@ -57,16 +53,16 @@ class MessageManager {
 		}
 	}
 
-	func carEmptyMessage() {
+	static func carEmptyMessage() {
 		print("В базе пока нет ни одного автомобиля.")
 		print("Для добавления автомобиля введите add.")
 	}
 
-	func carEmptyBodyFilterMessage() {
+	static func carEmptyBodyFilterMessage() {
 		print("По заданным параметрам автомобилей не найдено.")
 	}
 
-	func bodyTypeList() {
+	static func bodyTypeList() {
 		print("Выберите тип кузова")
 		print("1 - Седан")
 		print("2 - Кроссовер")
@@ -74,7 +70,7 @@ class MessageManager {
 		print("4 - Кабриолет")
 	}
 
-	func wrongBodyNumber() {
-		print("Неверный тип кузова, введите еще раз")
+	static func wrongBodyNumber() {
+		print("Ошибка, введите вариант с 1 по 4")
 	}
 }

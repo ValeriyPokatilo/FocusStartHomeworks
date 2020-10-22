@@ -5,10 +5,8 @@
 //  Created by Valeriy Pokatilo on 16.10.2020.
 //
 
-import Foundation
+var cars = Cars.shared.cars
 
-var cars = [Car]()
+MessageManager.welcomeMessage()
 
-MessageManager.shared.welcomeMessage()
-
-Process.shared.process()
+Process.process()

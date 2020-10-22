@@ -5,8 +5,6 @@
 //  Created by Valeriy Pokatilo on 16.10.2020.
 //
 
-import Foundation
-
 struct Car {
 	let manufacturer: String
 	let model: String
@@ -16,6 +14,6 @@ struct Car {
 
 	func newCarPrint() {
 		print("\(self.manufacturer) \(self.model) успешно добавлен в базу.")
-		print("В базе \(cars.count) автомобилей.")
+		print("Количество автомобилей в базе - \(cars.count).")
 	}
 }

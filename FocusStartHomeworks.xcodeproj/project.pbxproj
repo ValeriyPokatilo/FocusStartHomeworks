@@ -15,6 +15,7 @@
 		9769B8DC2539008C0037AF24 /* BodySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8DB2539008C0037AF24 /* BodySelector.swift */; };
 		9769B8DF253900DD0037AF24 /* CommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8DE253900DD0037AF24 /* CommandManager.swift */; };
 		9769B8E2253901060037AF24 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769B8E1253901060037AF24 /* Process.swift */; };
+		979018EE2541753C00DDE2B5 /* Cars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979018ED2541753C00DDE2B5 /* Cars.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		9769B8DB2539008C0037AF24 /* BodySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySelector.swift; sourceTree = "<group>"; };
 		9769B8DE253900DD0037AF24 /* CommandManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandManager.swift; sourceTree = "<group>"; };
 		9769B8E1253901060037AF24 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		979018ED2541753C00DDE2B5 /* Cars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cars.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				9769B8C62538FE940037AF24 /* main.swift */,
 				9769B8E1253901060037AF24 /* Process.swift */,
 				9769B8CF2538FF7D0037AF24 /* Car.swift */,
+				979018ED2541753C00DDE2B5 /* Cars.swift */,
 				9769B8D22538FF920037AF24 /* Body.swift */,
 				9769B8D5253900330037AF24 /* MessageManager.swift */,
 				9769B8DE253900DD0037AF24 /* CommandManager.swift */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9769B8D9253900710037AF24 /* CarCreator.swift in Sources */,
+				979018EE2541753C00DDE2B5 /* Cars.swift in Sources */,
 				9769B8D32538FF920037AF24 /* Body.swift in Sources */,
 				9769B8D02538FF7D0037AF24 /* Car.swift in Sources */,
 				9769B8C72538FE940037AF24 /* main.swift in Sources */,

@@ -5,25 +5,21 @@
 //  Created by Valeriy Pokatilo on 16.10.2020.
 //
 
-import Foundation
-
-class CarCreator {
-	static let shared = CarCreator()
-
-	func addCar() -> Car {
-		MessageManager.shared.separator()
+final class CarCreator {
+	static func addCar() -> Car {
+		MessageManager.separator()
 		print("Добавление нового автомобиля")
 
 		let car = Car(manufacturer: enterStringData(field: "производителя"),
 					  model: enterStringData(field: "модель"),
-					  body: BodySelector.shared.enterBodyType(),
+					  body: BodySelector.enterBodyType(),
 					  yearOfIssue: enterIntData(field: "год выпуска"),
 					  carNumber: enterOptStringData(field: "гос номер"))
 
 		return car
 	}
 
-	func enterStringData(field: String) -> String {
+	static func enterStringData(field: String) -> String {
 		var value = ""
 
 		while value.isEmpty {
@@ -34,7 +30,7 @@ class CarCreator {
 		return value
 	}
 
-	func enterOptStringData(field: String) -> String? {
+	static func enterOptStringData(field: String) -> String? {
 		print("Введите \(field) автомобиля")
 		let carNumber = readLine()
 
@@ -45,7 +41,7 @@ class CarCreator {
 		}
 	}
 
-	func enterIntData(field: String) -> Int? {
+	static func enterIntData(field: String) -> Int? {
 		print("Введите \(field) автомобиля")
 		let yearOfIssue = readLine()
 
