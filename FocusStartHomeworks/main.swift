@@ -5,7 +5,8 @@
 //  Created by Valeriy Pokatilo on 16.10.2020.
 //
 
-import Foundation
+var cars = Cars.shared.cars
 
-print("Hello, World!")
+MessageManager.welcomeMessage()
 
+Process.process()
