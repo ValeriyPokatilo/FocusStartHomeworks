@@ -14,10 +14,12 @@ class ViewController: UIViewController {
 
 		demonstration()
 	}
+}
 
+private extension ViewController {
 	func demonstration() {
 		let queue = DispatchQueue(label: "", attributes: .concurrent)
-
+		
 		queue.async(flags: .barrier) {
 			var threadSafeArray = ThreadSafeArray<Int>()
 
@@ -30,4 +32,3 @@ class ViewController: UIViewController {
 		}
 	}
 }
-

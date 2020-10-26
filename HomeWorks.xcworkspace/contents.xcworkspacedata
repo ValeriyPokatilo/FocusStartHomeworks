@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-2/HomeWork-2/ThreadSafeArray.swift">
-   </FileRef>
-   <FileRef
       location = "group:HomeWork-2/HomeWork-2.xcodeproj">
    </FileRef>
    <FileRef

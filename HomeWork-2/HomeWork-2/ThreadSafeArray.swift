@@ -1,10 +1,9 @@
 //
 //  ThreadSafeArray.swift
-//  
+//
 //
 //  Created by Valeriy Pokatilo on 23.10.2020.
 //
-
 struct ThreadSafeArray<Element>{
 	var elements = [Element]()
 
