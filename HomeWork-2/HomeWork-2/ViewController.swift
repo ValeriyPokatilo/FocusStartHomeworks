@@ -18,14 +18,14 @@ class ViewController: UIViewController {
 
 private extension ViewController {
 	func demonstration() {
-		let queue = DispatchQueue(label: "", attributes: .concurrent)
+		let queue = DispatchQueue.global(qos: .utility)
 		
-		queue.async(flags: .barrier) {
+		queue.sync() {
 			var threadSafeArray = ThreadSafeArray<Int>()
 
 			for number in 0...1000 {
 				threadSafeArray.append(number)
-				//print("Итерация №\(number), элементов в потокобезопасном массиве \(self.threadSafeArray.count)")
+				print("Итерация №\(number + 1), элементов в потокобезопасном массиве \(threadSafeArray.count)")
 			}
 
 			print("Итого: \(threadSafeArray.count) элементов в массиве")
