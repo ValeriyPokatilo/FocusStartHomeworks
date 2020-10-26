@@ -4,8 +4,13 @@
 //
 //  Created by Valeriy Pokatilo on 23.10.2020.
 //
-struct ThreadSafeArray<Element> {
+
+import Foundation
+
+final class ThreadSafeArray<Element> {
 	private var elements = [Element]()
+
+	private let queue = DispatchQueue(label: "DispatchBarrier", attributes: .concurrent)
 
 	var isEmpty: Bool {
 		return self.elements.isEmpty
@@ -15,12 +20,16 @@ struct ThreadSafeArray<Element> {
 		return self.elements.count
 	}
 
-	mutating func append(_ item: Element) {
-		self.elements.append(item)
+	func append(_ item: Element) {
+		queue.async(flags: .barrier) {
+			self.elements.append(item)
+		}
 	}
 
-	mutating func remove(at index: Int) {
-		self.elements.remove(at: index)
+	func remove(at index: Int) {
+		queue.async(flags: .barrier) {
+			self.elements.remove(at: index)
+		}
 	}
 
 	subscript(index: Int) -> Element {
