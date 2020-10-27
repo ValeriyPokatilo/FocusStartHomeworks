@@ -13,11 +13,19 @@ final class ThreadSafeArray<Element> {
 	private let queue = DispatchQueue(label: "DispatchBarrier", attributes: .concurrent)
 
 	var isEmpty: Bool {
-		return self.elements.isEmpty
+		var result: Bool!
+		self.queue.async(flags: .barrier) {
+			result = self.elements.isEmpty
+		}
+		return result
 	}
 
 	var count: Int {
-		return self.elements.count
+		var result: Int!
+		self.queue.async(flags: .barrier) {
+			result = self.elements.count
+		}
+		return result
 	}
 
 	func append(_ item: Element) {
@@ -33,16 +41,23 @@ final class ThreadSafeArray<Element> {
 	}
 
 	subscript(index: Int) -> Element? {
-		if (0...(self.elements.count - 1)) ~= index {
-			return self.elements[index]
-		} else {
-			return nil
+		var element: Element?
+		self.queue.async(flags: .barrier) {
+			let diapason = 0..<self.elements.count
+			if diapason ~= index {
+				element = self.elements[index]
+			}
 		}
+		return element
 	}
 }
 
 extension ThreadSafeArray where Element: Equatable {
 	func containce(_ element: Element) -> Bool {
-		return self.elements.contains(element)
+		var result: Bool!
+		self.queue.async(flags: .barrier) {
+			result = self.elements.contains(element)
+		}
+		return result
 	}
 }

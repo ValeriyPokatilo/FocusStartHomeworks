@@ -12,12 +12,12 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.demonstration1()
+		self.demonstration()
 	}
 }
 
 private extension ViewController {
-	func demonstration1() {
+	func demonstration() {
 		let threadSafeArray = ThreadSafeArray<Int>()
 
 		let group = DispatchGroup()
@@ -43,6 +43,4 @@ private extension ViewController {
 
 		print("Итого: \(threadSafeArray.count) элементов в массиве")
 	}
-
-
 }
