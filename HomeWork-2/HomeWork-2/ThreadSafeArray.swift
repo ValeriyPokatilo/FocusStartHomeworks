@@ -21,18 +21,28 @@ final class ThreadSafeArray<Element> {
 	}
 
 	func append(_ item: Element) {
-		queue.async(flags: .barrier) {
+		self.queue.async(flags: .barrier) {
 			self.elements.append(item)
 		}
 	}
 
 	func remove(at index: Int) {
-		queue.async(flags: .barrier) {
+		self.queue.async(flags: .barrier) {
 			self.elements.remove(at: index)
 		}
 	}
 
-	subscript(index: Int) -> Element {
-		return self.elements[index]
+	subscript(index: Int) -> Element? {
+		if (0...(self.elements.count - 1)) ~= index {
+			return self.elements[index]
+		} else {
+			return nil
+		}
+	}
+}
+
+extension ThreadSafeArray where Element: Equatable {
+	func containce(_ element: Element) -> Bool {
+		return self.elements.contains(element)
 	}
 }
