@@ -13,13 +13,13 @@ final class ThreadSafeArray<Element> {
 	private let queue = DispatchQueue(label: "DispatchBarrier", attributes: .concurrent)
 
 	var isEmpty: Bool {
-		return queue.sync {
+		return self.queue.sync {
 			self.elements.isEmpty
 		}
 	}
 
 	var count: Int {
-		return queue.sync {
+		return self.queue.sync {
 			self.elements.count
 		}
 	}
@@ -37,11 +37,11 @@ final class ThreadSafeArray<Element> {
 	}
 
 	subscript(index: Int) -> Element {
-		return queue.sync {
-			if 0..<self.elements.count ~= index {
+		return self.queue.sync {
+			if self.elements.indices.contains(index) {
 				return self.elements[index]
 			} else {
-				fatalError()
+				fatalError("Массив не содержит элемента по указанному индексу")
 			}
 		}
 	}
@@ -49,7 +49,7 @@ final class ThreadSafeArray<Element> {
 
 extension ThreadSafeArray where Element: Equatable {
 	func containce(_ element: Element) -> Bool {
-		return queue.sync {
+		return self.queue.sync {
 			self.elements.contains(element)
 		}
 	}
