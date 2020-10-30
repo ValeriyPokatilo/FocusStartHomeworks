@@ -7,7 +7,12 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+final class ThirdViewController: UIViewController {
+
+	// MARK: - Properties
+
+	let loginTextField = UITextField()
+	let passwordTextField = UITextField()
 
 	// MARK: - Lifecycle
 
@@ -15,8 +20,11 @@ class ThirdViewController: UIViewController {
         super.viewDidLoad()
 
 		self.view.backgroundColor = .purple
-    }
-    
 
+		setupUI()
+    }
+}
+
+private extension ThirdViewController {
 
 }

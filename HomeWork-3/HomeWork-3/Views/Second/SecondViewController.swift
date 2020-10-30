@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  HomeWork-3
 //
 //  Created by Valeriy Pokatilo on 29.10.2020.
@@ -7,15 +7,17 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+final class SecondViewController: UIViewController {
 
 	// MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.view.backgroundColor = .green
+		self.view.backgroundColor = .red
     }
+    
+
 
 
 }
