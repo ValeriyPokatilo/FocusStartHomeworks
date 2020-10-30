@@ -65,7 +65,7 @@ private extension SecondViewController {
 
 		headerLabel.text = "Заголовок"
 		headerLabel.textAlignment = .center
-		//headerLabel.font = .apple18()
+		headerLabel.font = .apple18()
 		headerLabel.translatesAutoresizingMaskIntoConstraints = false
 
 		viewForScroll.addSubview(headerLabel)
@@ -79,7 +79,7 @@ private extension SecondViewController {
 
 		textView.text = text + " " + text + " " + text
 		textView.textAlignment = .justified
-		//textView.font = .avenir14()
+		textView.font = .avenir14()
 		textView.textColor = .black
 		textView.backgroundColor = .red
 		textView.translatesAutoresizingMaskIntoConstraints = false
