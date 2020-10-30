@@ -33,6 +33,8 @@ final class FirstViewController: UIViewController {
     }
 }
 
+// MARK: - Extension for private function
+
 private extension FirstViewController {
 	func setupUI() {
 
@@ -99,7 +101,7 @@ private extension FirstViewController {
 
 	func setupImage() {
 		image.contentMode = .scaleAspectFit
-		image.image = #imageLiteral(resourceName: "005")
+		image.image = #imageLiteral(resourceName: "loremIpsum_square")
 
 		activityIndicator.translatesAutoresizingMaskIntoConstraints = false
 		activityIndicator.color = .green

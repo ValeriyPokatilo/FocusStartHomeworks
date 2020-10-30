@@ -21,7 +21,6 @@ final class ThirdViewController: UIViewController {
 
 		self.view.backgroundColor = .purple
 
-		setupUI()
     }
 }
 
