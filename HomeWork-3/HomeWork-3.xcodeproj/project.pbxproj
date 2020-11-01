@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97A5FDE9254F2D55004BC7A7 /* ThirdScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A5FDE8254F2D55004BC7A7 /* ThirdScreenView.swift */; };
 		97BCDB3F254F093500B8287C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDB3E254F093500B8287C /* Text.swift */; };
 		97DA4076254DCAAC009E4165 /* SecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DA4075254DCAAC009E4165 /* SecondScreenView.swift */; };
 		97E6E962254B1CD6007ABBE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E961254B1CD6007ABBE9 /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97A5FDE8254F2D55004BC7A7 /* ThirdScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreenView.swift; sourceTree = "<group>"; };
 		97BCDB3E254F093500B8287C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		97DA4075254DCAAC009E4165 /* SecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenView.swift; sourceTree = "<group>"; };
 		97E6E95E254B1CD6007ABBE9 /* HomeWork-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeWork-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				97E6E987254B2284007ABBE9 /* ThirdViewController.swift */,
+				97A5FDE8254F2D55004BC7A7 /* ThirdScreenView.swift */,
 			);
 			path = Third;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				97E6E982254B2248007ABBE9 /* FirstViewController.swift in Sources */,
 				97E6E9A2254B3D21007ABBE9 /* FirstScreenButtonsView.swift in Sources */,
 				97E6E9A8254B4CBD007ABBE9 /* FirstScreenImageView.swift in Sources */,
+				97A5FDE9254F2D55004BC7A7 /* ThirdScreenView.swift in Sources */,
 				97BCDB3F254F093500B8287C /* Text.swift in Sources */,
 				97DA4076254DCAAC009E4165 /* SecondScreenView.swift in Sources */,
 			);

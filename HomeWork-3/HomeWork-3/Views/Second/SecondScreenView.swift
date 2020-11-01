@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondScreenView: UIView {
+final class SecondScreenView: UIView {
 
 	// MARK: Properties
 
@@ -131,7 +131,6 @@ private extension SecondScreenView {
 
 		NSLayoutConstraint.activate(sharedConstraints) // ?????????????????????????????
 	}
-
 }
 
 // MARK: Compact Layout - Портретный режим

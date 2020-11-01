@@ -101,7 +101,7 @@ private extension FirstViewController {
 
 	func setupImage() {
 		image.contentMode = .scaleAspectFit
-		image.image = #imageLiteral(resourceName: "loremIpsum_square")
+		image.image = #imageLiteral(resourceName: "loremIpsum")
 
 		activityIndicator.translatesAutoresizingMaskIntoConstraints = false
 		activityIndicator.color = .green
