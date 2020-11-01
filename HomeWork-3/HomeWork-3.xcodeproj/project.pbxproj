@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97BCDB3F254F093500B8287C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDB3E254F093500B8287C /* Text.swift */; };
+		97DA4076254DCAAC009E4165 /* SecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DA4075254DCAAC009E4165 /* SecondScreenView.swift */; };
 		97E6E962254B1CD6007ABBE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E961254B1CD6007ABBE9 /* AppDelegate.swift */; };
 		97E6E964254B1CD6007ABBE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E963254B1CD6007ABBE9 /* SceneDelegate.swift */; };
 		97E6E96B254B1CDA007ABBE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97E6E96A254B1CDA007ABBE9 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97BCDB3E254F093500B8287C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		97DA4075254DCAAC009E4165 /* SecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenView.swift; sourceTree = "<group>"; };
 		97E6E95E254B1CD6007ABBE9 /* HomeWork-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeWork-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97E6E961254B1CD6007ABBE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97E6E963254B1CD6007ABBE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				97E6E984254B2255007ABBE9 /* SecondViewController.swift */,
+				97DA4075254DCAAC009E4165 /* SecondScreenView.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				97E6E9A4254B46FB007ABBE9 /* First */,
 				97ACED13254C620F00CA82D9 /* Second */,
 				97ACED14254C622900CA82D9 /* Third */,
+				97BCDB3E254F093500B8287C /* Text.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +242,8 @@
 				97E6E982254B2248007ABBE9 /* FirstViewController.swift in Sources */,
 				97E6E9A2254B3D21007ABBE9 /* FirstScreenButtonsView.swift in Sources */,
 				97E6E9A8254B4CBD007ABBE9 /* FirstScreenImageView.swift in Sources */,
+				97BCDB3F254F093500B8287C /* Text.swift in Sources */,
+				97DA4076254DCAAC009E4165 /* SecondScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

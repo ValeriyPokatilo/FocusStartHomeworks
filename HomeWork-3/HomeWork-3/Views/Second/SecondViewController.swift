@@ -21,20 +21,8 @@ final class SecondViewController: UIViewController {
 
 	// MARK: - Lifecycle
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-
-
-
-		self.view.backgroundColor = .red
-
-		setupUI()
-	}
-
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-
-		self.scrollView.frame = self.view.bounds
+	override func loadView() {
+		self.view = SecondScreenView()
 	}
 }
 
@@ -79,7 +67,7 @@ private extension SecondViewController {
 
 		textView.text = text + " " + text + " " + text
 		textView.textAlignment = .justified
-		textView.font = .avenir14()
+		textView.font = .apple14()
 		textView.textColor = .black
 		textView.backgroundColor = .red
 		textView.translatesAutoresizingMaskIntoConstraints = false

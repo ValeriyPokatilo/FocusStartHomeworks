@@ -8,15 +8,15 @@
 import UIKit
 
 extension UIFont {
-	static func american10() -> UIFont? {
+	static func apple10() -> UIFont? {
 		return UIFont.init(name: "AppleSDGothicNeo-Regular", size: 10)
 	}
 
-	static func avenir14() -> UIFont? {
+	static func apple14() -> UIFont? {
 		return UIFont.init(name: "AppleSDGothicNeo-Regular", size: 14)
 	}
 
 	static func apple18() -> UIFont? {
-		return UIFont.init(name: "AppleSDGothicNeo-Regular", size: 18)
+		return UIFont.init(name: "AppleSDGothicNeo-Bold", size: 18)
 	}
 }

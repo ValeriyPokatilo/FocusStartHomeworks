@@ -69,11 +69,11 @@ private extension FirstViewController {
 	func setupLabels() -> UIView {
 		label1.text = "Small label"
 		label1.textAlignment = .center
-		label1.font = .american10()
+		label1.font = .apple10()
 
 		label2.text = "Medium label"
 		label2.textAlignment = .center
-		label2.font = .avenir14()
+		label2.font = .apple14()
 
 		label3.text = "Big label"
 		label3.textAlignment = .center
@@ -86,13 +86,13 @@ private extension FirstViewController {
 	func setupButtons() -> UIView {
 		button1.backgroundColor = .purple
 		button1.setTitle("Circle", for: .normal)
-		button1.titleLabel?.font = .avenir14()
+		button1.titleLabel?.font = .apple14()
 		button1.titleLabel?.textColor = .white
 		button1.setTitleColor(.red, for: .normal)
 
 		button2.backgroundColor = .blue
 		button2.setTitle("Rectangle", for: .normal)
-		button2.titleLabel?.font = .avenir14()
+		button2.titleLabel?.font = .apple14()
 		button2.titleLabel?.textColor = .white
 		button2.setTitleColor(.red, for: .normal)
 
