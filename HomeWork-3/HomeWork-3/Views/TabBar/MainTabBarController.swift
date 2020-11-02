@@ -18,7 +18,7 @@ final class MainTabBarController: UITabBarController {
     }
 }
 
-// MARK: - Private functions
+// MARK: - Setup TabBar UI
 
 private extension MainTabBarController {
 	func setupUI() {
@@ -30,11 +30,10 @@ private extension MainTabBarController {
 		let tabIcon3 = UIImage(systemName: "battery.0", withConfiguration: boldConf)!
 
 		viewControllers = [
-			addNavigationController(rootViewController: ThirdViewController(), title: "Third screen", image: tabIcon3),
-			addNavigationController(rootViewController: FirstViewController(), title: "First screen", image: tabIcon1),
-			addNavigationController(rootViewController: SecondViewController(), title: "Second screen", image: tabIcon2),
+			self.addNavigationController(rootViewController: FirstViewController(), title: "First screen", image: tabIcon1),
+			self.addNavigationController(rootViewController: SecondViewController(), title: "Second screen", image: tabIcon2),
+			self.addNavigationController(rootViewController: ThirdViewController(), title: "Third screen", image: tabIcon3),
 		]
-
 	}
 
 	func addNavigationController(rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {

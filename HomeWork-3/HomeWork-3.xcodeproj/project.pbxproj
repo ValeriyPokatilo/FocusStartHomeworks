@@ -57,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		979E43A32550014400BB0273 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				97A5FDF0254F5C54004BC7A7 /* Images.swift */,
+				97BCDB3E254F093500B8287C /* Text.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		97ACED13254C620F00CA82D9 /* Second */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +82,14 @@
 				97A5FDE8254F2D55004BC7A7 /* ThirdScreenView.swift */,
 			);
 			path = Third;
+			sourceTree = "<group>";
+		};
+		97C92EA12550041400716C28 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				97E6E97D254B1F91007ABBE9 /* MainTabBarController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		97E6E955254B1CD6007ABBE9 = {
@@ -148,12 +165,11 @@
 		97E6E99C254B342D007ABBE9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				97E6E97D254B1F91007ABBE9 /* MainTabBarController.swift */,
+				97C92EA12550041400716C28 /* TabBar */,
 				97E6E9A4254B46FB007ABBE9 /* First */,
 				97ACED13254C620F00CA82D9 /* Second */,
 				97ACED14254C622900CA82D9 /* Third */,
-				97BCDB3E254F093500B8287C /* Text.swift */,
-				97A5FDF0254F5C54004BC7A7 /* Images.swift */,
+				979E43A32550014400BB0273 /* Managers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -400,7 +416,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "id5190011.HomeWork-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -419,7 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "id5190011.HomeWork-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

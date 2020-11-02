@@ -23,11 +23,10 @@ final class SecondScreenView: UIView {
 	private var regularConstraints: [NSLayoutConstraint] = []
 
 	private enum Constants: CGFloat {
-		case imageViewHeight = 300
 		case horizontalStandardSpace = 16
 		case horizontalBigSpace = 32
 		case verticalStandartSpace = 10
-		case imageSize = 75
+		case imageSize = 90
 	}
 
 	// MARK: - Life Cycle
@@ -63,7 +62,7 @@ private extension SecondScreenView {
 		imageView.contentMode = .scaleAspectFill
 		imageView.clipsToBounds = true
 
-		headerLabel.text = "Lorem impsum"
+		headerLabel.text = "Lorem ipsum"
 		headerLabel.textAlignment = .center
 		headerLabel.font = .apple18Bold()
 
@@ -116,7 +115,7 @@ private extension SecondScreenView {
 			scrollView.widthAnchor.constraint(equalTo: safeArea.widthAnchor)
 		])
 
-		// ImageView
+		// Image
 		scrollView.addSubview(imageView)
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -129,6 +128,14 @@ private extension SecondScreenView {
 		scrollView.addSubview(textLabel)
 		textLabel.translatesAutoresizingMaskIntoConstraints = false
 
+		sharedConstraints.append(contentsOf: [
+			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+											   constant: Constants.horizontalStandardSpace.rawValue),
+			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+												constant: -Constants.horizontalStandardSpace.rawValue),
+			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+		])
+
 		NSLayoutConstraint.activate(sharedConstraints)
 	}
 }
@@ -136,11 +143,10 @@ private extension SecondScreenView {
 // MARK: - Compact Layout
 
 private extension SecondScreenView {
-
 	func createCompactConstraintsArray() {
 		let safeArea = self.safeAreaLayoutGuide
-		print(safeArea)
 
+		// Image
 		compactConstraints.append(contentsOf: [
 			imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
 			imageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
@@ -148,6 +154,7 @@ private extension SecondScreenView {
 			imageView.heightAnchor.constraint(equalTo: scrollView.widthAnchor)
 		])
 
+		// Header
 		compactConstraints.append(contentsOf: [
 			headerLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
 												 constant: Constants.horizontalStandardSpace.rawValue),
@@ -157,26 +164,21 @@ private extension SecondScreenView {
 											 constant: Constants.verticalStandartSpace.rawValue)
 		])
 
-
+		// Text
 		compactConstraints.append(contentsOf: [
-			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
-											   constant: Constants.horizontalStandardSpace.rawValue),
-			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
-												constant: -Constants.horizontalStandardSpace.rawValue),
 			textLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor,
-										   constant: Constants.verticalStandartSpace.rawValue),
-			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+										   constant: Constants.verticalStandartSpace.rawValue)
 		])
 	}
 }
 
-// MARK: Regular Layout
+// MARK: - Regular Layout
 
 private extension SecondScreenView {
 	func createRegularConstraintsArray() {
 		let safeArea = self.safeAreaLayoutGuide
-		print(safeArea)
 
+		// Image
 		regularConstraints.append(contentsOf: [
 			imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
 											   constant: Constants.horizontalBigSpace.rawValue),
@@ -186,6 +188,7 @@ private extension SecondScreenView {
 			imageView.widthAnchor.constraint(equalToConstant: Constants.imageSize.rawValue)
 		])
 
+		// Header
 		regularConstraints.append(contentsOf: [
 			headerLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,
 												 constant: Constants.horizontalBigSpace.rawValue),
@@ -194,18 +197,10 @@ private extension SecondScreenView {
 			headerLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
 		])
 
+		// Text
 		regularConstraints.append(contentsOf: [
-			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
-											   constant: Constants.horizontalBigSpace.rawValue),
-			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
-												constant: -Constants.horizontalBigSpace.rawValue),
 			textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
-										   constant: Constants.verticalStandartSpace.rawValue),
-			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+										   constant: Constants.verticalStandartSpace.rawValue)
 		])
-
-		let bottomView = UIView()
-		scrollView.addSubview(bottomView)
-		bottomView.translatesAutoresizingMaskIntoConstraints = false
 	}
 }

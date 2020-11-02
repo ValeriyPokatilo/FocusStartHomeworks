@@ -16,7 +16,7 @@ final class FirstScreenView: UIView {
 	private let label3 = UILabel()
 
 	let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-	let button2 = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+	let button2 = UIButton()
 
 	private let image = UIImageView()
 
