@@ -18,6 +18,11 @@ final class ThirdScreenView: UIView {
 	var enterButtonAtTheTop: NSLayoutConstraint?
 	var enterButtonAtTheBottom: NSLayoutConstraint?
 
+	private enum Constants: CGFloat {
+		case horizontalStandartSpace = 32
+		case verticalStandartSpace = 50
+	}
+
 	// MARK: Life Cycle
 
 	public override init(frame: CGRect) {
@@ -41,23 +46,33 @@ final class ThirdScreenView: UIView {
 
 }
 
-// MARK: - Private functions
+// MARK: - Moution Enter button
 
 private extension ThirdScreenView {
 	@objc func keyboardWillAppear() {
-		guard let bottomPlace = enterButtonAtTheBottom?.isActive else { return }
-		if bottomPlace {
-			toggleConstraint()
+		motionEnterButton(toUp: true)
+	}
 
-			UIView.animate(withDuration: 3){
-				self.enterButton.layoutIfNeeded()
+	func motionEnterButton(toUp: Bool) {
+		if toUp {
+			guard let bottomPlace = enterButtonAtTheBottom?.isActive else { return }
+			if bottomPlace {
+				animateConstraint()
+			}
+		} else {
+			guard let topPlace = enterButtonAtTheTop?.isActive else { return }
+			if topPlace {
+				animateConstraint()
 			}
 		}
 	}
 
-	func toggleConstraint() {
+	func animateConstraint() {
 		self.enterButtonAtTheBottom?.isActive.toggle()
 		self.enterButtonAtTheTop?.isActive.toggle()
+		UIView.animate(withDuration: 1) {
+			self.enterButton.layoutIfNeeded()
+		}
 	}
 }
 
@@ -82,7 +97,6 @@ private extension ThirdScreenView {
 		enterButton.titleLabel?.font = .apple18Bold()
 		enterButton.titleLabel?.textColor = UIColor.white
 		enterButton.backgroundColor = UIColor.systemBlue
-		enterButton.layer.cornerRadius = 5
 	}
 
 	func setupViewsLayout() {
@@ -90,20 +104,26 @@ private extension ThirdScreenView {
 		loginTextField.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			loginTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+			loginTextField.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,
+												constant: Constants.verticalStandartSpace.rawValue),
 			loginTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-			loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-			loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+			loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor,
+													constant: Constants.horizontalStandartSpace.rawValue),
+			loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor,
+													 constant: -Constants.horizontalStandartSpace.rawValue)
 		])
 
 		self.addSubview(passwordTextField)
 		passwordTextField.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor, constant: 20),
+			passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor,
+												   constant: Constants.horizontalStandartSpace.rawValue),
 			passwordTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-			passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-			passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+			passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor,
+													   constant: Constants.horizontalStandartSpace.rawValue),
+			passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor,
+														constant: -Constants.horizontalStandartSpace.rawValue)
 		])
 
 		self.addSubview(enterButton)
@@ -115,11 +135,11 @@ private extension ThirdScreenView {
 		])
 
 		enterButtonAtTheBottom = enterButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
-																	 constant: -20)
+																	 constant: -Constants.verticalStandartSpace.rawValue)
 		enterButtonAtTheBottom?.isActive = true
 
-		enterButtonAtTheTop = enterButton.bottomAnchor.constraint(equalTo: passwordTextField.bottomAnchor,
-																  constant: 50)
+		enterButtonAtTheTop = enterButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor,
+																  constant: Constants.verticalStandartSpace.rawValue)
 	}
 }
 
@@ -127,28 +147,22 @@ private extension ThirdScreenView {
 
 extension ThirdScreenView: UITextFieldDelegate {
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+		super.touchesBegan(touches, with: event)
+		motionEnterButton(toUp: false)
 		self.endEditing(true)
-
-		guard let topPlace = enterButtonAtTheTop?.isActive else { return }
-		if topPlace {
-			toggleConstraint()
-
-			UIView.animate(withDuration: 3){
-				self.enterButton.layoutIfNeeded()
-			}
-		}
 	}
 
-	func textFieldDidEndEditing(_ textField: UITextField) {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		switch textField {
 		case loginTextField:
 			textField.resignFirstResponder()
 			passwordTextField.becomeFirstResponder()
 		case passwordTextField:
+			motionEnterButton(toUp: false)
 			self.endEditing(true)
-			self.toggleConstraint()
 		default:
 			break
 		}
+		return true
 	}
 }

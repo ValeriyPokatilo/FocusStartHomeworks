@@ -9,7 +9,7 @@ import UIKit
 
 final class SecondScreenView: UIView {
 
-	// MARK: Properties
+	// MARK: - Properties
 
 	private let scrollView = UIScrollView()
 	private let imageView = UIImageView()
@@ -30,7 +30,7 @@ final class SecondScreenView: UIView {
 		case imageSize = 75
 	}
 
-	// MARK: Life Cycle
+	// MARK: - Life Cycle
 
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -133,7 +133,7 @@ private extension SecondScreenView {
 	}
 }
 
-// MARK: Compact Layout
+// MARK: - Compact Layout
 
 private extension SecondScreenView {
 
