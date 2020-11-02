@@ -61,7 +61,7 @@ private extension ThirdScreenView {
 	}
 }
 
-// MARK: - Setup UI
+// MARK: - Setup views
 
 private extension ThirdScreenView {
 	func setupViews() {

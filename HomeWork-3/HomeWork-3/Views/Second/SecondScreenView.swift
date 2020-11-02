@@ -22,11 +22,13 @@ final class SecondScreenView: UIView {
 	private var compactConstraints: [NSLayoutConstraint] = []
 	private var regularConstraints: [NSLayoutConstraint] = []
 
-//	private enum Constants: CGFloat {
-//		case imageViewHeight = 300
-//		case horizontalStandardSpace = 16
-//		case horizontalBigSpace = 32
-//	}
+	private enum Constants: CGFloat {
+		case imageViewHeight = 300
+		case horizontalStandardSpace = 16
+		case horizontalBigSpace = 32
+		case verticalStandartSpace = 10
+		case imageSize = 75
+	}
 
 	// MARK: Life Cycle
 
@@ -42,17 +44,16 @@ final class SecondScreenView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	// MARK: Changes Cycle
+	// MARK: - Change screen method
 
 	override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 		super.traitCollectionDidChange(previousTraitCollection)
 
-		// Обработка поворота экрана
 		changeViewsLayout(traitCollection: traitCollection)
 	}
 }
 
-// MARK: Appearances - Настройка вьюх
+// MARK: - Setup views
 
 private extension SecondScreenView {
 	func setupViews() {
@@ -62,7 +63,7 @@ private extension SecondScreenView {
 		imageView.contentMode = .scaleAspectFill
 		imageView.clipsToBounds = true
 
-		headerLabel.text = "Заголовок"
+		headerLabel.text = "Lorem impsum"
 		headerLabel.textAlignment = .center
 		headerLabel.font = .apple18Bold()
 
@@ -103,7 +104,6 @@ private extension SecondScreenView {
 private extension SecondScreenView {
 	func createSharedConstraintsArray() {
 		let safeArea = self.safeAreaLayoutGuide
-		print(safeArea)
 
 		// ScrollView
 		self.addSubview(scrollView)
@@ -129,11 +129,11 @@ private extension SecondScreenView {
 		scrollView.addSubview(textLabel)
 		textLabel.translatesAutoresizingMaskIntoConstraints = false
 
-		NSLayoutConstraint.activate(sharedConstraints) // ?????????????????????????????
+		NSLayoutConstraint.activate(sharedConstraints)
 	}
 }
 
-// MARK: Compact Layout - Портретный режим
+// MARK: Compact Layout
 
 private extension SecondScreenView {
 
@@ -149,22 +149,28 @@ private extension SecondScreenView {
 		])
 
 		compactConstraints.append(contentsOf: [
-			headerLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
-			headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
-			headerLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10)
+			headerLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+												 constant: Constants.horizontalStandardSpace.rawValue),
+			headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+												  constant: -Constants.horizontalStandardSpace.rawValue),
+			headerLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
+											 constant: Constants.verticalStandartSpace.rawValue)
 		])
 
 
 		compactConstraints.append(contentsOf: [
-			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 16),
-			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16),
-			textLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 10),
+			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+											   constant: Constants.horizontalStandardSpace.rawValue),
+			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+												constant: -Constants.horizontalStandardSpace.rawValue),
+			textLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor,
+										   constant: Constants.verticalStandartSpace.rawValue),
 			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
 		])
 	}
 }
 
-// MARK: Regular Layout - Горизонтальный режим
+// MARK: Regular Layout
 
 private extension SecondScreenView {
 	func createRegularConstraintsArray() {
@@ -172,23 +178,34 @@ private extension SecondScreenView {
 		print(safeArea)
 
 		regularConstraints.append(contentsOf: [
-			imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32),
-			imageView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 16),
-			imageView.heightAnchor.constraint(equalToConstant: 75),
-			imageView.widthAnchor.constraint(equalToConstant: 75)
-		])
-
-		//let center = scrollView.frame.size.width - CGFloat(200 + 32)
-		regularConstraints.append(contentsOf: [
-			headerLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
-			headerLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 16)
+			imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+											   constant: Constants.horizontalBigSpace.rawValue),
+			imageView.topAnchor.constraint(equalTo: safeArea.topAnchor,
+										   constant: Constants.horizontalStandardSpace.rawValue),
+			imageView.heightAnchor.constraint(equalToConstant: Constants.imageSize.rawValue),
+			imageView.widthAnchor.constraint(equalToConstant: Constants.imageSize.rawValue)
 		])
 
 		regularConstraints.append(contentsOf: [
-			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32),
-			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32),
-			textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
-			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+			headerLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor,
+												 constant: Constants.horizontalBigSpace.rawValue),
+			headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+												  constant: -Constants.horizontalBigSpace.rawValue),
+			headerLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
 		])
+
+		regularConstraints.append(contentsOf: [
+			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+											   constant: Constants.horizontalBigSpace.rawValue),
+			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+												constant: -Constants.horizontalBigSpace.rawValue),
+			textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
+										   constant: Constants.verticalStandartSpace.rawValue),
+			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+		])
+
+		let bottomView = UIView()
+		scrollView.addSubview(bottomView)
+		bottomView.translatesAutoresizingMaskIntoConstraints = false
 	}
 }
