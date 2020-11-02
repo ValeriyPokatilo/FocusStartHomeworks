@@ -68,18 +68,18 @@ private extension ThirdScreenView {
 		self.backgroundColor = .systemBackground
 
 		loginTextField.placeholder = "Login"
-		loginTextField.font = .apple18()
+		loginTextField.font = .apple18Bold()
 		loginTextField.borderStyle = .roundedRect
 		loginTextField.returnKeyType = .next
 
 		passwordTextField.placeholder = "Password"
 		passwordTextField.isSecureTextEntry = true
-		passwordTextField.font = .apple18()
+		passwordTextField.font = .apple18Bold()
 		passwordTextField.borderStyle = .roundedRect
 		passwordTextField.returnKeyType = .done
 
 		enterButton.setTitle("Enter", for: .normal)
-		enterButton.titleLabel?.font = .apple18()
+		enterButton.titleLabel?.font = .apple18Bold()
 		enterButton.titleLabel?.textColor = UIColor.white
 		enterButton.backgroundColor = UIColor.systemBlue
 		enterButton.layer.cornerRadius = 5

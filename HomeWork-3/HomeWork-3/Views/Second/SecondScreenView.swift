@@ -33,7 +33,7 @@ final class SecondScreenView: UIView {
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
 
-		setupViews() // Настройка вьюх
+		setupViews() 
 		setupViewsLayout()
 		changeViewsLayout(traitCollection: traitCollection)
 	}
@@ -58,13 +58,13 @@ private extension SecondScreenView {
 	func setupViews() {
 		self.backgroundColor = .systemBackground
 
-		imageView.image = UIImage(named: "loremIpsum")
+		imageView.image = Images.loremIpsum.image
 		imageView.contentMode = .scaleAspectFill
 		imageView.clipsToBounds = true
 
 		headerLabel.text = "Заголовок"
 		headerLabel.textAlignment = .center
-		headerLabel.font = .apple18()
+		headerLabel.font = .apple18Bold()
 
 		textLabel.numberOfLines = 0
 		textLabel.text = Text.text

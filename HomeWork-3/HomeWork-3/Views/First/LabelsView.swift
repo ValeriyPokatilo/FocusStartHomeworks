@@ -1,5 +1,5 @@
 //
-//  FirstScreenLabelView.swift
+//  LabelsView.swift
 //  HomeWork-3
 //
 //  Created by Valeriy Pokatilo on 30.10.2020.
@@ -7,17 +7,13 @@
 
 import UIKit
 
-final class FirstScreenLabelsView: UIView {
+final class LabelsView: UIView {
 	init(label1: UILabel, label2: UILabel, label3: UILabel) {
 		super.init(frame: .zero)
 
-		label1.translatesAutoresizingMaskIntoConstraints = false
-		label2.translatesAutoresizingMaskIntoConstraints = false
-		label3.translatesAutoresizingMaskIntoConstraints = false
-
+		// Label 1
 		self.addSubview(label1)
-		self.addSubview(label2)
-		self.addSubview(label3)
+		label1.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
 			label1.topAnchor.constraint(equalTo: self.topAnchor),
@@ -25,11 +21,19 @@ final class FirstScreenLabelsView: UIView {
 			label1.trailingAnchor.constraint(equalTo: self.trailingAnchor)
 		])
 
+		// Label 2
+		self.addSubview(label2)
+		label2.translatesAutoresizingMaskIntoConstraints = false
+
 		NSLayoutConstraint.activate([
 			label2.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 10),
 			label2.leadingAnchor.constraint(equalTo: self.leadingAnchor),
 			label2.trailingAnchor.constraint(equalTo: self.trailingAnchor)
 		])
+
+		// Label 3
+		self.addSubview(label3)
+		label3.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
 			label3.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 20),
@@ -37,6 +41,7 @@ final class FirstScreenLabelsView: UIView {
 			label3.trailingAnchor.constraint(equalTo: self.trailingAnchor)
 		])
 
+		// Self
 		NSLayoutConstraint.activate([
 			self.bottomAnchor.constraint(equalTo: label3.bottomAnchor)
 		])
@@ -46,3 +51,4 @@ final class FirstScreenLabelsView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 }
+

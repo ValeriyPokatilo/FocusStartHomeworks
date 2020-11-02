@@ -16,7 +16,7 @@ extension UIFont {
 		return UIFont.init(name: "AppleSDGothicNeo-Regular", size: 14)
 	}
 
-	static func apple18() -> UIFont? {
+	static func apple18Bold() -> UIFont? {
 		return UIFont.init(name: "AppleSDGothicNeo-Bold", size: 18)
 	}
 }
