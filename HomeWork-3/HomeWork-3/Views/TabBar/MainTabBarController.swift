@@ -30,8 +30,8 @@ private extension MainTabBarController {
 		let tabIcon3 = UIImage(systemName: "battery.0", withConfiguration: boldConf)!
 
 		viewControllers = [
-			self.addNavigationController(rootViewController: FirstViewController(), title: "First screen", image: tabIcon1),
 			self.addNavigationController(rootViewController: SecondViewController(), title: "Second screen", image: tabIcon2),
+			self.addNavigationController(rootViewController: FirstViewController(), title: "First screen", image: tabIcon1),
 			self.addNavigationController(rootViewController: ThirdViewController(), title: "Third screen", image: tabIcon3),
 		]
 	}
