@@ -9,24 +9,22 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
 
-	// MARK: - Lifecycle
+	// MARK: - Life Cycle
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		setupUI()
-    }
+	override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+			super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+			setupUI()
+	}
 
-
-
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 }
 
-// MARK: - Setup TabBar UI
-
-private extension MainTabBarController {
+extension MainTabBarController {
 	func setupUI() {
 		tabBar.tintColor = .systemBlue
 
-		//let boldConf = UIImage.SymbolConfiguration(weight: .medium)
 		let tabIcon1 = SystemImage.batteryFull.image
 		let tabIcon2 = SystemImage.batteryMiddle.image
 		let tabIcon3 = SystemImage.batteryLow.image
