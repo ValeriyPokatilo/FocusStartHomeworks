@@ -88,15 +88,9 @@ extension FirstScreenView {
 
 // MARK: - Setup views layout
 
-extension FirstScreenView {
+private extension FirstScreenView {
 	func setupViewsLayout() {
-		setupViewsLayoutLabels()
-		setupViewsLayoutButtons()
-		setupViewsLayoutImage()
-		setupViewsLayoutActivityIndicator()
-	}
-
-	func setupViewsLayoutLabels() {
+		// Labels
 		let labelsView = LabelsView(smallFontLabel: smallFontLabel, middleFontLabel: middleFontLabel, bigFontLabel: bigFontLabel)
 		self.addSubview(labelsView)
 		labelsView.translatesAutoresizingMaskIntoConstraints = false
@@ -106,9 +100,8 @@ extension FirstScreenView {
 			labelsView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,
 											constant: Metrics.smallVerticalSpace.rawValue)
 		])
-	}
 
-	func setupViewsLayoutButtons() {
+		// Buttons
 		let buttonsView = ButtonsView(circleButton: circleButton, rectangleButton: rectangleButton)
 		self.addSubview(buttonsView)
 		buttonsView.translatesAutoresizingMaskIntoConstraints = false
@@ -117,9 +110,8 @@ extension FirstScreenView {
 			buttonsView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 			buttonsView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
 		])
-	}
 
-	func setupViewsLayoutImage() {
+		// Image
 		self.addSubview(image)
 		image.translatesAutoresizingMaskIntoConstraints = false
 
@@ -130,9 +122,8 @@ extension FirstScreenView {
 			image.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
 										  constant: -Metrics.smallVerticalSpace.rawValue),
 		])
-	}
 
-	func setupViewsLayoutActivityIndicator() {
+		// Activity indicator
 		image.addSubview(activityIndicator)
 		activityIndicator.translatesAutoresizingMaskIntoConstraints = false
 
