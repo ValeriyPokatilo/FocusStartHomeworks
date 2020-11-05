@@ -13,9 +13,11 @@ final class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		self.setupUI()
+		setupUI()
     }
+
+
+
 }
 
 // MARK: - Setup TabBar UI
@@ -24,14 +26,14 @@ private extension MainTabBarController {
 	func setupUI() {
 		tabBar.tintColor = .systemBlue
 
-		let boldConf = UIImage.SymbolConfiguration(weight: .medium)
-		let tabIcon1 = UIImage(systemName: "battery.100", withConfiguration: boldConf)!
-		let tabIcon2 = UIImage(systemName: "battery.25", withConfiguration: boldConf)!
-		let tabIcon3 = UIImage(systemName: "battery.0", withConfiguration: boldConf)!
+		//let boldConf = UIImage.SymbolConfiguration(weight: .medium)
+		let tabIcon1 = SystemImage.batteryFull.image
+		let tabIcon2 = SystemImage.batteryMiddle.image
+		let tabIcon3 = SystemImage.batteryLow.image
 
 		viewControllers = [
-			self.addNavigationController(rootViewController: SecondViewController(), title: "Second screen", image: tabIcon2),
 			self.addNavigationController(rootViewController: FirstViewController(), title: "First screen", image: tabIcon1),
+			self.addNavigationController(rootViewController: SecondViewController(), title: "Second screen", image: tabIcon2),
 			self.addNavigationController(rootViewController: ThirdViewController(), title: "Third screen", image: tabIcon3),
 		]
 	}

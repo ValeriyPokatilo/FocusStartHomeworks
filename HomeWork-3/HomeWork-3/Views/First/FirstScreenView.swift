@@ -11,21 +11,16 @@ final class FirstScreenView: UIView {
 	
 	// MARK: - Properties
 
-	private let label1 = UILabel()
-	private let label2 = UILabel()
-	private let label3 = UILabel()
+	private let smallFontLabel = UILabel()
+	private let middleFontLabel = UILabel()
+	private let bigFontLabel = UILabel()
 
-	let button1 = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-	let button2 = UIButton()
+	let circleButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+	let rectangleButton = UIButton()
 
 	private let image = UIImageView()
 
 	private let activityIndicator = UIActivityIndicatorView()
-
-	private enum Constants: CGFloat {
-		case smallVerticalSpace = 8
-		case imageSize = 100
-	}
 
 	// MARK: - Lifecycle
 
@@ -54,35 +49,35 @@ extension FirstScreenView {
 	}
 	
 	func setupLabels() {
-		label1.text = "Small label"
-		label1.textAlignment = .center
-		label1.font = .apple10()
+		smallFontLabel.text = "Small label"
+		smallFontLabel.textAlignment = .center
+		smallFontLabel.font = Font.apple10.font
 
-		label2.text = "Medium label"
-		label2.textAlignment = .center
-		label2.font = .apple14()
+		middleFontLabel.text = "Medium label"
+		middleFontLabel.textAlignment = .center
+		middleFontLabel.font = Font.apple14.font
 
-		label3.text = "Big label line 1\n Big label line 2"
-		label3.textAlignment = .center
-		label3.font = .apple18Bold()
-		label3.numberOfLines = 2
+		bigFontLabel.text = "Big label line 1\n Big label line 2"
+		bigFontLabel.textAlignment = .center
+		bigFontLabel.font = Font.apple18Bold.font
+		bigFontLabel.numberOfLines = 2
 	}
 
 	func setupButtons() {
-		button1.backgroundColor = .lightGray
-		button1.setTitle("Circle", for: .normal)
-		button1.titleLabel?.font = .apple14()
-		button1.setTitleColor(.white, for: .normal)
+		circleButton.backgroundColor = .lightGray
+		circleButton.setTitle("Circle", for: .normal)
+		circleButton.titleLabel?.font = Font.apple14.font
+		circleButton.setTitleColor(.white, for: .normal)
 		
-		button2.backgroundColor = .lightGray
-		button2.setTitle("Rectangle", for: .normal)
-		button2.titleLabel?.font = .apple14()
-		button2.setTitleColor(.white, for: .normal)
+		rectangleButton.backgroundColor = .lightGray
+		rectangleButton.setTitle("Rectangle", for: .normal)
+		rectangleButton.titleLabel?.font = Font.apple14.font
+		rectangleButton.setTitleColor(.white, for: .normal)
 	}
 
 	func setupImage() {
 		image.contentMode = .scaleAspectFit
-		image.image = Images.loremIpsum.image
+		image.image = AssetsImage.loremIpsum.image
 	}
 
 	func setupActivityIndicator() {
@@ -102,19 +97,19 @@ extension FirstScreenView {
 	}
 
 	func setupViewsLayoutLabels() {
-		let labelsView = LabelsView(label1: label1, label2: label2, label3: label3)
+		let labelsView = LabelsView(smallFontLabel: smallFontLabel, middleFontLabel: middleFontLabel, bigFontLabel: bigFontLabel)
 		self.addSubview(labelsView)
 		labelsView.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
 			labelsView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 			labelsView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,
-											constant: Constants.smallVerticalSpace.rawValue)
+											constant: Metrics.smallVerticalSpace.rawValue)
 		])
 	}
 
 	func setupViewsLayoutButtons() {
-		let buttonsView = ButtonsView(button1: button1, button2: button2)
+		let buttonsView = ButtonsView(circleButton: circleButton, rectangleButton: rectangleButton)
 		self.addSubview(buttonsView)
 		buttonsView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -130,10 +125,10 @@ extension FirstScreenView {
 
 		NSLayoutConstraint.activate([
 			image.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-			image.widthAnchor.constraint(equalToConstant: Constants.imageSize.rawValue),
-			image.heightAnchor.constraint(equalToConstant: Constants.imageSize.rawValue),
+			image.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
+			image.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
 			image.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
-										  constant: -Constants.smallVerticalSpace.rawValue),
+										  constant: -Metrics.smallVerticalSpace.rawValue),
 		])
 	}
 

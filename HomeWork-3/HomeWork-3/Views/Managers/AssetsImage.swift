@@ -7,14 +7,16 @@
 
 import UIKit
 
-enum Images: String {
-	case loremIpsum
+enum AssetsImage: String {
+	case loremIpsum = "loremIpsum"
 
 	var image: UIImage {
 		guard let image = UIImage(named: self.rawValue) else {
 			assertionFailure()
 			return UIImage()
 		}
+
+
 		return image
 	}
 }

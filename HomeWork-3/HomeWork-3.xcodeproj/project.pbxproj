@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97958A5E2553F76800F1F9A6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97958A5D2553F76800F1F9A6 /* Font.swift */; };
+		97958A6625540D3900F1F9A6 /* SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97958A6525540D3900F1F9A6 /* SystemImage.swift */; };
+		97958A69255412B700F1F9A6 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97958A68255412B700F1F9A6 /* Metrics.swift */; };
 		97A5FDE9254F2D55004BC7A7 /* ThirdScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A5FDE8254F2D55004BC7A7 /* ThirdScreenView.swift */; };
 		97A5FDEE254F5699004BC7A7 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A5FDED254F5699004BC7A7 /* FirstScreenView.swift */; };
-		97A5FDF1254F5C54004BC7A7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A5FDF0254F5C54004BC7A7 /* Images.swift */; };
+		97A5FDF1254F5C54004BC7A7 /* AssetsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A5FDF0254F5C54004BC7A7 /* AssetsImage.swift */; };
 		97BCDB3F254F093500B8287C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCDB3E254F093500B8287C /* Text.swift */; };
 		97DA4076254DCAAC009E4165 /* SecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97DA4075254DCAAC009E4165 /* SecondScreenView.swift */; };
 		97E6E962254B1CD6007ABBE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E961254B1CD6007ABBE9 /* AppDelegate.swift */; };
@@ -26,9 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		97958A5D2553F76800F1F9A6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		97958A6525540D3900F1F9A6 /* SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImage.swift; sourceTree = "<group>"; };
+		97958A68255412B700F1F9A6 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		97A5FDE8254F2D55004BC7A7 /* ThirdScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdScreenView.swift; sourceTree = "<group>"; };
 		97A5FDED254F5699004BC7A7 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
-		97A5FDF0254F5C54004BC7A7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		97A5FDF0254F5C54004BC7A7 /* AssetsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsImage.swift; sourceTree = "<group>"; };
 		97BCDB3E254F093500B8287C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		97DA4075254DCAAC009E4165 /* SecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenView.swift; sourceTree = "<group>"; };
 		97E6E95E254B1CD6007ABBE9 /* HomeWork-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeWork-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,8 +66,11 @@
 		979E43A32550014400BB0273 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				97A5FDF0254F5C54004BC7A7 /* Images.swift */,
+				97A5FDF0254F5C54004BC7A7 /* AssetsImage.swift */,
+				97958A6525540D3900F1F9A6 /* SystemImage.swift */,
 				97BCDB3E254F093500B8287C /* Text.swift */,
+				97958A5D2553F76800F1F9A6 /* Font.swift */,
+				97958A68255412B700F1F9A6 /* Metrics.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -256,15 +265,18 @@
 			files = (
 				97A5FDEE254F5699004BC7A7 /* FirstScreenView.swift in Sources */,
 				97E6E99E254B3455007ABBE9 /* LabelsView.swift in Sources */,
+				97958A5E2553F76800F1F9A6 /* Font.swift in Sources */,
 				97E6E962254B1CD6007ABBE9 /* AppDelegate.swift in Sources */,
+				97958A6625540D3900F1F9A6 /* SystemImage.swift in Sources */,
 				97E6E964254B1CD6007ABBE9 /* SceneDelegate.swift in Sources */,
 				97E6E97E254B1F91007ABBE9 /* MainTabBarController.swift in Sources */,
 				97E6E99A254B31C7007ABBE9 /* UIFont + Ext.swift in Sources */,
 				97E6E985254B2255007ABBE9 /* SecondViewController.swift in Sources */,
-				97A5FDF1254F5C54004BC7A7 /* Images.swift in Sources */,
+				97A5FDF1254F5C54004BC7A7 /* AssetsImage.swift in Sources */,
 				97E6E988254B2284007ABBE9 /* ThirdViewController.swift in Sources */,
 				97E6E982254B2248007ABBE9 /* FirstViewController.swift in Sources */,
 				97E6E9A2254B3D21007ABBE9 /* ButtonsView.swift in Sources */,
+				97958A69255412B700F1F9A6 /* Metrics.swift in Sources */,
 				97A5FDE9254F2D55004BC7A7 /* ThirdScreenView.swift in Sources */,
 				97BCDB3F254F093500B8287C /* Text.swift in Sources */,
 				97DA4076254DCAAC009E4165 /* SecondScreenView.swift in Sources */,

@@ -19,8 +19,8 @@ import UIKit
 	}
 
 	override func viewWillLayoutSubviews() {
-		firstView.button1.layer.cornerRadius = firstView.button1.bounds.height / 2
-		firstView.button2.layer.cornerRadius = 8
+		firstView.circleButton.layer.cornerRadius = firstView.circleButton.bounds.height / 2
+		firstView.rectangleButton.layer.cornerRadius = Metrics.smallVerticalSpace.rawValue
 	}
 }
 

@@ -20,13 +20,6 @@ final class SecondScreenView: UIView {
 	private var compactConstraints: [NSLayoutConstraint] = []
 	private var regularConstraints: [NSLayoutConstraint] = []
 
-	private enum Constants: CGFloat {
-		case horizontalStandardSpace = 16
-		case horizontalBigSpace = 32
-		case verticalStandartSpace = 10
-		case imageSize = 90
-	}
-
 	// MARK: - Life Cycle
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -53,18 +46,18 @@ private extension SecondScreenView {
 	func setupViews() {
 		self.backgroundColor = .systemBackground
 
-		imageView.image = Images.loremIpsum.image
-		imageView.contentMode = .scaleAspectFill
-		imageView.clipsToBounds = true
+		self.imageView.image = AssetsImage.loremIpsum.image
+		self.imageView.contentMode = .scaleAspectFill
+		self.imageView.clipsToBounds = true
 
-		headerLabel.text = "Lorem ipsum"
-		headerLabel.textAlignment = .center
-		headerLabel.font = .apple18Bold()
+		self.headerLabel.text = "Lorem ipsum"
+		self.headerLabel.textAlignment = .center
+		self.headerLabel.font = Font.apple18Bold.font
 
-		textLabel.numberOfLines = 0
-		textLabel.text = Text.text
-		textLabel.textAlignment = .justified
-		textLabel.font = .apple14()
+		self.textLabel.numberOfLines = 0
+		self.textLabel.text = Text.text
+		self.textLabel.textAlignment = .justified
+		self.textLabel.font = Font.apple14.font
 	}
 }
 
@@ -141,21 +134,24 @@ private extension SecondScreenView {
 		// Header
 		compactConstraints.append(contentsOf: [
 			headerLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
-												 constant: Constants.horizontalStandardSpace.rawValue),
+												 constant: Metrics.horizontalStandartSpace.rawValue),
 			headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
-												  constant: -Constants.horizontalStandardSpace.rawValue),
+												  constant: -Metrics.horizontalStandartSpace.rawValue),
 			headerLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
-											 constant: Constants.verticalStandartSpace.rawValue)
+											 constant: Metrics.verticalStandartSpace.rawValue)
 		])
 
 		// Text
 		compactConstraints.append(contentsOf: [
+			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+											   constant: Metrics.horizontalStandartSpace.rawValue),
+			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+												constant: -Metrics.horizontalStandartSpace.rawValue),
 			textLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor,
-										   constant: Constants.verticalStandartSpace.rawValue),
-			textLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-			textLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+										   constant: Metrics.verticalStandartSpace.rawValue),
 			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
 		])
+
 	}
 }
 
@@ -167,9 +163,9 @@ private extension SecondScreenView {
 		// Image
 		regularConstraints.append(contentsOf: [
 			imageView.topAnchor.constraint(equalTo: scrollView.topAnchor,
-										   constant: Constants.horizontalStandardSpace.rawValue),
+										   constant: Metrics.verticalStandartSpace.rawValue),
 			imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor,
-											   constant: Constants.horizontalStandardSpace.rawValue),
+											   constant: Metrics.verticalStandartSpace.rawValue),
 			imageView.heightAnchor.constraint(equalToConstant: 75),
 			imageView.widthAnchor.constraint(equalToConstant: 75)
 		])
@@ -177,21 +173,23 @@ private extension SecondScreenView {
 		// Header
 		regularConstraints.append(contentsOf: [
 			headerLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor,
-												 constant: Constants.horizontalStandardSpace.rawValue),
+												 constant: Metrics.horizontalStandartSpace.rawValue),
 			headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
-												  constant: -Constants.horizontalStandardSpace.rawValue),
+												  constant: -Metrics.horizontalStandartSpace.rawValue),
 			headerLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
 		])
 
 		// Text
 		regularConstraints.append(contentsOf: [
-			textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
-										   constant: Constants.verticalStandartSpace.rawValue),
 			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
-											   constant: Constants.horizontalStandardSpace.rawValue),
+											   constant: Metrics.horizontalStandartSpace.rawValue),
 			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
-												constant: -Constants.horizontalStandardSpace.rawValue),
+												constant: -Metrics.horizontalStandartSpace.rawValue),
+			textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
+										   constant: Metrics.verticalStandartSpace.rawValue),
 			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
 		])
+
+
 	}
 }

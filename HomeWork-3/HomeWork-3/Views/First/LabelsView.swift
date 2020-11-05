@@ -8,42 +8,42 @@
 import UIKit
 
 final class LabelsView: UIView {
-	init(label1: UILabel, label2: UILabel, label3: UILabel) {
+	init(smallFontLabel: UILabel, middleFontLabel: UILabel, bigFontLabel: UILabel) {
 		super.init(frame: .zero)
 
 		// Label 1
-		self.addSubview(label1)
-		label1.translatesAutoresizingMaskIntoConstraints = false
+		self.addSubview(smallFontLabel)
+		smallFontLabel.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			label1.topAnchor.constraint(equalTo: self.topAnchor),
-			label1.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-			label1.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+			smallFontLabel.topAnchor.constraint(equalTo: self.topAnchor),
+			smallFontLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+			smallFontLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
 		])
 
 		// Label 2
-		self.addSubview(label2)
-		label2.translatesAutoresizingMaskIntoConstraints = false
+		self.addSubview(middleFontLabel)
+		middleFontLabel.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			label2.topAnchor.constraint(equalTo: label1.bottomAnchor, constant: 10),
-			label2.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-			label2.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+			middleFontLabel.topAnchor.constraint(equalTo: smallFontLabel.bottomAnchor, constant: 10),
+			middleFontLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+			middleFontLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
 		])
 
 		// Label 3
-		self.addSubview(label3)
-		label3.translatesAutoresizingMaskIntoConstraints = false
+		self.addSubview(bigFontLabel)
+		bigFontLabel.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			label3.topAnchor.constraint(equalTo: label2.bottomAnchor, constant: 20),
-			label3.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-			label3.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+			bigFontLabel.topAnchor.constraint(equalTo: middleFontLabel.bottomAnchor, constant: 20),
+			bigFontLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+			bigFontLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
 		])
 
 		// Self
 		NSLayoutConstraint.activate([
-			self.bottomAnchor.constraint(equalTo: label3.bottomAnchor)
+			self.bottomAnchor.constraint(equalTo: bigFontLabel.bottomAnchor)
 		])
 	}
 

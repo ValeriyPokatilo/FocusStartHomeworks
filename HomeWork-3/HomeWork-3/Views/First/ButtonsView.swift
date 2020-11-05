@@ -8,34 +8,34 @@
 import UIKit
 
 final class ButtonsView: UIView {
-	init(button1: UIButton, button2: UIButton) {
+	init(circleButton: UIButton, rectangleButton: UIButton) {
 		super.init(frame: .zero)
 
 		// Button 1
-		self.addSubview(button1)
-		button1.translatesAutoresizingMaskIntoConstraints = false
+		self.addSubview(circleButton)
+		circleButton.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			button1.topAnchor.constraint(equalTo: self.topAnchor),
-			button1.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-			button1.heightAnchor.constraint(equalToConstant: 50),
-			button1.widthAnchor.constraint(equalToConstant: 50)
+			circleButton.topAnchor.constraint(equalTo: self.topAnchor),
+			circleButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+			circleButton.heightAnchor.constraint(equalToConstant: 50),
+			circleButton.widthAnchor.constraint(equalToConstant: 50)
 		])
 
 		// Button 2
-		self.addSubview(button2)
-		button2.translatesAutoresizingMaskIntoConstraints = false
+		self.addSubview(rectangleButton)
+		rectangleButton.translatesAutoresizingMaskIntoConstraints = false
 		
 		NSLayoutConstraint.activate([
-			button2.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 20),
-			button2.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-			button2.heightAnchor.constraint(equalToConstant: 50),
-			button2.widthAnchor.constraint(equalToConstant: 200)
+			rectangleButton.topAnchor.constraint(equalTo: circleButton.bottomAnchor, constant: 20),
+			rectangleButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+			rectangleButton.heightAnchor.constraint(equalToConstant: 50),
+			rectangleButton.widthAnchor.constraint(equalToConstant: 200)
 		])
 
 		// Self
 		NSLayoutConstraint.activate([
-			self.bottomAnchor.constraint(equalTo: button2.bottomAnchor)
+			self.bottomAnchor.constraint(equalTo: rectangleButton.bottomAnchor)
 		])
 	}
 

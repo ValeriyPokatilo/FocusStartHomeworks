@@ -18,11 +18,6 @@ final class ThirdScreenView: UIView {
 	var enterButtonAtTheTop: NSLayoutConstraint?
 	var enterButtonAtTheBottom: NSLayoutConstraint?
 
-	private enum Constants: CGFloat {
-		case horizontalStandartSpace = 32
-		case verticalStandartSpace = 50
-	}
-
 	// MARK: Life Cycle
 
 	public override init(frame: CGRect) {
@@ -83,18 +78,18 @@ private extension ThirdScreenView {
 		self.backgroundColor = .systemBackground
 
 		loginTextField.placeholder = "Login"
-		loginTextField.font = .apple18Bold()
+		loginTextField.font = Font.apple18Bold.font
 		loginTextField.borderStyle = .roundedRect
 		loginTextField.returnKeyType = .next
 
 		passwordTextField.placeholder = "Password"
 		passwordTextField.isSecureTextEntry = true
-		passwordTextField.font = .apple18Bold()
+		passwordTextField.font = Font.apple18Bold.font
 		passwordTextField.borderStyle = .roundedRect
 		passwordTextField.returnKeyType = .done
 
 		enterButton.setTitle("Enter", for: .normal)
-		enterButton.titleLabel?.font = .apple18Bold()
+		enterButton.titleLabel?.font = Font.apple18Bold.font
 		enterButton.titleLabel?.textColor = UIColor.white
 		enterButton.backgroundColor = UIColor.systemBlue
 	}
@@ -105,12 +100,12 @@ private extension ThirdScreenView {
 
 		NSLayoutConstraint.activate([
 			loginTextField.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,
-												constant: Constants.verticalStandartSpace.rawValue),
+												constant: Metrics.verticalStandartSpace.rawValue),
 			loginTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 			loginTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor,
-													constant: Constants.horizontalStandartSpace.rawValue),
+													constant: Metrics.horizontalStandartSpace.rawValue),
 			loginTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor,
-													 constant: -Constants.horizontalStandartSpace.rawValue)
+													 constant: -Metrics.horizontalStandartSpace.rawValue)
 		])
 
 		self.addSubview(passwordTextField)
@@ -118,12 +113,12 @@ private extension ThirdScreenView {
 
 		NSLayoutConstraint.activate([
 			passwordTextField.topAnchor.constraint(equalTo: loginTextField.bottomAnchor,
-												   constant: Constants.horizontalStandartSpace.rawValue),
+												   constant: Metrics.horizontalStandartSpace.rawValue),
 			passwordTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 			passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor,
-													   constant: Constants.horizontalStandartSpace.rawValue),
+													   constant: Metrics.horizontalStandartSpace.rawValue),
 			passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor,
-														constant: -Constants.horizontalStandartSpace.rawValue)
+														constant: -Metrics.horizontalStandartSpace.rawValue)
 		])
 
 		self.addSubview(enterButton)
@@ -135,11 +130,11 @@ private extension ThirdScreenView {
 		])
 
 		enterButtonAtTheBottom = enterButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
-																	 constant: -Constants.verticalStandartSpace.rawValue)
+																	 constant: -Metrics.verticalStandartSpace.rawValue)
 		enterButtonAtTheBottom?.isActive = true
 
 		enterButtonAtTheTop = enterButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor,
-																  constant: Constants.verticalStandartSpace.rawValue)
+																  constant: Metrics.verticalStandartSpace.rawValue)
 	}
 }
 

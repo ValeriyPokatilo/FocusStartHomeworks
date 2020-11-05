@@ -11,9 +11,7 @@ final class ThirdViewController: UIViewController {
 
 	// MARK: - Lifecycle
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-
+	override func loadView() {
 		self.view = ThirdScreenView()
 	}
 }
