@@ -21,7 +21,7 @@ final class MainTabBarController: UITabBarController {
 	}
 }
 
-extension MainTabBarController {
+private extension MainTabBarController {
 	func setupUI() {
 		tabBar.tintColor = .systemBlue
 

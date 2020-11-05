@@ -23,7 +23,6 @@
 		97E6E982254B2248007ABBE9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E981254B2248007ABBE9 /* FirstViewController.swift */; };
 		97E6E985254B2255007ABBE9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E984254B2255007ABBE9 /* SecondViewController.swift */; };
 		97E6E988254B2284007ABBE9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E987254B2284007ABBE9 /* ThirdViewController.swift */; };
-		97E6E99A254B31C7007ABBE9 /* UIFont + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E999254B31C7007ABBE9 /* UIFont + Ext.swift */; };
 		97E6E99E254B3455007ABBE9 /* LabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E99D254B3455007ABBE9 /* LabelsView.swift */; };
 		97E6E9A2254B3D21007ABBE9 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E6E9A1254B3D21007ABBE9 /* ButtonsView.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		97E6E981254B2248007ABBE9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		97E6E984254B2255007ABBE9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		97E6E987254B2284007ABBE9 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		97E6E999254B31C7007ABBE9 /* UIFont + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Ext.swift"; sourceTree = "<group>"; };
 		97E6E99D254B3455007ABBE9 /* LabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsView.swift; sourceTree = "<group>"; };
 		97E6E9A1254B3D21007ABBE9 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				97E6E99C254B342D007ABBE9 /* Views */,
-				97E6E998254B3199007ABBE9 /* Extensions */,
 				97E6E98F254B22CC007ABBE9 /* Storyboards */,
 				97E6E98E254B22AF007ABBE9 /* Supporting */,
 			);
@@ -161,14 +158,6 @@
 				97E6E963254B1CD6007ABBE9 /* SceneDelegate.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		97E6E998254B3199007ABBE9 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				97E6E999254B31C7007ABBE9 /* UIFont + Ext.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		97E6E99C254B342D007ABBE9 /* Views */ = {
@@ -270,7 +259,6 @@
 				97958A6625540D3900F1F9A6 /* SystemImage.swift in Sources */,
 				97E6E964254B1CD6007ABBE9 /* SceneDelegate.swift in Sources */,
 				97E6E97E254B1F91007ABBE9 /* MainTabBarController.swift in Sources */,
-				97E6E99A254B31C7007ABBE9 /* UIFont + Ext.swift in Sources */,
 				97E6E985254B2255007ABBE9 /* SecondViewController.swift in Sources */,
 				97A5FDF1254F5C54004BC7A7 /* AssetsImage.swift in Sources */,
 				97E6E988254B2284007ABBE9 /* ThirdViewController.swift in Sources */,

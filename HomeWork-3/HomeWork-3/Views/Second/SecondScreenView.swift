@@ -42,6 +42,7 @@ final class SecondScreenView: UIView {
 }
 
 // MARK: - Setup views
+
 private extension SecondScreenView {
 	func setupViews() {
 		self.backgroundColor = .systemBackground
@@ -62,6 +63,7 @@ private extension SecondScreenView {
 }
 
 // MARK: - Switch screen process
+
 private extension SecondScreenView {
 	func changeViewsLayout(traitCollection: UITraitCollection) {
 		switch(traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
@@ -86,6 +88,7 @@ private extension SecondScreenView {
 }
 
 // MARK: - Shared Layout
+
 private extension SecondScreenView {
 	func createSharedConstraintsArray() {
 		let safeArea = self.safeAreaLayoutGuide
@@ -119,6 +122,7 @@ private extension SecondScreenView {
 }
 
 // MARK: - Compact Layout
+
 private extension SecondScreenView {
 	func createCompactConstraintsArray() {
 		let safeArea = self.safeAreaLayoutGuide
@@ -156,6 +160,7 @@ private extension SecondScreenView {
 }
 
 // MARK: - Regular Layout
+
 private extension SecondScreenView {
 	func createRegularConstraintsArray() {
 		let safeArea = self.safeAreaLayoutGuide
@@ -189,7 +194,5 @@ private extension SecondScreenView {
 										   constant: Metrics.verticalStandartSpace.rawValue),
 			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
 		])
-
-
 	}
 }

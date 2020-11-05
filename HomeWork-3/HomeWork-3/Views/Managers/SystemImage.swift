@@ -17,7 +17,6 @@ enum SystemImage: String {
 			assertionFailure()
 			return UIImage()
 		}
-
 		return image
 	}
 }

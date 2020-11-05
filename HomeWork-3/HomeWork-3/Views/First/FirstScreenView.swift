@@ -27,8 +27,8 @@ final class FirstScreenView: UIView {
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
 
-		setupViews()
-		setupViewsLayout()
+		self.setupViews()
+		self.setupViewsLayout()
 	}
 
 	required init?(coder: NSCoder) {
@@ -38,51 +38,51 @@ final class FirstScreenView: UIView {
 
 // MARK: - Setup views
 
-extension FirstScreenView {
+private extension FirstScreenView {
 	func setupViews() {
 		self.backgroundColor = .systemBackground
 
-		setupLabels()
-		setupButtons()
-		setupImage()
-		setupActivityIndicator()
+		self.setupLabels()
+		self.setupButtons()
+		self.setupImage()
+		self.setupActivityIndicator()
 	}
 	
 	func setupLabels() {
-		smallFontLabel.text = "Small label"
-		smallFontLabel.textAlignment = .center
-		smallFontLabel.font = Font.apple10.font
+		self.smallFontLabel.text = "Small label"
+		self.smallFontLabel.textAlignment = .center
+		self.smallFontLabel.font = Font.apple10.font
 
-		middleFontLabel.text = "Medium label"
-		middleFontLabel.textAlignment = .center
-		middleFontLabel.font = Font.apple14.font
+		self.middleFontLabel.text = "Medium label"
+		self.middleFontLabel.textAlignment = .center
+		self.middleFontLabel.font = Font.apple14.font
 
-		bigFontLabel.text = "Big label line 1\n Big label line 2"
-		bigFontLabel.textAlignment = .center
-		bigFontLabel.font = Font.apple18Bold.font
-		bigFontLabel.numberOfLines = 2
+		self.bigFontLabel.text = "Big label line 1\n Big label line 2"
+		self.bigFontLabel.textAlignment = .center
+		self.bigFontLabel.font = Font.apple18Bold.font
+		self.bigFontLabel.numberOfLines = 2
 	}
 
 	func setupButtons() {
-		circleButton.backgroundColor = .lightGray
-		circleButton.setTitle("Circle", for: .normal)
-		circleButton.titleLabel?.font = Font.apple14.font
-		circleButton.setTitleColor(.white, for: .normal)
-		
-		rectangleButton.backgroundColor = .lightGray
-		rectangleButton.setTitle("Rectangle", for: .normal)
-		rectangleButton.titleLabel?.font = Font.apple14.font
-		rectangleButton.setTitleColor(.white, for: .normal)
+		self.circleButton.backgroundColor = .lightGray
+		self.circleButton.setTitle("Circle", for: .normal)
+		self.circleButton.titleLabel?.font = Font.apple14.font
+		self.circleButton.setTitleColor(.white, for: .normal)
+
+		self.rectangleButton.backgroundColor = .lightGray
+		self.rectangleButton.setTitle("Rectangle", for: .normal)
+		self.rectangleButton.titleLabel?.font = Font.apple14.font
+		self.rectangleButton.setTitleColor(.white, for: .normal)
 	}
 
 	func setupImage() {
-		image.contentMode = .scaleAspectFit
-		image.image = AssetsImage.loremIpsum.image
+		self.image.contentMode = .scaleAspectFit
+		self.image.image = AssetsImage.loremIpsum.image
 	}
 
 	func setupActivityIndicator() {
-		activityIndicator.color = .black
-		activityIndicator.startAnimating()
+		self.activityIndicator.color = .black
+		self.activityIndicator.startAnimating()
 	}
 }
 
@@ -113,23 +113,23 @@ private extension FirstScreenView {
 
 		// Image
 		self.addSubview(image)
-		image.translatesAutoresizingMaskIntoConstraints = false
+		self.image.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			image.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-			image.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
-			image.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
-			image.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
+			self.image.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+			self.image.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
+			self.image.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
+			self.image.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
 										  constant: -Metrics.smallVerticalSpace.rawValue),
 		])
 
 		// Activity indicator
-		image.addSubview(activityIndicator)
-		activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+		self.image.addSubview(activityIndicator)
+		self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			activityIndicator.centerXAnchor.constraint(equalTo: image.centerXAnchor),
-			activityIndicator.centerYAnchor.constraint(equalTo: image.centerYAnchor)
+			self.activityIndicator.centerXAnchor.constraint(equalTo: image.centerXAnchor),
+			self.activityIndicator.centerYAnchor.constraint(equalTo: image.centerYAnchor)
 		])
 	}
 }
