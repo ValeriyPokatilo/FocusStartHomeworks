@@ -11,12 +11,12 @@ final class ThirdScreenView: UIView {
 
 	// MARK: - Properties
 
-	let loginTextField = UITextField()
-	let passwordTextField = UITextField()
-	let enterButton = UIButton()
+	private let loginTextField = UITextField()
+	private let passwordTextField = UITextField()
+	private let enterButton = UIButton()
 
-	var enterButtonAtTheTop: NSLayoutConstraint?
-	var enterButtonAtTheBottom: NSLayoutConstraint?
+	private var enterButtonAtTheTop: NSLayoutConstraint?
+	private var enterButtonAtTheBottom: NSLayoutConstraint?
 
 	// MARK: Life Cycle
 
@@ -44,6 +44,7 @@ final class ThirdScreenView: UIView {
 // MARK: - Moution Enter button
 
 private extension ThirdScreenView {
+	
 	@objc func keyboardWillAppear() {
 		self.motionEnterButton(toUp: true)
 	}

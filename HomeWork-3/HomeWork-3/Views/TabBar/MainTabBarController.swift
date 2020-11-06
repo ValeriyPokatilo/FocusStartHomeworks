@@ -13,7 +13,7 @@ final class MainTabBarController: UITabBarController {
 
 	override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 			super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-			setupUI()
+		setupUI()
 	}
 
 	required init?(coder: NSCoder) {

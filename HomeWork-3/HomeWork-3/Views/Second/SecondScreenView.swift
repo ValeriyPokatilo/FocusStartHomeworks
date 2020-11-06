@@ -95,27 +95,27 @@ private extension SecondScreenView {
 
 		// ScrollView
 		self.addSubview(scrollView)
-		scrollView.translatesAutoresizingMaskIntoConstraints = false
+		self.scrollView.translatesAutoresizingMaskIntoConstraints = false
 
 		sharedConstraints.append(contentsOf: [
-			scrollView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-			scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-			scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-			scrollView.widthAnchor.constraint(equalTo: safeArea.widthAnchor)
+			self.scrollView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+			self.scrollView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+			self.scrollView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+			self.scrollView.widthAnchor.constraint(equalTo: safeArea.widthAnchor)
 		])
 
 		// Image
-		scrollView.addSubview(imageView)
-		imageView.translatesAutoresizingMaskIntoConstraints = false
+		self.scrollView.addSubview(imageView)
+		self.imageView.translatesAutoresizingMaskIntoConstraints = false
 
 
 		// Header
-		scrollView.addSubview(headerLabel)
-		headerLabel.translatesAutoresizingMaskIntoConstraints = false
+		self.scrollView.addSubview(headerLabel)
+		self.headerLabel.translatesAutoresizingMaskIntoConstraints = false
 
 		// Text
-		scrollView.addSubview(textLabel)
-		textLabel.translatesAutoresizingMaskIntoConstraints = false
+		self.scrollView.addSubview(textLabel)
+		self.textLabel.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate(sharedConstraints)
 	}
@@ -129,31 +129,31 @@ private extension SecondScreenView {
 
 		// Image
 		compactConstraints.append(contentsOf: [
-			imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-			imageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-			imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-			imageView.heightAnchor.constraint(equalTo: scrollView.widthAnchor)
+			self.imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+			self.imageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+			self.imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+			self.imageView.heightAnchor.constraint(equalTo: scrollView.widthAnchor)
 		])
 
 		// Header
 		compactConstraints.append(contentsOf: [
-			headerLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+			self.headerLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
 												 constant: Metrics.horizontalStandartSpace.rawValue),
-			headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+			self.headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
 												  constant: -Metrics.horizontalStandartSpace.rawValue),
-			headerLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
+			self.headerLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor,
 											 constant: Metrics.verticalStandartSpace.rawValue)
 		])
 
 		// Text
 		compactConstraints.append(contentsOf: [
-			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+			self.textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
 											   constant: Metrics.horizontalStandartSpace.rawValue),
-			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+			self.textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
 												constant: -Metrics.horizontalStandartSpace.rawValue),
-			textLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor,
+			self.textLabel.topAnchor.constraint(equalTo: headerLabel.bottomAnchor,
 										   constant: Metrics.verticalStandartSpace.rawValue),
-			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+			self.textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
 		])
 
 	}
@@ -167,32 +167,32 @@ private extension SecondScreenView {
 
 		// Image
 		regularConstraints.append(contentsOf: [
-			imageView.topAnchor.constraint(equalTo: scrollView.topAnchor,
+			self.imageView.topAnchor.constraint(equalTo: scrollView.topAnchor,
 										   constant: Metrics.verticalStandartSpace.rawValue),
-			imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor,
+			self.imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor,
 											   constant: Metrics.verticalStandartSpace.rawValue),
-			imageView.heightAnchor.constraint(equalToConstant: 75),
-			imageView.widthAnchor.constraint(equalToConstant: 75)
+			self.imageView.heightAnchor.constraint(equalToConstant: 75),
+			self.imageView.widthAnchor.constraint(equalToConstant: 75)
 		])
 
 		// Header
 		regularConstraints.append(contentsOf: [
-			headerLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor,
+			self.headerLabel.leadingAnchor.constraint(equalTo: self.imageView.leadingAnchor,
 												 constant: Metrics.horizontalStandartSpace.rawValue),
-			headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+			self.headerLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
 												  constant: -Metrics.horizontalStandartSpace.rawValue),
-			headerLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+			self.headerLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
 		])
 
 		// Text
 		regularConstraints.append(contentsOf: [
-			textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
+			self.textLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor,
 											   constant: Metrics.horizontalStandartSpace.rawValue),
-			textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
+			self.textLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor,
 												constant: -Metrics.horizontalStandartSpace.rawValue),
-			textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,
+			self.textLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor,
 										   constant: Metrics.verticalStandartSpace.rawValue),
-			textLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+			self.textLabel.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
 		])
 	}
 }
