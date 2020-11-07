@@ -9,6 +9,7 @@ import UIKit
 final class SecondScreenView: UIView {
 
 	// MARK: - Properties
+
 	private let scrollView = UIScrollView()
 	private let imageView = UIImageView()
 	private let headerLabel = UILabel()
@@ -21,6 +22,7 @@ final class SecondScreenView: UIView {
 	private var regularConstraints: [NSLayoutConstraint] = []
 
 	// MARK: - Life Cycle
+
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
 
