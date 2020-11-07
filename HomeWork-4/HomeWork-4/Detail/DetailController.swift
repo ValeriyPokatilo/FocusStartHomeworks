@@ -12,7 +12,7 @@ class DetailController: UIViewController {
 	// MARK: - Lifecycle
 
 	override func loadView() {
-
+		self.view = DetailView()
 	}
 }
 
