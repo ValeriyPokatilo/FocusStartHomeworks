@@ -15,11 +15,11 @@ enum Font {
 	public var font: UIFont {
 		switch self {
 		case .headerStyle:
-			return UIFont.init(name: "AppleSDGothicNeo-Bold", size: 18.0)!
+			return UIFont.init(name: "AppleSDGothicNeo-Bold", size: 21.0)!
 		case .textStyle:
-			return UIFont.init(name: "AppleSDGothicNeo-Regular", size: 14.0)!
+			return UIFont.init(name: "AppleSDGothicNeo-Regular", size: 16.0)!
 		case .dateStyle:
-			return UIFont.init(name: "AppleSDGothicNeo-Italic", size: 14.0)!
+			return UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16.0)!
 		}
 	}
 }

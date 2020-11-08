@@ -5,21 +5,42 @@
 //  Created by Valeriy Pokatilo on 08.11.2020.
 //
 
-import Foundation
+import UIKit
 
 struct Article {
 	let title: String
 	let text: String
 	let time: String?
+	let topImage: UIImage
+	let bottomImage: UIImage
 
 	static func returnArticle() -> [Article] {
 		let articles = [
-			Article(title: "Статья 1", text: "Текст 1", time: "22:30"),
-			Article(title: "Статья 2", text: "Текст 2", time: "09:17"),
-			Article(title: "Статья 3", text: "Текст 3", time: "16:07"),
-			Article(title: "Статья 4", text: "Текст 4", time: "23:59"),
-			Article(title: "Статья 5", text: "Текст 5", time: "07:45"),
-			Article(title: "Статья 6", text: "Текст 6", time: "19:45"),
+			Article(title: Text.iphone2Header,
+					text: Text.iphone2Text,
+					time: Text.iphone2Time,
+					topImage: AssetsImage.iphone2front.image,
+					bottomImage: AssetsImage.iphone2rear.image),
+			Article(title: Text.iphone4Header,
+					text: Text.iphone4Text,
+					time: Text.iphone4Time,
+					topImage: AssetsImage.iphone4front.image,
+					bottomImage: AssetsImage.iphone4rear.image),
+			Article(title: Text.iphone8Header,
+					text: Text.iphone8Text,
+					time: Text.iphone8Time,
+					topImage: AssetsImage.iphone8front.image,
+					bottomImage: AssetsImage.iphone8rear.image),
+			Article(title: Text.iphoneXHeader,
+					text: Text.iphoneXText,
+					time: Text.iphoneXTime,
+					topImage: AssetsImage.iphoneXfront.image,
+					bottomImage: AssetsImage.iphoneXrear.image),
+			Article(title: Text.iphone12Header,
+					text: Text.iphone12Text,
+					time: Text.iphone12Time,
+					topImage: AssetsImage.iphone12front.image,
+					bottomImage: AssetsImage.iphone12rear.image)
 		]
 
 		return articles
