@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 	// MARK: - Properties
 
 	var article = Article(title: "Энциклопедия iPhone",
+						  preText: "",
 						  text: "Выберите модель",
 						  time: nil,
 						  topImage: AssetsImage.iphone0front.image,
@@ -22,6 +23,9 @@ class DetailViewController: UIViewController {
 	private let articleText = UILabel()
 	private let topPicture = UIImageView()
 	private let bottomPicture = UIImageView()
+
+	private let topRoundedShadowImageView = RoundShadowImageView()
+	private let bottomRoundedShadowImageView = RoundShadowImageView()
 
 	// MARK: - Lifecycle
 
@@ -79,36 +83,44 @@ private extension DetailViewController {
 			self.scrollView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor)
 		])
 
-
 		self.scrollView.addSubview(articleText)
 		self.articleText.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			self.articleText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
-			self.articleText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
-			self.articleText.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
-		])
-
-		self.scrollView.addSubview(topPicture)
-		self.topPicture.translatesAutoresizingMaskIntoConstraints = false
-
-		NSLayoutConstraint.activate([
-			self.topPicture.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
-			self.topPicture.topAnchor.constraint(equalTo: articleText.bottomAnchor, constant: 16),
-			self.topPicture.heightAnchor.constraint(equalToConstant: 300),
-			self.topPicture.widthAnchor.constraint(equalToConstant: 300)
+			self.articleText.leadingAnchor.constraint(equalTo: self.view.leadingAnchor,
+													  constant: Metrics.standartSizeSeparatop.rawValue),
+			self.articleText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor,
+													   constant: -Metrics.standartSizeSeparatop.rawValue),
+			self.articleText.topAnchor.constraint(equalTo: scrollView.topAnchor,
+												  constant: Metrics.standartSizeSeparatop.rawValue),
 		])
 
 
-		self.scrollView.addSubview(bottomPicture)
-		self.bottomPicture.translatesAutoresizingMaskIntoConstraints = false
+		self.scrollView.addSubview(topRoundedShadowImageView)
+		self.topRoundedShadowImageView.image = topPicture.image
+		self.topRoundedShadowImageView.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			self.bottomPicture.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
-			self.bottomPicture.topAnchor.constraint(equalTo: topPicture.bottomAnchor, constant: 16),
-			self.bottomPicture.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 16),
-			self.bottomPicture.heightAnchor.constraint(equalToConstant: 300),
-			self.bottomPicture.widthAnchor.constraint(equalToConstant: 300)
+			self.topRoundedShadowImageView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
+			self.topRoundedShadowImageView.topAnchor.constraint(equalTo: articleText.bottomAnchor,
+																constant: Metrics.standartSizeSeparatop.rawValue),
+			self.topRoundedShadowImageView.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
+			self.topRoundedShadowImageView.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue)
+		])
+
+
+		self.scrollView.addSubview(bottomRoundedShadowImageView)
+		self.bottomRoundedShadowImageView.image = bottomPicture.image
+		self.bottomRoundedShadowImageView.translatesAutoresizingMaskIntoConstraints = false
+
+		NSLayoutConstraint.activate([
+			self.bottomRoundedShadowImageView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
+			self.bottomRoundedShadowImageView.topAnchor.constraint(equalTo: topRoundedShadowImageView.bottomAnchor,
+																   constant: Metrics.bigSizeSeparatop.rawValue),
+			self.bottomRoundedShadowImageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,
+																	  constant: Metrics.standartSizeSeparatop.rawValue),
+			self.bottomRoundedShadowImageView.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
+			self.bottomRoundedShadowImageView.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue)
 		])
 	}
 }
