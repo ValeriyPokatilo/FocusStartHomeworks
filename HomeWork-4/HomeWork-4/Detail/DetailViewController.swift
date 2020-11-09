@@ -7,16 +7,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController {
 
 	// MARK: - Properties
 
-	var article = Article(title: "Энциклопедия iPhone",
-						  preText: "",
-						  text: "Выберите модель",
-						  time: nil,
-						  topImage: AssetsImage.iphone0front.image,
-						  bottomImage: AssetsImage.iphone0rear.image)
+	var article: Article?
 
 	private let scrollView = UIScrollView()
 
@@ -31,25 +26,8 @@ class DetailViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		setupNavigation()
 		setupViews()
 		setupViewsLayout()
-	}
-}
-
-// MARK: - Setup navigation
-
-extension DetailViewController {
-	func setupNavigation() {
-		self.navigationItem.title = self.article.title
-		self.navigationController?.navigationBar.prefersLargeTitles = true
-
-		if let splitController = self.splitViewController {
-			if let navigationController = splitController.viewControllers.last as? UINavigationController {
-				navigationController.topViewController?.navigationItem.leftBarButtonItem = splitController.displayModeButtonItem
-			}
-		}
 	}
 }
 
@@ -59,20 +37,29 @@ private extension DetailViewController {
 	func setupViews() {
 		self.view.backgroundColor = .systemBackground
 
+		guard let currenArticle = article else { return }
+
+		// Navigation
+		self.navigationItem.title = currenArticle.title
+		self.navigationController?.navigationBar.prefersLargeTitles = true
+
+		// Article
 		self.articleText.numberOfLines = 0
-		self.articleText.text = article.text
+		self.articleText.text = currenArticle.text
 		self.articleText.textAlignment = .justified
 		self.articleText.font = Font.textStyle.font
 
+		// Pictures
 		self.topPicture.contentMode = .scaleAspectFit
-		self.topPicture.image = article.topImage
+		self.topPicture.image = currenArticle.topImage
 
 		self.bottomPicture.contentMode = .scaleAspectFit
-		self.bottomPicture.image = article.bottomImage
+		self.bottomPicture.image = currenArticle.bottomImage
 
 	}
 
 	func setupViewsLayout() {
+		// ScrollView
 		self.view.addSubview(scrollView)
 		self.scrollView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -83,6 +70,7 @@ private extension DetailViewController {
 			self.scrollView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor)
 		])
 
+		// Text
 		self.scrollView.addSubview(articleText)
 		self.articleText.translatesAutoresizingMaskIntoConstraints = false
 
@@ -96,6 +84,7 @@ private extension DetailViewController {
 		])
 
 
+		// Pictures
 		self.scrollView.addSubview(topRoundedShadowImageView)
 		self.topRoundedShadowImageView.image = topPicture.image
 		self.topRoundedShadowImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -103,7 +92,7 @@ private extension DetailViewController {
 		NSLayoutConstraint.activate([
 			self.topRoundedShadowImageView.centerXAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.centerXAnchor),
 			self.topRoundedShadowImageView.topAnchor.constraint(equalTo: articleText.bottomAnchor,
-																constant: Metrics.standartSizeSeparatop.rawValue),
+																constant: Metrics.bigSizeSeparatop.rawValue),
 			self.topRoundedShadowImageView.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
 			self.topRoundedShadowImageView.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue)
 		])
@@ -118,7 +107,7 @@ private extension DetailViewController {
 			self.bottomRoundedShadowImageView.topAnchor.constraint(equalTo: topRoundedShadowImageView.bottomAnchor,
 																   constant: Metrics.bigSizeSeparatop.rawValue),
 			self.bottomRoundedShadowImageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,
-																	  constant: Metrics.standartSizeSeparatop.rawValue),
+																	  constant: -Metrics.standartSizeSeparatop.rawValue),
 			self.bottomRoundedShadowImageView.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
 			self.bottomRoundedShadowImageView.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue)
 		])

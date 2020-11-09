@@ -9,7 +9,8 @@ import UIKit
 
 final class RoundShadowImageView: UIView {
 
-	// MARK: Properties
+	// MARK: - Properties
+
 	private let cornerRadius: CGFloat
 	private let shadowColor: UIColor
 	private let shadowRadius: CGFloat
@@ -17,7 +18,8 @@ final class RoundShadowImageView: UIView {
 	private let shadowOffset: CGSize
 	private let imageOpacity: Float // ???
 
-	// MARK: Layers
+	// MARK: - Layers
+
 	private var imageLayer = CALayer()
 	private var shadowLayer: CAShapeLayer?
 
@@ -25,7 +27,7 @@ final class RoundShadowImageView: UIView {
 		return UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
 	}
 
-	// MARK: Views
+	// MARK: - Views
 	var image: UIImage? = nil {
 		didSet {
 			imageLayer.contents = image?.cgImage
@@ -33,7 +35,8 @@ final class RoundShadowImageView: UIView {
 		}
 	}
 
-	// MARK: Life Cycle
+	// MARK: - Life Cycle
+
 	init(
 		cornerRadius: CGFloat = 10,
 		shadowColor: UIColor = .black,
@@ -71,7 +74,8 @@ final class RoundShadowImageView: UIView {
 	}
 }
 
-// MARK: Configure Layers
+// MARK: - Configure Layers
+
 private extension RoundShadowImageView {
 	func configureLayer() {
 		self.layer.shouldRasterize = true

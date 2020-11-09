@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MasterTableViewCell: UITableViewCell {
+final class MasterTableViewCell: UITableViewCell {
 
 	// MARK: - Properties
 
@@ -44,6 +44,7 @@ private extension MasterTableViewCell {
 	}
 
 	func setupViewsLayout() {
+		// Header
 		self.addSubview(self.articleHeaderLabel)
 		self.articleHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
 
@@ -56,6 +57,7 @@ private extension MasterTableViewCell {
 														 constant: Metrics.standartSizeSeparatop.rawValue),
 		])
 
+		// Text
 		self.addSubview(articleTextLabel)
 		self.articleTextLabel.translatesAutoresizingMaskIntoConstraints = false
 		self.articleTextLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -67,16 +69,14 @@ private extension MasterTableViewCell {
 														  constant: -Metrics.standartSizeSeparatop.rawValue),
 			self.articleTextLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,
 														   constant: Metrics.standartSizeSeparatop.rawValue)
-
 		])
 
-
+		// Time
 		self.addSubview(self.articleTimeLabel)
 		self.articleTimeLabel.translatesAutoresizingMaskIntoConstraints = false
 		self.articleTimeLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
 
 		NSLayoutConstraint.activate([
-			//self.articleTimeLabel.topAnchor.constraint(equalTo: self.articleHeaderLabel.bottomAnchor, constant: 16),
 			self.articleTimeLabel.bottomAnchor.constraint(equalTo: self.articleTextLabel.bottomAnchor),
 			self.articleTimeLabel.leadingAnchor.constraint(equalTo: self.articleTextLabel.trailingAnchor, constant: 30),
 			self.articleTimeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)

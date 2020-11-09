@@ -74,11 +74,19 @@
 				97BC48112556B49200B91955 /* Detail */,
 				97E86F2B25572B8200E59F2E /* Model */,
 				97E86F3925572CFA00E59F2E /* Data */,
+				97601BF82559CBB0000EE3E2 /* Views */,
 				97E86F3E25572F8200E59F2E /* Supportins */,
 				97E86F3D25572F7000E59F2E /* Storyboard */,
-				97601BEE2559BC1B000EE3E2 /* RoundShadowImageView.swift */,
 			);
 			path = "HomeWork-4";
+			sourceTree = "<group>";
+		};
+		97601BF82559CBB0000EE3E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97601BEE2559BC1B000EE3E2 /* RoundShadowImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		97BC48112556B49200B91955 /* Detail */ = {
