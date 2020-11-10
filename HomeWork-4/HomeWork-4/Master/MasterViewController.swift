@@ -19,7 +19,11 @@ final class MasterViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupTableView()
-		//didSelectRowAt(index: 0)
+
+		// Если запускае мна iPad то показываем содержимое первой ячейки
+		if UIDevice.current.userInterfaceIdiom == .pad {
+			didSelectRowAt(index: 0)
+		}
 	}
 }
 
