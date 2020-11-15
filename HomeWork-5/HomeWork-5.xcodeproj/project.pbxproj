@@ -12,6 +12,8 @@
 		97C733062560F6BC007A0199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C733052560F6BC007A0199 /* Assets.xcassets */; };
 		97C733092560F6BC007A0199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C733072560F6BC007A0199 /* LaunchScreen.storyboard */; };
 		97C733162560FDA4007A0199 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C733152560FDA4007A0199 /* CurrencyViewController.swift */; };
+		97C7331E256100FC007A0199 /* TodayRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C7331D256100FB007A0199 /* TodayRate.swift */; };
+		97C7332225610121007A0199 /* CurrentValute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C7332125610121007A0199 /* CurrentValute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		97C733082560F6BC007A0199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C7330A2560F6BC007A0199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97C733152560FDA4007A0199 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		97C7331D256100FB007A0199 /* TodayRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRate.swift; sourceTree = "<group>"; };
+		97C7332125610121007A0199 /* CurrentValute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentValute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				97C733142560FD73007A0199 /* CurrencyList */,
+				97C7331C256100DB007A0199 /* Model */,
 				97C7331A2560FE90007A0199 /* Application */,
 			);
 			path = "HomeWork-5";
@@ -78,6 +83,15 @@
 				97C7330A2560F6BC007A0199 /* Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		97C7331C256100DB007A0199 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97C7331D256100FB007A0199 /* TodayRate.swift */,
+				97C7332125610121007A0199 /* CurrentValute.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +166,8 @@
 				97C733162560FDA4007A0199 /* CurrencyViewController.swift in Sources */,
 				97C732FD2560F6B7007A0199 /* AppDelegate.swift in Sources */,
 				97C732FF2560F6B7007A0199 /* SceneDelegate.swift in Sources */,
+				97C7332225610121007A0199 /* CurrentValute.swift in Sources */,
+				97C7331E256100FC007A0199 /* TodayRate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
