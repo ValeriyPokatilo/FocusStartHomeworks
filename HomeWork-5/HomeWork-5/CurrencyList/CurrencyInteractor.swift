@@ -8,7 +8,6 @@
 import Foundation
 
 protocol CurrencyInteractorProtocol: AnyObject {
-	func extractTitle()
 	func fetchCurrensys()
 }
 
@@ -25,10 +24,6 @@ final class CurrencyInteractor {
 }
 
 extension CurrencyInteractor: CurrencyInteractorProtocol {
-	func extractTitle() {
-		// Get title from userDef
-	}
-
 	func fetchCurrensys() {
 		NetworkManager.shared.getExchangeRate { [weak self] valutes in
 			self?.presenter.currencysDidReceive(valutes)

@@ -42,6 +42,8 @@ extension CountryView {
 		valueTextField.font = Font.textStyle.font
 		valueTextField.textAlignment = .right
 		valueTextField.borderStyle = .roundedRect
+		valueTextField.keyboardType = .numberPad
+		valueTextField.returnKeyType = .done
 
 		setupViewsLayout()
 	}

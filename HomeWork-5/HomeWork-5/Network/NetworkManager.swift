@@ -25,6 +25,9 @@ final class NetworkManager {
 				decoder.keyDecodingStrategy = .convertFromSnakeCase
 				let today = try decoder.decode(TodayRate.self, from: data)
 
+				let date = today.Date
+				UserDefManager.shared.saveStringValue(value: date, key: "Date")
+
 				for (_, valute) in today.Valute {
 					if valute.CharCode != "XDR" {
 						valutes.append(valute)

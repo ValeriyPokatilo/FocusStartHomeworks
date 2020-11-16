@@ -9,7 +9,6 @@ import UIKit
 
 protocol CurrencyViewProtocol: AnyObject {
 	func reloadData()
-	func setTitle(title: String)
 }
 
 final class CurrencyViewController: UIViewController {
@@ -37,10 +36,6 @@ final class CurrencyViewController: UIViewController {
 // MARK: - CurrencyViewProtocol
 
 extension CurrencyViewController: CurrencyViewProtocol {
-	func setTitle(title: String) {
-		self.navigationItem.title = title
-	}
-
 	func reloadData() {
 		DispatchQueue.main.async {
 			self.tableView.reloadData()
@@ -119,13 +114,8 @@ extension CurrencyViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 
-		guard let valute = presenter.valute(atIndex: indexPath) else {
-			return
-		}
+		presenter.showValuteDetail(for: indexPath)
 
-		let converter = ConverterViewController()
-		converter.valute = valute.CharCode ?? ""
 
-		navigationController?.pushViewController(converter, animated: true)
 	}
 }

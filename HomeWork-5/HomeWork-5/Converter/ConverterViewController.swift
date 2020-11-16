@@ -7,22 +7,55 @@
 
 import UIKit
 
+protocol ConverterViewProtocol: AnyObject {
+	func setAnotherValute(with anoverValute: AnotherValute)
+}
+
 class ConverterViewController: UIViewController {
 
-	let roubleValuteView = CountryView()
-	let anotherValuteView = CountryView()
+	// MARK: - Properties
 
-	var valute: String = "" // ???
+	var roubleValuteView = CountryView()
+	var anotherValuteView = CountryView()
+
+	var presenter: ConverterPresenterProtocol!
+
+	// MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		presenter.showDetails()
 		setupViews()
+
+		roubleValuteView.valueTextField.addTarget(self, action: #selector(changeRoubleValue), for: .editingChanged)
+		anotherValuteView.valueTextField.addTarget(self, action: #selector(changeAnotherValue), for: .editingChanged)
     }
+
+	// MARK: - Actions
+
+	@objc func changeRoubleValue() {
+		print("r")
+	}
+
+	@objc func changeAnotherValue() {
+		print("a")
+	}
+
 }
 
-// Setup views
+extension ConverterViewController: ConverterViewProtocol {
+	func setAnotherValute(with anoverValute: AnotherValute) {
+		roubleValuteView.valueTextField.text = anoverValute.value
 
-private extension ConverterViewController {
+		anotherValuteView.countryLabel.text = anoverValute.country
+		anotherValuteView.flagImage.image = UIImage(named: anoverValute.imageName)
+		anotherValuteView.valueTextField.text = anoverValute.nominal
+	}
+}
+
+// MARK: - Setup views
+
+extension ConverterViewController {
 	func setupViews() {
 		self.view.backgroundColor = .white
 
