@@ -28,17 +28,17 @@ final class CountryView: UIView {
 
 extension CountryView {
 	func setupViews() {
-		flagImage.image = UIImage(named: "RUR")
+		flagImage.image = UIImage()
 
-		nameLabel.text = "RUR"
+		//nameLabel.text = "RUR"
 		nameLabel.font = Font.headerStyle.font
 
-		countryLabel.text = "Российский рубль"
+		//countryLabel.text = "Российский рубль"
 		countryLabel.font = Font.textStyle.font
 		countryLabel.adjustsFontSizeToFitWidth = true
 		countryLabel.minimumScaleFactor = 0.4
 
-		valueTextField.text = "1" // номминал
+		//valueTextField.text = "1" // номминал
 		valueTextField.font = Font.textStyle.font
 		valueTextField.textAlignment = .right
 		valueTextField.borderStyle = .roundedRect

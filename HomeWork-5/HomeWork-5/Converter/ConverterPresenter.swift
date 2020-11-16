@@ -10,12 +10,13 @@ import Foundation
 struct AnotherValute {
 	let country: String
 	let imageName: String
-	let nominal: String
-	let value: String
+	let nominal: Double
+	let value: Double
 }
 
 protocol ConverterPresenterProtocol: AnyObject {
 	func showDetails()
+	func roubleValueChanged(newValue: String)
 }
 
 class ConverterPresenter {
@@ -31,6 +32,11 @@ extension ConverterPresenter: ConverterPresenterProtocol {
 	func showDetails() {
 		interactor.provideConverter()
 	}
+
+	func roubleValueChanged(newValue: String) {
+		interactor.provideRoubleConvertation(newValue: newValue)
+	}
+
 }
 
 extension ConverterPresenter: ConverterInteractorOutputProtocol {

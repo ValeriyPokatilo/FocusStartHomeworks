@@ -34,22 +34,26 @@ class ConverterViewController: UIViewController {
 	// MARK: - Actions
 
 	@objc func changeRoubleValue() {
-		print("r")
+		if let newValue = roubleValuteView.valueTextField.text {
+			presenter.roubleValueChanged(newValue: newValue)
+		}
 	}
 
 	@objc func changeAnotherValue() {
-		print("a")
+		//presenter.anotheValueChanged()
 	}
 
 }
 
 extension ConverterViewController: ConverterViewProtocol {
-	func setAnotherValute(with anoverValute: AnotherValute) {
-		roubleValuteView.valueTextField.text = anoverValute.value
+	func setAnotherValute(with anotherValute: AnotherValute) {
+		roubleValuteView.countryLabel.text = "Российский рубль"
+		roubleValuteView.flagImage.image = UIImage(named: "RUR")
+		roubleValuteView.valueTextField.text = "\(anotherValute.value)"
 
-		anotherValuteView.countryLabel.text = anoverValute.country
-		anotherValuteView.flagImage.image = UIImage(named: anoverValute.imageName)
-		anotherValuteView.valueTextField.text = anoverValute.nominal
+		anotherValuteView.countryLabel.text = anotherValute.country
+		anotherValuteView.flagImage.image = UIImage(named: anotherValute.imageName)
+		anotherValuteView.valueTextField.text = String(anotherValute.nominal)
 	}
 }
 
