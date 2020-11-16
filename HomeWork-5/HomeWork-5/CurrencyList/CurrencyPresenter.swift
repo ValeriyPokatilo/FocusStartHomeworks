@@ -35,11 +35,11 @@ final class CurrencyPresenter {
 
 extension CurrencyPresenter: CurrencyPresenterProtocol {
 	func viewDidLoad() {
-		interactor.fetchCurrensys()
+		self.interactor.fetchCurrensys()
 	}
 
 	func valute(atIndex indexPath: IndexPath) -> Valute? {
-		if valutes.indices.contains(indexPath.row) {
+		if self.valutes.indices.contains(indexPath.row) {
 			return valutes[indexPath.row]
 		} else {
 			return nil

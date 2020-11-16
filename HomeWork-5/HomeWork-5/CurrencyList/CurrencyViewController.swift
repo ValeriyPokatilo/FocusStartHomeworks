@@ -109,8 +109,8 @@ extension CurrencyViewController: UITableViewDelegate {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		tableView.deselectRow(at: indexPath, animated: true)
+		self.tableView.deselectRow(at: indexPath, animated: true)
 
-		presenter.showValuteDetail(for: indexPath)
+		self.presenter.showValuteDetail(for: indexPath)
 	}
 }
