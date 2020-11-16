@@ -11,32 +11,31 @@ final class NetworkManager {
 
 	static let shared = NetworkManager()
 
-	func getExchangeRate(complition: @escaping (_ currentValutes: [CurrentValute]) -> ()) {
-		var valutes: [CurrentValute] = []
+	func getExchangeRate(complition: @escaping (_ valutes: [Valute]) -> ()) {
+		var valutes: [Valute] = []
 
 		let jsonUrlString = "https://www.cbr-xml-daily.ru/daily_json.js"
 		guard let url = URL(string: jsonUrlString) else { return }
 
-		URLSession.shared.dataTask(with: url) { (data, responce, error) in
+		Foundation.URLSession.shared.dataTask(with: url) { (data, _, _) in
 			guard let data = data else { return }
 
 			do {
 				let decoder = JSONDecoder()
-				decoder.keyDecodingStrategy = .custom({ keys -> CodingKey in
-					let key = keys.first!.stringValue.lowercased() //+ keys.dropFirst()
-					return String(key) as! CodingKey
-				})
+				decoder.keyDecodingStrategy = .convertFromSnakeCase
 				let today = try decoder.decode(TodayRate.self, from: data)
 
 				for (_, valute) in today.Valute {
-					if valute.charCode != "XDR" {
+					if valute.CharCode != "XDR" {
 						valutes.append(valute)
 					}
 				}
-				complition(valutes)
+				print(valutes.count)
+				complition(valutes.sorted())
 			} catch let error {
-				print(error.localizedDescription)
+				print("Error serialization json", error)
 			}
+
 		}.resume()
 	}
 }
