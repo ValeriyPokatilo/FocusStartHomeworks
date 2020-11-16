@@ -19,7 +19,6 @@ struct Valute: Decodable {
 }
 
 extension Valute: Comparable {
-
 	static func < (lhs: Valute, rhs: Valute) -> Bool {
 		return lhs.CharCode ?? "" < rhs.CharCode ?? ""
 	}
@@ -35,5 +34,4 @@ extension Valute: Comparable {
 	static func > (lhs: Valute, rhs: Valute) -> Bool {
 		return lhs.CharCode ?? "" > rhs.CharCode ?? ""
 	}
-
 }

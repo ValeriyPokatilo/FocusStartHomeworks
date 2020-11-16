@@ -17,6 +17,7 @@ struct AnotherValute {
 protocol ConverterPresenterProtocol: AnyObject {
 	func showDetails()
 	func roubleValueChanged(newValue: String)
+	func anotheValueChanged(newValue: String)
 }
 
 class ConverterPresenter {
@@ -37,6 +38,9 @@ extension ConverterPresenter: ConverterPresenterProtocol {
 		interactor.provideRoubleConvertation(newValue: newValue)
 	}
 
+	func anotheValueChanged(newValue: String) {
+		interactor.provideAnotherConvertation(newValue: newValue)
+	}
 }
 
 extension ConverterPresenter: ConverterInteractorOutputProtocol {

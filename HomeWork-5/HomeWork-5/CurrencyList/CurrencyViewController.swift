@@ -20,7 +20,6 @@ final class CurrencyViewController: UIViewController {
 
 	var presenter: CurrencyPresenterProtocol!
 	private let configurator: CurrencyConfiguratorProtocol = CurrencyConfigurator()
-	//var selfToDetailsSegueName = "showDetail"
 
 	// MARK: - lifecycle
 
@@ -52,8 +51,6 @@ private extension CurrencyViewController {
 
 			let navBarAppearance = UINavigationBarAppearance()
 			navBarAppearance.configureWithOpaqueBackground()
-			//navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
-			//navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
 			navBarAppearance.backgroundColor = UIColor.white
 			navigationController?.navigationBar.standardAppearance = navBarAppearance
 			navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
@@ -115,7 +112,5 @@ extension CurrencyViewController: UITableViewDelegate {
 		tableView.deselectRow(at: indexPath, animated: true)
 
 		presenter.showValuteDetail(for: indexPath)
-
-
 	}
 }

@@ -27,8 +27,12 @@ class ConverterViewController: UIViewController {
 		presenter.showDetails()
 		setupViews()
 
-		roubleValuteView.valueTextField.addTarget(self, action: #selector(changeRoubleValue), for: .editingChanged)
-		anotherValuteView.valueTextField.addTarget(self, action: #selector(changeAnotherValue), for: .editingChanged)
+		roubleValuteView.valueTextField.addTarget(self,
+												  action: #selector(changeRoubleValue),
+												  for: .editingChanged)
+		anotherValuteView.valueTextField.addTarget(self,
+												   action: #selector(changeAnotherValue),
+												   for: .editingChanged)
     }
 
 	// MARK: - Actions
@@ -40,20 +44,21 @@ class ConverterViewController: UIViewController {
 	}
 
 	@objc func changeAnotherValue() {
-		//presenter.anotheValueChanged()
+		if let newValue = anotherValuteView.valueTextField.text {
+			presenter.anotheValueChanged(newValue: newValue)
+		}
 	}
-
 }
 
 extension ConverterViewController: ConverterViewProtocol {
 	func setAnotherValute(with anotherValute: AnotherValute) {
 		roubleValuteView.countryLabel.text = "Российский рубль"
 		roubleValuteView.flagImage.image = UIImage(named: "RUR")
-		roubleValuteView.valueTextField.text = "\(anotherValute.value)"
+		roubleValuteView.valueTextField.text = String(format: "%.2f", anotherValute.value)
 
 		anotherValuteView.countryLabel.text = anotherValute.country
 		anotherValuteView.flagImage.image = UIImage(named: anotherValute.imageName)
-		anotherValuteView.valueTextField.text = String(anotherValute.nominal)
+		anotherValuteView.valueTextField.text = String(format: "%.2f", anotherValute.nominal)
 	}
 }
 

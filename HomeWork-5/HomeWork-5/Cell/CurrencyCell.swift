@@ -25,6 +25,8 @@ class CurrencyCell: UITableViewCell {
 
 }
 
+// MARK: - Setup views
+
 extension CurrencyCell {
 	func setupViews(valute: Valute) {
 		nameLabel.text = valute.CharCode
@@ -84,7 +86,8 @@ extension CurrencyCell {
 		self.addSubview(countryLabel)
 		NSLayoutConstraint.activate([
 			countryLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 3),
-			countryLabel.leadingAnchor.constraint(equalTo: flagImage.trailingAnchor, constant: 16)
+			countryLabel.leadingAnchor.constraint(equalTo: flagImage.trailingAnchor, constant: 16),
+			countryLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
 		])
 
 		resultStringLabel.translatesAutoresizingMaskIntoConstraints = false

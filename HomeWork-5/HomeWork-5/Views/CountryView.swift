@@ -30,15 +30,12 @@ extension CountryView {
 	func setupViews() {
 		flagImage.image = UIImage()
 
-		//nameLabel.text = "RUR"
 		nameLabel.font = Font.headerStyle.font
 
-		//countryLabel.text = "Российский рубль"
 		countryLabel.font = Font.textStyle.font
 		countryLabel.adjustsFontSizeToFitWidth = true
 		countryLabel.minimumScaleFactor = 0.4
 
-		//valueTextField.text = "1" // номминал
 		valueTextField.font = Font.textStyle.font
 		valueTextField.textAlignment = .right
 		valueTextField.borderStyle = .roundedRect
@@ -61,18 +58,12 @@ extension CountryView {
 			flagImage.centerYAnchor.constraint(equalTo: self.centerYAnchor)
 		])
 
-//		nameLabel.translatesAutoresizingMaskIntoConstraints = false
-//		self.addSubview(nameLabel)
-//		NSLayoutConstraint.activate([
-//			nameLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 24),
-//			nameLabel.leadingAnchor.constraint(equalTo: flagImage.trailingAnchor, constant: 16)
-//		])
-
 		countryLabel.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(countryLabel)
 		NSLayoutConstraint.activate([
 			countryLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 28),
-			countryLabel.leadingAnchor.constraint(equalTo: flagImage.trailingAnchor, constant: 16)
+			countryLabel.leadingAnchor.constraint(equalTo: flagImage.trailingAnchor, constant: 16),
+			countryLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16)
 		])
 
 		valueTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -86,5 +77,6 @@ extension CountryView {
 
 		NSLayoutConstraint.activate([
 			self.bottomAnchor.constraint(equalTo: flagImage.bottomAnchor)
-		])	}
+		])
+	}
 }

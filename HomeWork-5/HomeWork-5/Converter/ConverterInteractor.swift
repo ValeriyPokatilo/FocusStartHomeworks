@@ -10,6 +10,7 @@ import Foundation
 protocol ConverterInteractorProtocol: AnyObject {
 	func provideConverter()
 	func provideRoubleConvertation(newValue: String)
+	func provideAnotherConvertation(newValue: String)
 }
 
 protocol ConverterInteractorOutputProtocol: AnyObject {
@@ -44,6 +45,18 @@ extension ConverterInteractor: ConverterInteractorProtocol {
 											  imageName: valute.CharCode ?? "",
 											  nominal: nominal,
 											  value: newValueDouble)
+			presenter.receiveConverter(anotherValute: anotherValute)
+		}
+	}
+
+	func provideAnotherConvertation(newValue: String) {
+		if let newNominal = Double(newValue) {
+
+			let newValue = (newNominal * Double(valute.Value ?? 0)) / Double(valute.Nominal ?? 0)
+			let anotherValute = AnotherValute(country: valute.Name ?? "",
+											  imageName: valute.CharCode ?? "",
+											  nominal: newNominal,
+											  value: newValue)
 			presenter.receiveConverter(anotherValute: anotherValute)
 		}
 	}

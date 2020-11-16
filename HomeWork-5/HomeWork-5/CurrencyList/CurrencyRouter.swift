@@ -24,7 +24,6 @@ extension CurrencyRouter: CurrencyRouterProtocol {
 		let converter = ConverterViewController()
 		let configurator: ConverterConfiguratorProtocol = ConverterConfigurator()
 		configurator.configure(with: converter, and: valute)
-		//converter.valute = valute.CharCode ?? ""
 
 		viewController.navigationController?.pushViewController(converter, animated: true)
 	}
