@@ -10,6 +10,7 @@ import UIKit
 enum Font {
 	case headerStyle
 	case textStyle
+	case countryStyle
 	case dateStyle
 
 	public var font: UIFont {
@@ -18,6 +19,8 @@ enum Font {
 			return UIFont.init(name: "AppleSDGothicNeo-Bold", size: 21.0)!
 		case .textStyle:
 			return UIFont.init(name: "AppleSDGothicNeo-Regular", size: 16.0)!
+		case .countryStyle:
+				return UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16.0)!
 		case .dateStyle:
 			return UIFont.init(name: "AppleSDGothicNeo-SemiBold", size: 16.0)!
 		}

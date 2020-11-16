@@ -9,6 +9,7 @@ import UIKit
 
 protocol CurrencyViewProtocol: AnyObject {
 	func reloadData()
+	func setTitle(title: String)
 }
 
 final class CurrencyViewController: UIViewController {
@@ -20,7 +21,7 @@ final class CurrencyViewController: UIViewController {
 
 	var presenter: CurrencyPresenterProtocol!
 	private let configurator: CurrencyConfiguratorProtocol = CurrencyConfigurator()
-	var selfToDetailsSegueName = "showDetail"
+	//var selfToDetailsSegueName = "showDetail"
 
 	// MARK: - lifecycle
 
@@ -28,13 +29,18 @@ final class CurrencyViewController: UIViewController {
         super.viewDidLoad()
 		self.configurator.configure(view: self)
 		self.presenter.viewDidLoad()
+		self.setupNavigationBar()
 		self.setupTableView()
     }
 }
 
-// MARK: - Protocol
+// MARK: - CurrencyViewProtocol
 
 extension CurrencyViewController: CurrencyViewProtocol {
+	func setTitle(title: String) {
+		self.navigationItem.title = title
+	}
+
 	func reloadData() {
 		DispatchQueue.main.async {
 			self.tableView.reloadData()
@@ -44,26 +50,25 @@ extension CurrencyViewController: CurrencyViewProtocol {
 
 // MARK: - Setup table view
 
-extension CurrencyViewController {
+private extension CurrencyViewController {
+	func setupNavigationBar() {
+		if #available(iOS 13.0, *) {
+			self.navigationItem.title = "Курсы валют"
+
+			let navBarAppearance = UINavigationBarAppearance()
+			navBarAppearance.configureWithOpaqueBackground()
+			//navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+			//navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+			navBarAppearance.backgroundColor = UIColor.white
+			navigationController?.navigationBar.standardAppearance = navBarAppearance
+			navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+		}
+	}
+
 	func setupTableView() {
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
-
 		self.tableView.register(CurrencyCell.self, forCellReuseIdentifier: cellID)
-
-		//self.tableView.rowHeight = UITableView.automaticDimension
-
-		self.navigationItem.title = "Курсы валют"
-
-		if #available(iOS 13.0, *) {
-			let navBarAppearance = UINavigationBarAppearance()
-			navBarAppearance.configureWithOpaqueBackground()
-			navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-			navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-			navBarAppearance.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
-			self.navigationController?.navigationBar.standardAppearance = navBarAppearance
-			self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-		}
 
 		setupTableViewLayout()
 	}
@@ -102,8 +107,6 @@ extension CurrencyViewController: UITableViewDataSource {
 
 		return cell
 	}
-
-
 }
 
 // MARK: - UITableViewDelegate
@@ -116,9 +119,13 @@ extension CurrencyViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 
+		guard let valute = presenter.valute(atIndex: indexPath) else {
+			return
+		}
+
 		let converter = ConverterViewController()
-		let navigationConverter = UINavigationController(rootViewController: converter)
-		navigationConverter.modalPresentationStyle = .fullScreen
-		present(navigationConverter, animated: true)
+		converter.valute = valute.CharCode ?? ""
+
+		navigationController?.pushViewController(converter, animated: true)
 	}
 }
