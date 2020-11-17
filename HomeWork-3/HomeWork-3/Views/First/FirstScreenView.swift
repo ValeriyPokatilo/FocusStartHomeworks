@@ -15,8 +15,8 @@ final class FirstScreenView: UIView {
 	private let middleFontLabel = UILabel()
 	private let bigFontLabel = UILabel()
 
-	let circleButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-	let rectangleButton = UIButton()
+	private let circleButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+	private let rectangleButton = UIButton()
 
 	private let image = UIImageView()
 
