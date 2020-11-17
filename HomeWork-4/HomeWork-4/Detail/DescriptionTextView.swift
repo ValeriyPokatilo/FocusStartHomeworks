@@ -45,10 +45,10 @@ private extension DescriptionTextView {
 		guard let currenArticle = article else { return }
 
 		// Article
-		articleText.numberOfLines = 0
-		articleText.text = currenArticle.text
-		articleText.textAlignment = .justified
-		articleText.font = Font.textStyle.font
+		self.articleText.numberOfLines = 0
+		self.articleText.text = currenArticle.text
+		self.articleText.textAlignment = .justified
+		self.articleText.font = Font.textStyle.font
 
 		// Pictures
 		self.topPicture.contentMode = .scaleAspectFit
@@ -76,12 +76,15 @@ private extension DescriptionTextView {
 		self.articleText.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			self.articleText.leadingAnchor.constraint(equalTo: self.leadingAnchor,
-													  constant: Metrics.standartSizeSeparatop.rawValue),
-			self.articleText.trailingAnchor.constraint(equalTo: self.trailingAnchor,
-													   constant: -Metrics.standartSizeSeparatop.rawValue),
-			self.articleText.topAnchor.constraint(equalTo: scrollView.topAnchor,
-												  constant: Metrics.standartSizeSeparatop.rawValue),
+			self.articleText.leadingAnchor.constraint(
+				equalTo: self.leadingAnchor,
+				constant: Metrics.standartSizeSeparatop.rawValue),
+			self.articleText.trailingAnchor.constraint(
+				equalTo: self.trailingAnchor,
+				constant: -Metrics.standartSizeSeparatop.rawValue),
+			self.articleText.topAnchor.constraint(
+				equalTo: scrollView.topAnchor,
+				constant: Metrics.standartSizeSeparatop.rawValue),
 		])
 
 
@@ -92,10 +95,13 @@ private extension DescriptionTextView {
 
 		NSLayoutConstraint.activate([
 			self.topRoundedShadowImageView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-			self.topRoundedShadowImageView.topAnchor.constraint(equalTo: articleText.bottomAnchor,
-																constant: Metrics.bigSizeSeparatop.rawValue),
-			self.topRoundedShadowImageView.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
-			self.topRoundedShadowImageView.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue)
+			self.topRoundedShadowImageView.topAnchor.constraint(
+				equalTo: articleText.bottomAnchor,
+				constant: Metrics.bigSizeSeparatop.rawValue),
+			self.topRoundedShadowImageView.heightAnchor.constraint(
+				equalToConstant: Metrics.imageSize.rawValue),
+			self.topRoundedShadowImageView.widthAnchor.constraint(
+				equalToConstant: Metrics.imageSize.rawValue)
 		])
 
 
@@ -105,12 +111,16 @@ private extension DescriptionTextView {
 
 		NSLayoutConstraint.activate([
 			self.bottomRoundedShadowImageView.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-			self.bottomRoundedShadowImageView.topAnchor.constraint(equalTo: topRoundedShadowImageView.bottomAnchor,
-																   constant: Metrics.bigSizeSeparatop.rawValue),
-			self.bottomRoundedShadowImageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor,
-																	  constant: -Metrics.standartSizeSeparatop.rawValue),
-			self.bottomRoundedShadowImageView.heightAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue),
-			self.bottomRoundedShadowImageView.widthAnchor.constraint(equalToConstant: Metrics.imageSize.rawValue)
+			self.bottomRoundedShadowImageView.topAnchor.constraint(
+				equalTo: topRoundedShadowImageView.bottomAnchor,
+				constant: Metrics.bigSizeSeparatop.rawValue),
+			self.bottomRoundedShadowImageView.bottomAnchor.constraint(
+				equalTo: scrollView.bottomAnchor,
+				constant: -Metrics.standartSizeSeparatop.rawValue),
+			self.bottomRoundedShadowImageView.heightAnchor.constraint(
+				equalToConstant: Metrics.imageSize.rawValue),
+			self.bottomRoundedShadowImageView.widthAnchor.constraint(
+				equalToConstant: Metrics.imageSize.rawValue)
 		])
 	}
 }
