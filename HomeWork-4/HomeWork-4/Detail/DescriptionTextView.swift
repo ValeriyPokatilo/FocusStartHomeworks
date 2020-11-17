@@ -10,7 +10,7 @@ import UIKit
 final class DescriptionTextView: UIView {
 	// MARK: - Properties
 
-	var article: Article?
+	private var article: Article?
 
 	private let scrollView = UIScrollView()
 
