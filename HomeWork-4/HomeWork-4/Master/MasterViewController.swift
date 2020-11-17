@@ -20,7 +20,7 @@ final class MasterViewController: UITableViewController {
 		super.viewDidLoad()
 		setupTableView()
 
-		// Если запускае мна iPad то показываем содержимое первой ячейки
+		// Если запускаем на iPad то показываем содержимое первой ячейки
 		if UIDevice.current.userInterfaceIdiom == .pad {
 			didSelectRowAt(index: 0)
 		}

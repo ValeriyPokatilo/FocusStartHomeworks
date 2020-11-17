@@ -8,6 +8,7 @@
 import UIKit
 
 final class DescriptionTextView: UIView {
+
 	// MARK: - Properties
 
 	private var article: Article?
@@ -56,7 +57,6 @@ private extension DescriptionTextView {
 
 		self.bottomPicture.contentMode = .scaleAspectFit
 		self.bottomPicture.image = currenArticle.bottomImage
-
 	}
 
 	func setupViewsLayout() {
@@ -88,7 +88,7 @@ private extension DescriptionTextView {
 		])
 
 
-		// Pictures
+		// Top pictures
 		self.scrollView.addSubview(topRoundedShadowImageView)
 		self.topRoundedShadowImageView.image = topPicture.image
 		self.topRoundedShadowImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -104,7 +104,7 @@ private extension DescriptionTextView {
 				equalToConstant: Metrics.imageSize.rawValue)
 		])
 
-
+		// Bottom pictures
 		self.scrollView.addSubview(bottomRoundedShadowImageView)
 		self.bottomRoundedShadowImageView.image = bottomPicture.image
 		self.bottomRoundedShadowImageView.translatesAutoresizingMaskIntoConstraints = false
