@@ -87,7 +87,7 @@ extension ConverterViewController {
 		NSLayoutConstraint.activate([
 			anotherValuteView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
 			anotherValuteView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-			anotherValuteView.topAnchor.constraint(equalTo: self.roubleValuteView.bottomAnchor, constant: 32)
+			anotherValuteView.topAnchor.constraint(equalTo: self.roubleValuteView.bottomAnchor, constant: Metrics.horizontalBigSpace.rawValue)
 		])
 	}
 }

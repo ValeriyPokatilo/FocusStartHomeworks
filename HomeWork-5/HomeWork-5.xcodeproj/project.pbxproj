@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		974238F02563EE97007982EF /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974238EF2563EE97007982EF /* Metrics.swift */; };
 		978145FD25623C9700270324 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978145FC25623C9700270324 /* ConverterViewController.swift */; };
 		97814602256249B700270324 /* ConverterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97814601256249B700270324 /* ConverterInteractor.swift */; };
 		97814605256249C200270324 /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97814604256249C200270324 /* ConverterPresenter.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		974238EF2563EE97007982EF /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		978145FC25623C9700270324 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		97814601256249B700270324 /* ConverterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterInteractor.swift; sourceTree = "<group>"; };
 		97814604256249C200270324 /* ConverterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				97C7332125610121007A0199 /* Valute.swift */,
 				978CF6B22561D08A00114756 /* Font.swift */,
 				978CF6B52561D29A00114756 /* SystemImage.swift */,
+				974238EF2563EE97007982EF /* Metrics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				97C73329256108E6007A0199 /* CurrencyInteractor.swift in Sources */,
 				97814602256249B700270324 /* ConverterInteractor.swift in Sources */,
 				97C73326256101B0007A0199 /* NetworkManager.swift in Sources */,
+				974238F02563EE97007982EF /* Metrics.swift in Sources */,
 				9781460C25628D7700270324 /* CountryView.swift in Sources */,
 				97814605256249C200270324 /* ConverterPresenter.swift in Sources */,
 				978CF6B62561D29A00114756 /* SystemImage.swift in Sources */,
