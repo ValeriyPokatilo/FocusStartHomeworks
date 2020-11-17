@@ -51,22 +51,5 @@ final class CommandManager {
 		}
 
 		MessageManager.separator()
-
-		/*
-		var counter = 0
-
-		for car in cars {
-			if car.body == body {
-				MessageManager.carShowMessage(car: car)
-				counter += 1
-			}
-		}
-
-		if counter == 0 {
-			MessageManager.carEmptyBodyFilterMessage()
-		}
-
-		MessageManager.separator()
-*/
 	}
 }
