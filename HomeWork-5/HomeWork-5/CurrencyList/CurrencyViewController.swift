@@ -15,8 +15,8 @@ final class CurrencyViewController: UIViewController {
 
 	// MARK: - Properties
 
-	let cellID = "Cell"
-	var tableView = UITableView()
+	private let cellID = "Cell"
+	private var tableView = UITableView()
 
 	var presenter: CurrencyPresenterProtocol!
 	private let configurator: CurrencyConfiguratorProtocol = CurrencyConfigurator()

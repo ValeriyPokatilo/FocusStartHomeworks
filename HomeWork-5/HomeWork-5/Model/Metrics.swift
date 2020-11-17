@@ -8,10 +8,11 @@
 import UIKit
 
 enum Metrics: CGFloat {
-	case smallVerticalSpace = 8
-	case horizontalStandartSpace = 16
-	case horizontalMediumSpace = 22
-	case horizontalBigSpace = 32
-	case verticalStandartSpace = 10
+	case smallSizeSeparator = 8
+	case standartSizeSeparator = 16
+	case mediumSizeSeparator = 22
+	case bigSizeSeparator = 32
+	case verticalSeparator = 12
+	case labelTopSeparator = 82
 	case imageSize = 100
 }

@@ -86,13 +86,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		978146102562998900270324 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		97C732F02560F6B6007A0199 = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +109,6 @@
 				97C7333825610AA4007A0199 /* Cell */,
 				978145F825623C3500270324 /* Converter */,
 				9781460A25628D4D00270324 /* Views */,
-				978146102562998900270324 /* Data */,
 				97C733242561019F007A0199 /* Network */,
 				97C7331C256100DB007A0199 /* Model */,
 				97C7331A2560FE90007A0199 /* Application */,

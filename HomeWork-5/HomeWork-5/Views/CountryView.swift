@@ -51,29 +51,46 @@ extension CountryView {
 		self.flagImage.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.flagImage)
 		NSLayoutConstraint.activate([
-			self.flagImage.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 16),
-			self.flagImage.heightAnchor.constraint(equalToConstant: 100),
-			self.flagImage.widthAnchor.constraint(equalToConstant: 100),
-			self.flagImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+			self.flagImage.topAnchor.constraint(
+				equalTo: safeArea.topAnchor,
+				constant: Metrics.verticalSeparator.rawValue),
+			self.flagImage.heightAnchor.constraint(
+				equalToConstant: Metrics.imageSize.rawValue),
+			self.flagImage.widthAnchor.constraint(
+				equalToConstant: Metrics.imageSize.rawValue),
+			self.flagImage.leadingAnchor.constraint(
+				equalTo: self.leadingAnchor,
+				constant: Metrics.verticalSeparator.rawValue),
 			self.flagImage.centerYAnchor.constraint(equalTo: self.centerYAnchor)
 		])
 
 		self.countryLabel.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.countryLabel)
 		NSLayoutConstraint.activate([
-			self.countryLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 28),
-			self.countryLabel.leadingAnchor.constraint(equalTo: self.flagImage.trailingAnchor, constant: 16),
-			self.countryLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16)
+			self.countryLabel.topAnchor.constraint(
+				equalTo: safeArea.topAnchor,
+				constant: Metrics.labelTopSeparator.rawValue),
+			self.countryLabel.leadingAnchor.constraint(
+				equalTo: self.flagImage.trailingAnchor,
+				constant: Metrics.verticalSeparator.rawValue),
+			self.countryLabel.trailingAnchor.constraint(
+				equalTo: safeArea.trailingAnchor,
+				constant: -Metrics.verticalSeparator.rawValue)
 		])
 
 		self.valueTextField.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.valueTextField)
 		NSLayoutConstraint.activate([
-			self.valueTextField.topAnchor.constraint(equalTo: self.countryLabel.bottomAnchor, constant: 12),
-			self.valueTextField.leadingAnchor.constraint(equalTo: self.flagImage.trailingAnchor, constant: 16),
-			self.valueTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -16)
+			self.valueTextField.topAnchor.constraint(
+				equalTo: self.countryLabel.bottomAnchor,
+				constant: Metrics.verticalSeparator.rawValue),
+			self.valueTextField.leadingAnchor.constraint(
+				equalTo: self.flagImage.trailingAnchor,
+				constant: Metrics.verticalSeparator.rawValue),
+			self.valueTextField.trailingAnchor.constraint(
+				equalTo: safeArea.trailingAnchor,
+				constant: -Metrics.verticalSeparator.rawValue)
 		])
-
 
 		NSLayoutConstraint.activate([
 			self.bottomAnchor.constraint(equalTo: self.flagImage.bottomAnchor)

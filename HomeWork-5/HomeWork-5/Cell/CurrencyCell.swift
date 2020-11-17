@@ -22,7 +22,6 @@ class CurrencyCell: UITableViewCell {
 	func cellConfigure(valute: Valute) {
 		setupViews(valute: valute)
 	}
-
 }
 
 // MARK: - Setup views
@@ -64,42 +63,61 @@ extension CurrencyCell {
 				equalToConstant: Metrics.imageSize.rawValue),
 			self.flagImage.widthAnchor.constraint(
 				equalToConstant: Metrics.imageSize.rawValue),
-			self.flagImage.leadingAnchor.constraint(equalTo: self.leadingAnchor,
-													constant: Metrics.horizontalStandartSpace.rawValue),
+			self.flagImage.leadingAnchor.constraint(
+				equalTo: self.leadingAnchor,
+				constant: Metrics.standartSizeSeparator.rawValue),
 			self.flagImage.centerYAnchor.constraint(equalTo: self.centerYAnchor)
 		])
 
 		self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.nameLabel)
 		NSLayoutConstraint.activate([
-			nameLabel.topAnchor.constraint(equalTo: self.topAnchor,
-										   constant: Metrics.smallVerticalSpace.rawValue),
-			nameLabel.leadingAnchor.constraint(equalTo: self.flagImage.trailingAnchor, constant: Metrics.horizontalStandartSpace.rawValue)
+			nameLabel.topAnchor.constraint(
+				equalTo: self.topAnchor,
+				constant: Metrics.smallSizeSeparator.rawValue),
+			nameLabel.leadingAnchor.constraint(
+				equalTo: self.flagImage.trailingAnchor,
+				constant: Metrics.standartSizeSeparator.rawValue)
 		])
 
 		self.toUpImage.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.toUpImage)
 		NSLayoutConstraint.activate([
-			self.toUpImage.leadingAnchor.constraint(equalTo: self.flagImage.trailingAnchor, constant: 70),
-			self.toUpImage.topAnchor.constraint(equalTo: self.topAnchor,
-												constant: Metrics.smallVerticalSpace.rawValue),
-			self.toUpImage.heightAnchor.constraint(equalToConstant: Metrics.horizontalMediumSpace.rawValue),
-			self.toUpImage.widthAnchor.constraint(equalToConstant: Metrics.horizontalMediumSpace.rawValue)
+			self.toUpImage.leadingAnchor.constraint(
+				equalTo: self.flagImage.trailingAnchor,
+				constant: 70),
+			self.toUpImage.topAnchor.constraint(
+				equalTo: self.topAnchor,
+				constant: Metrics.smallSizeSeparator.rawValue),
+			self.toUpImage.heightAnchor.constraint(
+				equalToConstant: Metrics.mediumSizeSeparator.rawValue),
+			self.toUpImage.widthAnchor.constraint(
+				equalToConstant: Metrics.mediumSizeSeparator.rawValue)
 		])
 
 		self.countryLabel.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.countryLabel)
 		NSLayoutConstraint.activate([
-			self.countryLabel.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor, constant: 3),
-			self.countryLabel.leadingAnchor.constraint(equalTo: self.flagImage.trailingAnchor, constant: Metrics.horizontalStandartSpace.rawValue),
-			self.countryLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Metrics.horizontalStandartSpace.rawValue)
+			self.countryLabel.topAnchor.constraint(
+				equalTo: self.nameLabel.bottomAnchor,
+				constant: 3),
+			self.countryLabel.leadingAnchor.constraint(
+				equalTo: self.flagImage.trailingAnchor,
+				constant: Metrics.standartSizeSeparator.rawValue),
+			self.countryLabel.trailingAnchor.constraint(
+				equalTo: self.trailingAnchor,
+				constant: -Metrics.standartSizeSeparator.rawValue)
 		])
 
 		self.resultStringLabel.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.resultStringLabel)
 		NSLayoutConstraint.activate([
-			self.resultStringLabel.topAnchor.constraint(equalTo: self.countryLabel.bottomAnchor, constant: 3),
-			self.resultStringLabel.leadingAnchor.constraint(equalTo: self.flagImage.trailingAnchor, constant: Metrics.horizontalStandartSpace.rawValue)
+			self.resultStringLabel.topAnchor.constraint(
+				equalTo: self.countryLabel.bottomAnchor,
+				constant: 3),
+			self.resultStringLabel.leadingAnchor.constraint(
+				equalTo: self.flagImage.trailingAnchor,
+				constant: Metrics.standartSizeSeparator.rawValue)
 		])
 	}
 }
