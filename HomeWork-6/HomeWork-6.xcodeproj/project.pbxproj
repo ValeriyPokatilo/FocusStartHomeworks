@@ -27,6 +27,7 @@
 		97198BC12569A00500004AA8 /* StackViewBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BC02569A00500004AA8 /* StackViewBuilderProtocol.swift */; };
 		97198BC52569A02500004AA8 /* StackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BC42569A02500004AA8 /* StackViewBuilder.swift */; };
 		97198BC82569A03500004AA8 /* StackViewDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BC72569A03500004AA8 /* StackViewDirector.swift */; };
+		97198BCB2569A66500004AA8 /* ControllesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BCA2569A66500004AA8 /* ControllesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		97198BC02569A00500004AA8 /* StackViewBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewBuilderProtocol.swift; sourceTree = "<group>"; };
 		97198BC42569A02500004AA8 /* StackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewBuilder.swift; sourceTree = "<group>"; };
 		97198BC72569A03500004AA8 /* StackViewDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewDirector.swift; sourceTree = "<group>"; };
+		97198BCA2569A66500004AA8 /* ControllesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				97198B5A256998FC00004AA8 /* ViewController.swift */,
+				97198BCA2569A66500004AA8 /* ControllesView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				97198B8325699E2A00004AA8 /* ButtonBuilderProtocol.swift in Sources */,
 				97198BAE25699F7100004AA8 /* LabelDirector.swift in Sources */,
 				97198BB225699FA600004AA8 /* SwitchBuilderProtocol.swift in Sources */,
+				97198BCB2569A66500004AA8 /* ControllesView.swift in Sources */,
 				97198B59256998FC00004AA8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
