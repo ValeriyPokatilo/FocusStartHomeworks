@@ -28,6 +28,7 @@
 		97198BC52569A02500004AA8 /* StackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BC42569A02500004AA8 /* StackViewBuilder.swift */; };
 		97198BC82569A03500004AA8 /* StackViewDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BC72569A03500004AA8 /* StackViewDirector.swift */; };
 		97198BCB2569A66500004AA8 /* ControllesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BCA2569A66500004AA8 /* ControllesView.swift */; };
+		97198BCE2569A6BF00004AA8 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BCD2569A6BF00004AA8 /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		97198BC42569A02500004AA8 /* StackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewBuilder.swift; sourceTree = "<group>"; };
 		97198BC72569A03500004AA8 /* StackViewDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewDirector.swift; sourceTree = "<group>"; };
 		97198BCA2569A66500004AA8 /* ControllesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllesView.swift; sourceTree = "<group>"; };
+		97198BCD2569A6BF00004AA8 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				97198B5A256998FC00004AA8 /* ViewController.swift */,
 				97198BCA2569A66500004AA8 /* ControllesView.swift */,
+				97198BCD2569A6BF00004AA8 /* CustomView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				97198BA725699F4D00004AA8 /* LabelBuilderProtocol.swift in Sources */,
 				97198B7C25699C6700004AA8 /* TextViewBuilder.swift in Sources */,
 				97198BC12569A00500004AA8 /* StackViewBuilderProtocol.swift in Sources */,
+				97198BCE2569A6BF00004AA8 /* CustomView.swift in Sources */,
 				97198BB625699FB700004AA8 /* SwithBuilder.swift in Sources */,
 				97198B8725699E4800004AA8 /* ButtonBuilder.swift in Sources */,
 				97198B5B256998FC00004AA8 /* ViewController.swift in Sources */,
