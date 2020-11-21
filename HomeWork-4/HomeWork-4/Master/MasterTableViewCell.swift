@@ -49,12 +49,15 @@ private extension MasterTableViewCell {
 		self.articleHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			self.articleHeaderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,
-															 constant: Metrics.standartSizeSeparatop.rawValue),
-			self.articleHeaderLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor,
-															  constant: -Metrics.standartSizeSeparatop.rawValue),
-			self.articleHeaderLabel.topAnchor.constraint(equalTo: self.topAnchor,
-														 constant: Metrics.standartSizeSeparatop.rawValue),
+			self.articleHeaderLabel.leadingAnchor.constraint(
+				equalTo: self.leadingAnchor,
+				constant: Metrics.standartSizeSeparatop.rawValue),
+			self.articleHeaderLabel.trailingAnchor.constraint(
+				equalTo: self.trailingAnchor,
+				constant: -Metrics.standartSizeSeparatop.rawValue),
+			self.articleHeaderLabel.topAnchor.constraint(
+				equalTo: self.topAnchor,
+				constant: Metrics.standartSizeSeparatop.rawValue),
 		])
 
 		// Text
@@ -63,12 +66,15 @@ private extension MasterTableViewCell {
 		self.articleTextLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
 
 		NSLayoutConstraint.activate([
-			self.articleTextLabel.topAnchor.constraint(equalTo: self.articleHeaderLabel.bottomAnchor,
-													   constant: Metrics.standartSizeSeparatop.rawValue),
-			self.articleTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor,
-														  constant: -Metrics.standartSizeSeparatop.rawValue),
-			self.articleTextLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor,
-														   constant: Metrics.standartSizeSeparatop.rawValue)
+			self.articleTextLabel.topAnchor.constraint(
+				equalTo: self.articleHeaderLabel.bottomAnchor,
+				constant: Metrics.standartSizeSeparatop.rawValue),
+			self.articleTextLabel.bottomAnchor.constraint(
+				equalTo: self.bottomAnchor,
+				constant: -Metrics.standartSizeSeparatop.rawValue),
+			self.articleTextLabel.leadingAnchor.constraint(
+				equalTo: self.leadingAnchor,
+				constant: Metrics.standartSizeSeparatop.rawValue)
 		])
 
 		// Time
@@ -79,7 +85,9 @@ private extension MasterTableViewCell {
 		NSLayoutConstraint.activate([
 			self.articleTimeLabel.bottomAnchor.constraint(equalTo: self.articleTextLabel.bottomAnchor),
 			self.articleTimeLabel.leadingAnchor.constraint(equalTo: self.articleTextLabel.trailingAnchor, constant: 30),
-			self.articleTimeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20)
+			self.articleTimeLabel.trailingAnchor.constraint(
+				equalTo: self.trailingAnchor,
+				constant: -Metrics.standartSizeSeparatop.rawValue)
 		])
 	}
 }
