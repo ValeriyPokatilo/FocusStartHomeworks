@@ -23,7 +23,7 @@ final class ButtonBuilder: ButtonBuilderProtocol {
 	}
 
 	func setCornerRadius() {
-		self.button.layer.cornerRadius = 3
+		self.button.layer.cornerRadius = Metrics.buttonCornerRadius.rawValue
 	}
 
 	func getResult() -> UIButton {

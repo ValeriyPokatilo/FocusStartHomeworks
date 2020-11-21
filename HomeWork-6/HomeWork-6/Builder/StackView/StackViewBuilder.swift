@@ -23,7 +23,7 @@ final class StackViewBuilder: StackViewBuilderProtocol {
 	}
 
 	func setSpacing() {
-		self.stackView.spacing = 10
+		self.stackView.spacing = Metrics.stackViewSpacing.rawValue
 	}
 
 	func getResult() -> UIStackView {

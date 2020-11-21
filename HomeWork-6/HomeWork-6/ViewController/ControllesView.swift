@@ -57,10 +57,17 @@ extension ControllesView {
 		self.pingButton.translatesAutoresizingMaskIntoConstraints = false
 
 		NSLayoutConstraint.activate([
-			self.pingButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-			self.pingButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-			self.pingButton.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-			self.pingButton.heightAnchor.constraint(equalToConstant: 24)
+			self.pingButton.topAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.topAnchor,
+				constant: Metrics.verticalOffset.rawValue),
+			self.pingButton.leadingAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.leadingAnchor,
+				constant: Metrics.horizontalOffset.rawValue),
+			self.pingButton.trailingAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.trailingAnchor,
+				constant: -Metrics.horizontalOffset.rawValue),
+			self.pingButton.heightAnchor.constraint(
+				equalToConstant: Metrics.buttonHeight.rawValue)
 		])
 
 		// StackView
@@ -70,9 +77,15 @@ extension ControllesView {
 		self.connectionStackView.addArrangedSubview(connectionLabel)
 
 		NSLayoutConstraint.activate([
-			self.connectionStackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-			self.connectionStackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-			self.connectionStackView.topAnchor.constraint(equalTo: self.pingButton.bottomAnchor, constant: 40),
+			self.connectionStackView.leadingAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.leadingAnchor,
+				constant: Metrics.horizontalOffset.rawValue),
+			self.connectionStackView.trailingAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.trailingAnchor,
+				constant: -Metrics.horizontalOffset.rawValue),
+			self.connectionStackView.topAnchor.constraint(
+				equalTo: self.pingButton.bottomAnchor,
+				constant: Metrics.bigHorizontalOffset.rawValue),
 		])
 
 		self.bottomAnchor.constraint(equalTo: self.connectionStackView.bottomAnchor).isActive = true

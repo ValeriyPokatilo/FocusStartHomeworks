@@ -36,26 +36,36 @@ private extension CustomView {
 	}
 
 	func setupViewLayout() {
-
-
 		// TextView
 		self.addSubview(logTextView)
 		logTextView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
-			self.logTextView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-			self.logTextView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-			self.logTextView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
-			//self.logTextView.bottomAnchor.constraint(equalTo: self.controllersView.topAnchor, constant: -20),
+			self.logTextView.leadingAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.leadingAnchor,
+				constant: Metrics.horizontalOffset.rawValue),
+			self.logTextView.trailingAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.trailingAnchor,
+				constant: -Metrics.horizontalOffset.rawValue),
+			self.logTextView.topAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.topAnchor,
+				constant: Metrics.verticalOffset.rawValue),
 		])
 
 		self.addSubview(self.controllersView)
 		self.controllersView.translatesAutoresizingMaskIntoConstraints = false
 		NSLayoutConstraint.activate([
-			self.controllersView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-			self.controllersView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-			self.controllersView.topAnchor.constraint(equalTo: self.logTextView.bottomAnchor, constant: 20),
-			self.controllersView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+			self.controllersView.leadingAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.leadingAnchor,
+				constant: Metrics.horizontalOffset.rawValue),
+			self.controllersView.trailingAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.trailingAnchor,
+				constant: -Metrics.horizontalOffset.rawValue),
+			self.controllersView.topAnchor.constraint(
+				equalTo: self.logTextView.bottomAnchor,
+				constant: Metrics.verticalOffset.rawValue),
+			self.controllersView.bottomAnchor.constraint(
+				equalTo: self.safeAreaLayoutGuide.bottomAnchor,
+				constant: -Metrics.verticalOffset.rawValue),
 		])
 	}
-
 }

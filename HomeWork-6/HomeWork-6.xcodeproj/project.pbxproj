@@ -29,6 +29,10 @@
 		97198BC82569A03500004AA8 /* StackViewDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BC72569A03500004AA8 /* StackViewDirector.swift */; };
 		97198BCB2569A66500004AA8 /* ControllesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BCA2569A66500004AA8 /* ControllesView.swift */; };
 		97198BCE2569A6BF00004AA8 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BCD2569A6BF00004AA8 /* CustomView.swift */; };
+		97198BD12569A70500004AA8 /* ObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BD02569A70500004AA8 /* ObserverProtocol.swift */; };
+		97198BD42569A71800004AA8 /* NotificationCentres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BD32569A71800004AA8 /* NotificationCentres.swift */; };
+		97198BD82569A74300004AA8 /* Dater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BD72569A74300004AA8 /* Dater.swift */; };
+		97198BDB2569A75300004AA8 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97198BDA2569A75300004AA8 /* Metrics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,10 @@
 		97198BC72569A03500004AA8 /* StackViewDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewDirector.swift; sourceTree = "<group>"; };
 		97198BCA2569A66500004AA8 /* ControllesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllesView.swift; sourceTree = "<group>"; };
 		97198BCD2569A6BF00004AA8 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		97198BD02569A70500004AA8 /* ObserverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverProtocol.swift; sourceTree = "<group>"; };
+		97198BD32569A71800004AA8 /* NotificationCentres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCentres.swift; sourceTree = "<group>"; };
+		97198BD72569A74300004AA8 /* Dater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dater.swift; sourceTree = "<group>"; };
+		97198BDA2569A75300004AA8 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 				97198B7525699B7000004AA8 /* ViewController */,
 				97198B7425699B6900004AA8 /* Observer */,
 				97198B6F25699B3E00004AA8 /* Builder */,
+				97198BD62569A72B00004AA8 /* Supporting */,
 				97198B6C25699A8800004AA8 /* Application */,
 			);
 			path = "HomeWork-6";
@@ -123,6 +132,8 @@
 		97198B7425699B6900004AA8 /* Observer */ = {
 			isa = PBXGroup;
 			children = (
+				97198BD02569A70500004AA8 /* ObserverProtocol.swift */,
+				97198BD32569A71800004AA8 /* NotificationCentres.swift */,
 			);
 			path = Observer;
 			sourceTree = "<group>";
@@ -131,8 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				97198B5A256998FC00004AA8 /* ViewController.swift */,
-				97198BCA2569A66500004AA8 /* ControllesView.swift */,
 				97198BCD2569A6BF00004AA8 /* CustomView.swift */,
+				97198BCA2569A66500004AA8 /* ControllesView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -185,6 +196,15 @@
 				97198BC72569A03500004AA8 /* StackViewDirector.swift */,
 			);
 			path = StackView;
+			sourceTree = "<group>";
+		};
+		97198BD62569A72B00004AA8 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				97198BD72569A74300004AA8 /* Dater.swift */,
+				97198BDA2569A75300004AA8 /* Metrics.swift */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +281,9 @@
 				97198BA725699F4D00004AA8 /* LabelBuilderProtocol.swift in Sources */,
 				97198B7C25699C6700004AA8 /* TextViewBuilder.swift in Sources */,
 				97198BC12569A00500004AA8 /* StackViewBuilderProtocol.swift in Sources */,
+				97198BD42569A71800004AA8 /* NotificationCentres.swift in Sources */,
 				97198BCE2569A6BF00004AA8 /* CustomView.swift in Sources */,
+				97198BDB2569A75300004AA8 /* Metrics.swift in Sources */,
 				97198BB625699FB700004AA8 /* SwithBuilder.swift in Sources */,
 				97198B8725699E4800004AA8 /* ButtonBuilder.swift in Sources */,
 				97198B5B256998FC00004AA8 /* ViewController.swift in Sources */,
@@ -274,7 +296,9 @@
 				97198B8325699E2A00004AA8 /* ButtonBuilderProtocol.swift in Sources */,
 				97198BAE25699F7100004AA8 /* LabelDirector.swift in Sources */,
 				97198BB225699FA600004AA8 /* SwitchBuilderProtocol.swift in Sources */,
+				97198BD82569A74300004AA8 /* Dater.swift in Sources */,
 				97198BCB2569A66500004AA8 /* ControllesView.swift in Sources */,
+				97198BD12569A70500004AA8 /* ObserverProtocol.swift in Sources */,
 				97198B59256998FC00004AA8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
