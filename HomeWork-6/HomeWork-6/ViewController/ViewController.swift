@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol ViewControllerProtocol {
+	var pingButton: UIButton { get }
+}
+
 class ViewController: UIViewController {
 
 	let customView = CustomView()
 
+	// Костыль * Start
 	var button = UIButton()
 	var switcher = UISwitch()
 	var textView = UITextView()
+	// Костыль * End
 
 	let notificationCentres = NotificationCentres()
 
@@ -26,13 +32,19 @@ class ViewController: UIViewController {
 	override func loadView() {
 		self.view = customView
 
+		// Костыль * Start
 		button = customView.controllersView.pingButton
-		button.addTarget(self, action: #selector(buttonTouchUpInside), for: .touchUpInside)
+		button.addTarget(self,
+						 action: #selector(buttonTouchUpInside),
+						 for: .touchUpInside)
 
 		switcher = customView.controllersView.connectionSwitcher
-		switcher.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
+		switcher.addTarget(self,
+						   action: #selector(switchValueChanged),
+						   for: .valueChanged)
 
 		textView = customView.logTextView
+		// Костыль * End
 	}
 
 	@objc func buttonTouchUpInside() {

@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class ControllesView: UIView {
-	var pingButton = UIButton()
+final class ControllesView: UIView, ViewControllerProtocol {
+	var pingButton = UIButton() // private
 	private var connectionStackView = UIStackView()
-	var connectionSwitcher = UISwitch()
+	var connectionSwitcher = UISwitch() // private
 	private var connectionLabel = UILabel()
 
 	init() {
@@ -90,5 +90,4 @@ extension ControllesView {
 
 		self.bottomAnchor.constraint(equalTo: self.connectionStackView.bottomAnchor).isActive = true
 	}
-
 }
