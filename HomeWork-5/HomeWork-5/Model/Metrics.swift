@@ -15,4 +15,5 @@ enum Metrics: CGFloat {
 	case verticalSeparator = 12
 	case labelTopSeparator = 82
 	case imageSize = 100
+	case tableViewHeight = 90
 }

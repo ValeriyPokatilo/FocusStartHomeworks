@@ -11,11 +11,11 @@ class CurrencyCell: UITableViewCell {
 
 	// MARK: - Properties
 
-	private var nameLabel = UILabel()
-	private var resultStringLabel = UILabel()
-	private var countryLabel = UILabel()
-	private var toUpImage = UIImageView()
-	private var flagImage = UIImageView()
+	var nameLabel = UILabel()
+	var resultStringLabel = UILabel()
+	var countryLabel = UILabel()
+	var toUpImage = UIImageView()
+	var flagImage = UIImageView()
 
 	// MARK: - Functions
 
@@ -26,7 +26,7 @@ class CurrencyCell: UITableViewCell {
 
 // MARK: - Setup views
 
-extension CurrencyCell {
+private extension CurrencyCell {
 	func setupViews(valute: Valute) {
 		self.nameLabel.text = valute.CharCode
 		self.nameLabel.font = Font.headerStyle.font

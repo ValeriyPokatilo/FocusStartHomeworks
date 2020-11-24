@@ -52,8 +52,8 @@ private extension CurrencyViewController {
 			let navBarAppearance = UINavigationBarAppearance()
 			navBarAppearance.configureWithOpaqueBackground()
 			navBarAppearance.backgroundColor = UIColor.white
-			navigationController?.navigationBar.standardAppearance = navBarAppearance
-			navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+			self.navigationController?.navigationBar.standardAppearance = navBarAppearance
+			self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
 		}
 	}
 
@@ -62,7 +62,7 @@ private extension CurrencyViewController {
 		self.tableView.dataSource = self
 		self.tableView.register(CurrencyCell.self, forCellReuseIdentifier: cellID)
 
-		setupTableViewLayout()
+		self.setupTableViewLayout()
 	}
 
 	func setupTableViewLayout() {
@@ -89,15 +89,16 @@ extension CurrencyViewController: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = self.tableView.dequeueReusableCell(withIdentifier: cellID,
-												 for: indexPath) as! CurrencyCell
+												 for: indexPath) as? CurrencyCell
 
 		guard let valute = presenter.valute(atIndex: indexPath) else {
 			return UITableViewCell()
 		}
 
-		cell.cellConfigure(valute: valute)
+		guard let nonOptionalCell = cell else { return UITableViewCell() }
+		nonOptionalCell.cellConfigure(valute: valute)
 
-		return cell
+		return nonOptionalCell
 	}
 }
 
@@ -105,7 +106,7 @@ extension CurrencyViewController: UITableViewDataSource {
 
 extension CurrencyViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 90
+		return Metrics.tableViewHeight.rawValue
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
