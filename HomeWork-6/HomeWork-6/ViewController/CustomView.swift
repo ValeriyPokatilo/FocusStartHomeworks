@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class CustomView: UIView {
-	var logTextView = UITextView()
-	var controllersView = ControllesView()
+final class CustomView: UIView, TextViewProtocol {
+	var logTextView = UITextView() // Private ?
+	var controllersView = ControllesView() // Private ?
 
 	init() {
 		super.init(frame: .zero)

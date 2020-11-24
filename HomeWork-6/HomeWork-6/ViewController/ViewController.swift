@@ -7,44 +7,52 @@
 
 import UIKit
 
-protocol ViewControllerProtocol {
+protocol TextViewProtocol {
+	var logTextView: UITextView { get }
+}
+
+protocol ConnectionControllersProtocol {
 	var pingButton: UIButton { get }
+	var connectionSwitcher: UISwitch { get }
 }
 
 class ViewController: UIViewController {
-
 	let customView = CustomView()
 
-	// Костыль * Start
 	var button = UIButton()
 	var switcher = UISwitch()
 	var textView = UITextView()
-	// Костыль * End
 
 	let notificationCentres = NotificationCentres()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		self.view.backgroundColor = UIColor.systemBackground
 	}
 
 	override func loadView() {
 		self.view = customView
 
-		// Костыль * Start
-		button = customView.controllersView.pingButton
+		let connectionControllersLink: ConnectionControllersProtocol =
+			customView.controllersView
+
+		// Button
+		button = connectionControllersLink.pingButton
 		button.addTarget(self,
 						 action: #selector(buttonTouchUpInside),
 						 for: .touchUpInside)
 
-		switcher = customView.controllersView.connectionSwitcher
+		// Switcher
+		switcher = connectionControllersLink.connectionSwitcher
 		switcher.addTarget(self,
 						   action: #selector(switchValueChanged),
 						   for: .valueChanged)
 
+		// TextView
+		let textViewLink: TextViewProtocol = customView
+		textView = textViewLink.logTextView
+
 		textView = customView.logTextView
-		// Костыль * End
 	}
 
 	@objc func buttonTouchUpInside() {
@@ -63,4 +71,5 @@ class ViewController: UIViewController {
 extension ViewController: ObserverProtocol {
 	func update(subject: NotificationCentres) {
 		textView.text = textView.text + ("\(subject.date) Ping state - OK\n")
-	}}
+	}
+}

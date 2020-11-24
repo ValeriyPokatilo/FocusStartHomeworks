@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class ControllesView: UIView, ViewControllerProtocol {
-	var pingButton = UIButton() // private
+final class ControllesView: UIView, ConnectionControllersProtocol {
+	var pingButton = UIButton() // private ?
 	private var connectionStackView = UIStackView()
-	var connectionSwitcher = UISwitch() // private
+	var connectionSwitcher = UISwitch() // private ?
 	private var connectionLabel = UILabel()
 
 	init() {
