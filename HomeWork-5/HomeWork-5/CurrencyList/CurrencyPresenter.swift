@@ -39,11 +39,9 @@ extension CurrencyPresenter: CurrencyPresenterProtocol {
 	}
 
 	func valute(atIndex indexPath: IndexPath) -> Valute? {
-		if self.valutes.indices.contains(indexPath.row) {
-			return valutes[indexPath.row]
-		} else {
-			return nil
-		}
+		guard self.valutes.indices.contains(indexPath.row) else { return nil } 
+		return valutes[indexPath.row]
+
 	}
 
 	func showValuteDetail(for indexPath: IndexPath) {

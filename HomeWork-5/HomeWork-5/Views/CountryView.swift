@@ -10,10 +10,10 @@ import UIKit
 final class CountryView: UIView {
 
 	// MARK: - Properties
-	let nameLabel = UILabel()
-	let countryLabel = UILabel()
-	let flagImage = UIImageView()
-	let valueTextField = UITextField()
+	private let nameLabel = UILabel()
+	private let countryLabel = UILabel()
+	private let flagImage = UIImageView()
+	private let valueTextField = UITextField()
 
 	init() {
 		super.init(frame: .zero)

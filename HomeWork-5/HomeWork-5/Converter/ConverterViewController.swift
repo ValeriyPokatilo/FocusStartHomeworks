@@ -15,8 +15,8 @@ class ConverterViewController: UIViewController {
 
 	// MARK: - Properties
 
-	var roubleValuteView = CountryView()
-	var anotherValuteView = CountryView()
+	private var roubleValuteView = CountryView()
+	private var anotherValuteView = CountryView()
 
 	var presenter: ConverterPresenterProtocol!
 

@@ -37,16 +37,14 @@ extension ConverterInteractor: ConverterInteractorProtocol {
 	}
 
 	func provideRoubleConvertation(newValue: String) {
-		if let newValueDouble = Double(newValue) {
+		guard let newValueDouble = Double(newValue) else { return }
+		let nominal = Double(valute.Nominal ?? 0) * newValueDouble / (valute.Value ?? 0)
 
-			let nominal = Double(valute.Nominal ?? 0) * newValueDouble / (valute.Value ?? 0)
-
-			let anotherValute = AnotherValute(country: valute.Name ?? "",
-											  imageName: valute.CharCode ?? "",
-											  nominal: nominal,
-											  value: newValueDouble)
-			presenter.receiveConverter(anotherValute: anotherValute)
-		}
+		let anotherValute = AnotherValute(country: valute.Name ?? "",
+										  imageName: valute.CharCode ?? "",
+										  nominal: nominal,
+										  value: newValueDouble)
+		presenter.receiveConverter(anotherValute: anotherValute)
 	}
 
 	func provideAnotherConvertation(newValue: String) {

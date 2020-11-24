@@ -9,12 +9,12 @@ import Foundation
 
 final class NetworkManager {
 
+	let jsonUrlString = "https://www.cbr-xml-daily.ru/daily_json.js"
 	static let shared = NetworkManager()
 
 	func getExchangeRate(complition: @escaping (_ valutes: [Valute]) -> ()) {
 		var valutes: [Valute] = []
 
-		let jsonUrlString = "https://www.cbr-xml-daily.ru/daily_json.js"
 		guard let url = URL(string: jsonUrlString) else { return }
 
 		Foundation.URLSession.shared.dataTask(with: url) { (data, _, _) in
