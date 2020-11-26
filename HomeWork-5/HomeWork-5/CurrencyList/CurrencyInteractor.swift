@@ -16,7 +16,7 @@ protocol CurrencyInteractorOutputProtocol: AnyObject {
 }
 
 final class CurrencyInteractor {
-	weak var presenter: CurrencyInteractorOutputProtocol!
+	weak var presenter: CurrencyInteractorOutputProtocol? = CurrencyPresenter(view: CurrencyViewController())
 
 	required init(presenter: CurrencyInteractorOutputProtocol) {
 		self.presenter = presenter
@@ -26,7 +26,7 @@ final class CurrencyInteractor {
 extension CurrencyInteractor: CurrencyInteractorProtocol {
 	func fetchCurrensys() {
 		NetworkManager.shared.getExchangeRate { [weak self] valutes in
-			self?.presenter.currencysDidReceive(valutes)
+			self?.presenter?.currencysDidReceive(valutes)
 		}
 	}
 }

@@ -31,20 +31,20 @@ class ConverterPresenter {
 
 extension ConverterPresenter: ConverterPresenterProtocol {
 	func showDetails() {
-		interactor.provideConverter()
+		interactor?.provideConverter()
 	}
 
 	func roubleValueChanged(newValue: String) {
-		interactor.provideRoubleConvertation(newValue: newValue)
+		interactor?.provideRoubleConvertation(newValue: newValue)
 	}
 
 	func anotheValueChanged(newValue: String) {
-		interactor.provideAnotherConvertation(newValue: newValue)
+		interactor?.provideAnotherConvertation(newValue: newValue)
 	}
 }
 
-extension ConverterPresenter: ConverterInteractorOutputProtocol {
+extension ConverterPresenter: PresenterOutputProtocol {
 	func receiveConverter(anotherValute: AnotherValute) {
-		view.setAnotherValute(with: anotherValute)
+		view?.setAnotherValute(with: anotherValute)
 	}
 }

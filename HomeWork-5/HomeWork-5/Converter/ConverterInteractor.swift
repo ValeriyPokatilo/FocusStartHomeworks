@@ -13,15 +13,15 @@ protocol ConverterInteractorProtocol: AnyObject {
 	func provideAnotherConvertation(newValue: String)
 }
 
-protocol ConverterInteractorOutputProtocol: AnyObject {
+protocol PresenterOutputProtocol: AnyObject {
 	func receiveConverter(anotherValute: AnotherValute)
 }
 
 class ConverterInteractor {
-	weak var presenter: ConverterInteractorOutputProtocol!
+	weak var presenter: PresenterOutputProtocol!
 	private var valute: Valute
 
-	init(presenter: ConverterInteractorOutputProtocol, valute: Valute) {
+	init(presenter: PresenterOutputProtocol, valute: Valute) {
 		self.presenter = presenter
 		self.valute = valute
 	}

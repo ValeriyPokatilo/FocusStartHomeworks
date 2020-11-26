@@ -18,15 +18,18 @@ final class CurrencyViewController: UIViewController {
 	private let cellID = "Cell"
 	private var tableView = UITableView()
 
-	var presenter: CurrencyPresenterProtocol!
+	var presenter: CurrencyPresenterProtocol?
 	private let configurator: CurrencyConfiguratorProtocol = CurrencyConfigurator()
 
 	// MARK: - lifecycle
 
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
+
+		self.presenter = CurrencyPresenter(view: self)
+
 		self.configurator.configure(view: self)
-		self.presenter.viewDidLoad()
+		self.presenter?.viewDidLoad()
 		self.setupNavigationBar()
 		self.setupTableView()
     }
@@ -84,14 +87,14 @@ private extension CurrencyViewController {
 
 extension CurrencyViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return presenter.valutesCount ?? 0
+		return presenter?.valutesCount ?? 0
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = self.tableView.dequeueReusableCell(withIdentifier: cellID,
 												 for: indexPath) as? CurrencyCell
 
-		guard let valute = presenter.valute(atIndex: indexPath) else {
+		guard let valute = presenter?.valute(atIndex: indexPath) else {
 			return UITableViewCell()
 		}
 
@@ -112,6 +115,6 @@ extension CurrencyViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.tableView.deselectRow(at: indexPath, animated: true)
 
-		self.presenter.showValuteDetail(for: indexPath)
+		self.presenter?.showValuteDetail(for: indexPath)
 	}
 }

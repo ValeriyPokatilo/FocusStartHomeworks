@@ -17,9 +17,9 @@ protocol CurrencyPresenterProtocol: AnyObject {
 }
 
 final class CurrencyPresenter {
-	weak var view: CurrencyViewProtocol!
-	var interactor: CurrencyInteractorProtocol!
-	var router: CurrencyRouterProtocol!
+	weak var view: CurrencyViewProtocol? = CurrencyViewController()
+	var interactor: CurrencyInteractorProtocol?
+	var router: CurrencyRouterProtocol = CurrencyRouter(viewController: CurrencyViewController())
 
 	var valutes: [Valute] = []
 	var valutesCount: Int? {
@@ -35,7 +35,7 @@ final class CurrencyPresenter {
 
 extension CurrencyPresenter: CurrencyPresenterProtocol {
 	func viewDidLoad() {
-		self.interactor.fetchCurrensys()
+		self.interactor?.fetchCurrensys()
 	}
 
 	func valute(atIndex indexPath: IndexPath) -> Valute? {
@@ -55,6 +55,6 @@ extension CurrencyPresenter: CurrencyPresenterProtocol {
 extension CurrencyPresenter: CurrencyInteractorOutputProtocol {
 	func currencysDidReceive(_ valutes: [Valute]) {
 		self.valutes = valutes
-		view.reloadData()
+		view!.reloadData()
 	}
 }

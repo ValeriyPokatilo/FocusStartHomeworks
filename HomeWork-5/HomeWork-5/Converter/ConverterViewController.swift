@@ -18,19 +18,19 @@ class ConverterViewController: UIViewController {
 	private var roubleValuteView = CountryView()
 	private var anotherValuteView = CountryView()
 
-	var presenter: ConverterPresenterProtocol!
+	var presenter: ConverterPresenterProtocol?
 
 	// MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		presenter.showDetails()
-		setupViews()
+		self.presenter?.showDetails()
+		self.setupViews()
 
-		roubleValuteView.valueTextField.addTarget(self,
+		self.roubleValuteView.valueTextField.addTarget(self,
 												  action: #selector(changeRoubleValue),
 												  for: .editingChanged)
-		anotherValuteView.valueTextField.addTarget(self,
+		self.anotherValuteView.valueTextField.addTarget(self,
 												   action: #selector(changeAnotherValue),
 												   for: .editingChanged)
     }
@@ -39,13 +39,13 @@ class ConverterViewController: UIViewController {
 
 	@objc func changeRoubleValue() {
 		if let newValue = roubleValuteView.valueTextField.text {
-			presenter.roubleValueChanged(newValue: newValue)
+			presenter?.roubleValueChanged(newValue: newValue)
 		}
 	}
 
 	@objc func changeAnotherValue() {
 		if let newValue = anotherValuteView.valueTextField.text {
-			presenter.anotheValueChanged(newValue: newValue)
+			presenter?.anotheValueChanged(newValue: newValue)
 		}
 	}
 }

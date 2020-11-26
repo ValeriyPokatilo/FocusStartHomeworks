@@ -69,7 +69,7 @@ extension CountryView {
 		NSLayoutConstraint.activate([
 			self.countryLabel.topAnchor.constraint(
 				equalTo: safeArea.topAnchor,
-				constant: Metrics.labelTopSeparator.rawValue),
+				constant: Metrics.verticalSeparator.rawValue),
 			self.countryLabel.leadingAnchor.constraint(
 				equalTo: self.flagImage.trailingAnchor,
 				constant: Metrics.verticalSeparator.rawValue),
