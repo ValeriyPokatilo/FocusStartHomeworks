@@ -43,7 +43,7 @@ extension ConverterPresenter: ConverterPresenterProtocol {
 	}
 }
 
-extension ConverterPresenter: PresenterOutputProtocol {
+extension ConverterPresenter: ConverterOutput {
 	func receiveConverter(anotherValute: AnotherValute) {
 		view?.setAnotherValute(with: anotherValute)
 	}

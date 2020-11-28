@@ -11,14 +11,14 @@ protocol CurrencyInteractorProtocol: AnyObject {
 	func fetchCurrensys()
 }
 
-protocol CurrencyInteractorOutputProtocol: AnyObject {
+protocol CurrencyOutput: AnyObject {
 	func currencysDidReceive(_ valutes: [Valute])
 }
 
 final class CurrencyInteractor {
-	weak var presenter: CurrencyInteractorOutputProtocol? = CurrencyPresenter(view: CurrencyViewController())
+	private weak var presenter: CurrencyOutput? = CurrencyPresenter(view: CurrencyViewController())
 
-	required init(presenter: CurrencyInteractorOutputProtocol) {
+	required init(presenter: CurrencyOutput) {
 		self.presenter = presenter
 	}
 }

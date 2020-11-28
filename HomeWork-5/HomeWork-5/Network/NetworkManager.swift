@@ -9,7 +9,7 @@ import Foundation
 
 final class NetworkManager {
 
-	let jsonUrlString = "https://www.cbr-xml-daily.ru/daily_json.js"
+	private let jsonUrlString = "https://www.cbr-xml-daily.ru/daily_json.js"
 	static let shared = NetworkManager()
 
 	func getExchangeRate(complition: @escaping (_ valutes: [Valute]) -> ()) {
