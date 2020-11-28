@@ -26,7 +26,7 @@ final class CountryView: UIView {
 
 }
 
-extension CountryView {
+private extension CountryView {
 	func setupViews() {
 		self.flagImage.image = UIImage()
 

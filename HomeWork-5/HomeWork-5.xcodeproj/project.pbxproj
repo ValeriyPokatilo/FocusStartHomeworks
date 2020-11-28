@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		974238F02563EE97007982EF /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974238EF2563EE97007982EF /* Metrics.swift */; };
+		97445ED325720D8E004C58CE /* DoubleCountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97445ED225720D8E004C58CE /* DoubleCountryView.swift */; };
 		978145FD25623C9700270324 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978145FC25623C9700270324 /* ConverterViewController.swift */; };
 		97814602256249B700270324 /* ConverterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97814601256249B700270324 /* ConverterInteractor.swift */; };
 		97814605256249C200270324 /* ConverterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97814604256249C200270324 /* ConverterPresenter.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		974238EF2563EE97007982EF /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		97445ED225720D8E004C58CE /* DoubleCountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleCountryView.swift; sourceTree = "<group>"; };
 		978145FC25623C9700270324 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		97814601256249B700270324 /* ConverterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterInteractor.swift; sourceTree = "<group>"; };
 		97814604256249C200270324 /* ConverterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterPresenter.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				9781460B25628D7700270324 /* CountryView.swift */,
+				97445ED225720D8E004C58CE /* DoubleCountryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				978145FD25623C9700270324 /* ConverterViewController.swift in Sources */,
 				97C732FD2560F6B7007A0199 /* AppDelegate.swift in Sources */,
 				97C732FF2560F6B7007A0199 /* SceneDelegate.swift in Sources */,
+				97445ED325720D8E004C58CE /* DoubleCountryView.swift in Sources */,
 				97814608256249D000270324 /* ConverterConfigurator.swift in Sources */,
 				97C7333625610A9B007A0199 /* CurrencyCell.swift in Sources */,
 				97C7332D256108F1007A0199 /* CurrencyPresenter.swift in Sources */,
