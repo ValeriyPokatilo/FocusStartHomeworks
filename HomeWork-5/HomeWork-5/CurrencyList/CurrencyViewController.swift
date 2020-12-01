@@ -7,41 +7,31 @@
 
 import UIKit
 
-protocol CurrencyViewProtocol: AnyObject {
-	func reloadData()
-}
-
 final class CurrencyViewController: UIViewController {
 
 	// MARK: - Properties
 
 	private let cellID = "Cell"
 	private var tableView = UITableView()
+	//private var valutes: [Valute] = []
 
-	var presenter: CurrencyPresenterProtocol?
-	private let configurator: CurrencyConfiguratorProtocol = CurrencyConfigurator()
+	private var viewModel: CurrencyViewModelProtocol? {
+		didSet {
+			viewModel?.fetchCurrencys() {
+				DispatchQueue.main.async {
+					self.tableView.reloadData()
+				}
+			}
+		}
+	}
 
 	// MARK: - lifecycle
 
 	override func viewDidLoad() {
-        super.viewDidLoad()
-
-		self.presenter = CurrencyPresenter(view: self)
-
-		self.configurator.configure(view: self)
-		self.presenter?.viewDidLoad()
+		super.viewDidLoad()
+		self.viewModel = CurrencyViewModel()
 		self.setupNavigationBar()
 		self.setupTableView()
-    }
-}
-
-// MARK: - CurrencyViewProtocol
-
-extension CurrencyViewController: CurrencyViewProtocol {
-	func reloadData() {
-		DispatchQueue.main.async {
-			self.tableView.reloadData()
-		}
 	}
 }
 
@@ -49,22 +39,16 @@ extension CurrencyViewController: CurrencyViewProtocol {
 
 private extension CurrencyViewController {
 	func setupNavigationBar() {
-		if #available(iOS 13.0, *) {
-			self.navigationItem.title = "Курсы валют"
-
-			let navBarAppearance = UINavigationBarAppearance()
-			navBarAppearance.configureWithOpaqueBackground()
-			navBarAppearance.backgroundColor = UIColor.white
-			self.navigationController?.navigationBar.standardAppearance = navBarAppearance
-			self.navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
-		}
+		self.navigationItem.title = "Курсы валют"
+		self.navigationController?.navigationBar.barTintColor = UIColor.darkGray
+		self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white ]
+		self.navigationController?.navigationBar.tintColor = .white
 	}
 
 	func setupTableView() {
 		self.tableView.delegate = self
 		self.tableView.dataSource = self
 		self.tableView.register(CurrencyCell.self, forCellReuseIdentifier: cellID)
-
 		self.setupTableViewLayout()
 	}
 
@@ -72,13 +56,15 @@ private extension CurrencyViewController {
 		self.view.addSubview(tableView)
 		self.tableView.translatesAutoresizingMaskIntoConstraints = false
 
-		let safeArea = self.view.safeAreaLayoutGuide
-
 		NSLayoutConstraint.activate([
-			self.tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-			self.tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
-			self.tableView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-			self.tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+			self.tableView.topAnchor.constraint(
+				equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+			self.tableView.bottomAnchor.constraint(
+				equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+			self.tableView.leadingAnchor.constraint(
+				equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+			self.tableView.trailingAnchor.constraint(
+				equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
 		])
 	}
 }
@@ -87,19 +73,18 @@ private extension CurrencyViewController {
 
 extension CurrencyViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return presenter?.valutesCount ?? 0
+		guard let count = viewModel?.numberOfRows() else { return 0 }
+		return count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = self.tableView.dequeueReusableCell(withIdentifier: cellID,
 												 for: indexPath) as? CurrencyCell
 
-		guard let valute = presenter?.valute(atIndex: indexPath) else {
-			return UITableViewCell()
-		}
+		let cellViewModel = viewModel?.cellViewModel(for: indexPath)
+		cell?.viewModel = cellViewModel
 
 		guard let nonOptionalCell = cell else { return UITableViewCell() }
-		nonOptionalCell.cellConfigure(valute: valute)
 
 		return nonOptionalCell
 	}
@@ -109,12 +94,15 @@ extension CurrencyViewController: UITableViewDataSource {
 
 extension CurrencyViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return Metrics.tableViewHeight.rawValue
+		return Metrics.tableViewHeight
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.tableView.deselectRow(at: indexPath, animated: true)
 
-		self.presenter?.showValuteDetail(for: indexPath)
+		let converter = ConverterViewController()
+		viewModel?.selectedRow(for: indexPath)
+		converter.viewModel = viewModel?.converterViewModel()
+		navigationController?.pushViewController(converter, animated: true)
 	}
 }

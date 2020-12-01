@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CurrencyCell: UITableViewCell {
+final class CurrencyCell: UITableViewCell {
 
 	// MARK: - Properties
 
@@ -17,33 +17,35 @@ class CurrencyCell: UITableViewCell {
 	private var toUpImage = UIImageView()
 	private var flagImage = UIImageView()
 
-	// MARK: - Functions
+	var viewModel: CurrencyCellViewModelProtocol? {
+		didSet {
+			self.nameLabel.text = viewModel?.charCode
+			self.countryLabel.text = viewModel?.name
+			self.resultStringLabel.text = viewModel?.resultString
+			self.flagImage.image = UIImage(named: viewModel?.charCode ?? "")
 
-	func cellConfigure(valute: Valute) {
-		setupViews(valute: valute)
+			self.setupViews()
+		}
 	}
 }
 
 // MARK: - Setup views
 
 private extension CurrencyCell {
-	func setupViews(valute: Valute) {
-		self.nameLabel.text = valute.CharCode
-		self.nameLabel.font = Font.headerStyle.font
+	func setupViews() {
+		self.backgroundColor = UIColor.darkGray
 
-		self.countryLabel.text = valute.Name
+		self.nameLabel.font = Font.headerStyle.font
+		self.nameLabel.textColor = UIColor.white
+
 		self.countryLabel.font = Font.textStyle.font
+		self.countryLabel.textColor = UIColor.white
 		self.countryLabel.adjustsFontSizeToFitWidth = true
 		self.countryLabel.minimumScaleFactor = 0.4
-
-		let longValue = valute.Value ?? 0
-		let value = String(format: "%.2f", longValue)
-		self.resultStringLabel.text = "\(value) руб. за \(valute.Nominal ?? 0) \(valute.CharCode ?? "")"
 		self.resultStringLabel.font = Font.dateStyle.font
+		self.resultStringLabel.textColor = UIColor.white
 
-		self.flagImage.image = UIImage(named: valute.CharCode ?? "nophoto")
-
-		if valute.toUp {
+		if self.viewModel?.toUp ?? true {
 			self.toUpImage.tintColor = .green
 			self.toUpImage.image = SystemImage.up.image
 		} else {
@@ -59,12 +61,12 @@ private extension CurrencyCell {
 		self.addSubview(self.flagImage)
 		NSLayoutConstraint.activate([
 			self.flagImage.heightAnchor.constraint(
-				equalToConstant: Metrics.imageSize.rawValue),
+				equalToConstant: Metrics.imageSize),
 			self.flagImage.widthAnchor.constraint(
-				equalToConstant: Metrics.imageSize.rawValue),
+				equalToConstant: Metrics.imageSize),
 			self.flagImage.leadingAnchor.constraint(
 				equalTo: self.leadingAnchor,
-				constant: Metrics.standartSizeSeparator.rawValue),
+				constant: Metrics.standartSizeSeparator),
 			self.flagImage.centerYAnchor.constraint(equalTo: self.centerYAnchor)
 		])
 
@@ -73,10 +75,10 @@ private extension CurrencyCell {
 		NSLayoutConstraint.activate([
 			nameLabel.topAnchor.constraint(
 				equalTo: self.topAnchor,
-				constant: Metrics.smallSizeSeparator.rawValue),
+				constant: Metrics.smallSizeSeparator),
 			nameLabel.leadingAnchor.constraint(
 				equalTo: self.flagImage.trailingAnchor,
-				constant: Metrics.standartSizeSeparator.rawValue)
+				constant: Metrics.standartSizeSeparator)
 		])
 
 		self.toUpImage.translatesAutoresizingMaskIntoConstraints = false
@@ -84,14 +86,14 @@ private extension CurrencyCell {
 		NSLayoutConstraint.activate([
 			self.toUpImage.leadingAnchor.constraint(
 				equalTo: self.flagImage.trailingAnchor,
-				constant: 70),
+				constant: Metrics.tableViewToUpSeparator),
 			self.toUpImage.topAnchor.constraint(
 				equalTo: self.topAnchor,
-				constant: Metrics.smallSizeSeparator.rawValue),
+				constant: Metrics.smallSizeSeparator),
 			self.toUpImage.heightAnchor.constraint(
-				equalToConstant: Metrics.mediumSizeSeparator.rawValue),
+				equalToConstant: Metrics.mediumSizeSeparator),
 			self.toUpImage.widthAnchor.constraint(
-				equalToConstant: Metrics.mediumSizeSeparator.rawValue)
+				equalToConstant: Metrics.mediumSizeSeparator)
 		])
 
 		self.countryLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -99,13 +101,13 @@ private extension CurrencyCell {
 		NSLayoutConstraint.activate([
 			self.countryLabel.topAnchor.constraint(
 				equalTo: self.nameLabel.bottomAnchor,
-				constant: 3),
+				constant: Metrics.minimumSizeSeparator),
 			self.countryLabel.leadingAnchor.constraint(
 				equalTo: self.flagImage.trailingAnchor,
-				constant: Metrics.standartSizeSeparator.rawValue),
+				constant: Metrics.standartSizeSeparator),
 			self.countryLabel.trailingAnchor.constraint(
 				equalTo: self.trailingAnchor,
-				constant: -Metrics.standartSizeSeparator.rawValue)
+				constant: -Metrics.standartSizeSeparator)
 		])
 
 		self.resultStringLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -113,10 +115,10 @@ private extension CurrencyCell {
 		NSLayoutConstraint.activate([
 			self.resultStringLabel.topAnchor.constraint(
 				equalTo: self.countryLabel.bottomAnchor,
-				constant: 3),
+				constant: Metrics.minimumSizeSeparator),
 			self.resultStringLabel.leadingAnchor.constraint(
 				equalTo: self.flagImage.trailingAnchor,
-				constant: Metrics.standartSizeSeparator.rawValue)
+				constant: Metrics.standartSizeSeparator)
 		])
 	}
 }
