@@ -14,6 +14,7 @@
 		973AC7892579420B006AEBF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 973AC7872579420B006AEBF7 /* LaunchScreen.storyboard */; };
 		973AC79F257943DE006AEBF7 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AC79E257943DE006AEBF7 /* Metrics.swift */; };
 		973AC7A2257943F3006AEBF7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AC7A1257943F3006AEBF7 /* Colors.swift */; };
+		973AC7A525794440006AEBF7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AC7A425794440006AEBF7 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		973AC78A2579420B006AEBF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		973AC79E257943DE006AEBF7 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 		973AC7A1257943F3006AEBF7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		973AC7A425794440006AEBF7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				973AC79E257943DE006AEBF7 /* Metrics.swift */,
 				973AC7A1257943F3006AEBF7 /* Colors.swift */,
 				973AC78025794204006AEBF7 /* ViewController.swift */,
+				973AC7A425794440006AEBF7 /* TableViewCell.swift */,
 				973AC7922579427D006AEBF7 /* Application */,
 			);
 			path = "HomeWork-7";
@@ -150,6 +153,7 @@
 				973AC78125794204006AEBF7 /* ViewController.swift in Sources */,
 				973AC7A2257943F3006AEBF7 /* Colors.swift in Sources */,
 				973AC77D25794204006AEBF7 /* AppDelegate.swift in Sources */,
+				973AC7A525794440006AEBF7 /* TableViewCell.swift in Sources */,
 				973AC77F25794204006AEBF7 /* SceneDelegate.swift in Sources */,
 				973AC79F257943DE006AEBF7 /* Metrics.swift in Sources */,
 			);
