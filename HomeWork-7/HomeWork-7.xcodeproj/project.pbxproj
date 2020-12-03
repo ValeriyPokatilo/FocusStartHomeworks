@@ -12,6 +12,8 @@
 		973AC78125794204006AEBF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AC78025794204006AEBF7 /* ViewController.swift */; };
 		973AC7862579420B006AEBF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 973AC7852579420B006AEBF7 /* Assets.xcassets */; };
 		973AC7892579420B006AEBF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 973AC7872579420B006AEBF7 /* LaunchScreen.storyboard */; };
+		973AC79F257943DE006AEBF7 /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AC79E257943DE006AEBF7 /* Metrics.swift */; };
+		973AC7A2257943F3006AEBF7 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AC7A1257943F3006AEBF7 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		973AC7852579420B006AEBF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		973AC7882579420B006AEBF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		973AC78A2579420B006AEBF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		973AC79E257943DE006AEBF7 /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		973AC7A1257943F3006AEBF7 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		973AC77B25794204006AEBF7 /* HomeWork-7 */ = {
 			isa = PBXGroup;
 			children = (
+				973AC79E257943DE006AEBF7 /* Metrics.swift */,
+				973AC7A1257943F3006AEBF7 /* Colors.swift */,
 				973AC78025794204006AEBF7 /* ViewController.swift */,
 				973AC7922579427D006AEBF7 /* Application */,
 			);
@@ -142,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				973AC78125794204006AEBF7 /* ViewController.swift in Sources */,
+				973AC7A2257943F3006AEBF7 /* Colors.swift in Sources */,
 				973AC77D25794204006AEBF7 /* AppDelegate.swift in Sources */,
 				973AC77F25794204006AEBF7 /* SceneDelegate.swift in Sources */,
+				973AC79F257943DE006AEBF7 /* Metrics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +292,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3H58KDA5;
-				INFOPLIST_FILE = "HomeWork-7/Info.plist";
+				INFOPLIST_FILE = "HomeWork-7/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,7 +311,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y3H58KDA5;
-				INFOPLIST_FILE = "HomeWork-7/Info.plist";
+				INFOPLIST_FILE = "HomeWork-7/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
