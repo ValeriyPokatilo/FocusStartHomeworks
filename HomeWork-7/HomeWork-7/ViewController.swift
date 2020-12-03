@@ -108,7 +108,7 @@ extension ViewController: UITableViewDataSource {
 												 for: indexPath) as? TableViewCell
 
 		guard let nonOptionalCell = cell else { return UITableViewCell() }
-		//nonOptionalCell.initialize(imageUrl: self.textField.text ?? "")
+		nonOptionalCell.initialize(imageUrl: self.textField.text ?? "")
 
 		return nonOptionalCell
 	}
