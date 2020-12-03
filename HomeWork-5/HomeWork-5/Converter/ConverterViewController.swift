@@ -46,16 +46,19 @@ final class ConverterViewController: UIViewController {
 
 private extension ConverterViewController {
 	func addTargets() {
-		self.numberPadView.button1.addTarget(self, action: #selector(button1Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button2.addTarget(self, action: #selector(button2Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button3.addTarget(self, action: #selector(button3Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button4.addTarget(self, action: #selector(button4Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button5.addTarget(self, action: #selector(button5Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button6.addTarget(self, action: #selector(button6Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button7.addTarget(self, action: #selector(button7Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button8.addTarget(self, action: #selector(button8Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button9.addTarget(self, action: #selector(button9Pressed), for: UIControl.Event.touchUpInside)
-		self.numberPadView.button0.addTarget(self, action: #selector(button0Pressed), for: UIControl.Event.touchUpInside)
+
+
+
+		self.numberPadView.button1.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button2.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button3.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button4.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button5.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button6.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button7.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button8.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button9.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+		self.numberPadView.button0.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
 		self.numberPadView.buttonClear.addTarget(self, action: #selector(clear), for: UIControl.Event.touchUpInside)
 	}
 
@@ -86,45 +89,10 @@ private extension ConverterViewController {
 // MARK: - IB Actions
 
 extension ConverterViewController {
-	@objc func button1Pressed() {
-		self.numberButtonPressed(value: "1")
+	@objc func buttonPressed(_ sender: UIButton) {
+		self.numberButtonPressed(value: String(sender.tag))
 	}
 
-	@objc func button2Pressed() {
-		self.numberButtonPressed(value: "2")
-	}
-
-	@objc func button3Pressed() {
-		self.numberButtonPressed(value: "3")
-	}
-
-	@objc func button4Pressed() {
-		self.numberButtonPressed(value: "4")
-	}
-
-	@objc func button5Pressed() {
-		self.numberButtonPressed(value: "5")
-	}
-
-	@objc func button6Pressed() {
-		self.numberButtonPressed(value: "6")
-	}
-
-	@objc func button7Pressed() {
-		self.numberButtonPressed(value: "7")
-	}
-
-	@objc func button8Pressed() {
-		self.numberButtonPressed(value: "8")
-	}
-
-	@objc func button9Pressed() {
-		self.numberButtonPressed(value: "9")
-	}
-
-	@objc func button0Pressed() {
-		self.numberButtonPressed(value: "0")
-	}
 
 	@objc func clear() {
 		self.firstValuteView.valueLabel.text = "0"
