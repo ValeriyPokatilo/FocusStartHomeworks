@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class TableViewCell: UITableViewCell {
 	let activityIndicator = UIActivityIndicatorView()
 	let loadedImage = UIImageView()
@@ -15,6 +14,7 @@ class TableViewCell: UITableViewCell {
 	func initialize(imageUrl: String) {
 		setupImage()
 		setupActivityIndicator()
+		getImage(imageUrl: imageUrl)
 	}
 }
 
@@ -50,5 +50,19 @@ private extension TableViewCell {
 		])
 		self.activityIndicator.startAnimating()
 		self.activityIndicator.hidesWhenStopped = true
+	}
+
+	func getImage(imageUrl: String) {
+		guard let url = URL(string: imageUrl) else { return }
+		let session = URLSession.shared
+
+		session.dataTask(with: url) { (data, responce, error) in
+			if let data = data, let image = UIImage(data: data) {
+				DispatchQueue.main.async {
+					self.loadedImage.image = image
+					self.activityIndicator.stopAnimating()
+				}
+			}
+		}.resume()
 	}
 }
