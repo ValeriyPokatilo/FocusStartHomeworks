@@ -13,7 +13,7 @@ enum Font {
 	case countryStyle
 	case dateStyle
 
-	public var font: UIFont {
+	var font: UIFont {
 		switch self {
 		case .headerStyle:
 			return UIFont.init(name: "AppleSDGothicNeo-Bold", size: 21.0)!

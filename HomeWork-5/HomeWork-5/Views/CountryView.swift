@@ -8,12 +8,12 @@
 import UIKit
 
 final class CountryView: UIView {
-
 	// MARK: - Properties
+
 	let nameLabel = UILabel()
 	let countryLabel = UILabel()
 	let flagImage = UIImageView()
-	let valueTextField = UITextField()
+	var valueLabel = UILabel()
 
 	init() {
 		super.init(frame: .zero)
@@ -26,21 +26,20 @@ final class CountryView: UIView {
 
 }
 
-extension CountryView {
+private extension CountryView {
 	func setupViews() {
 		self.flagImage.image = UIImage()
 
 		self.nameLabel.font = Font.headerStyle.font
 
 		self.countryLabel.font = Font.textStyle.font
+		self.countryLabel.textColor = UIColor.white
 		self.countryLabel.adjustsFontSizeToFitWidth = true
 		self.countryLabel.minimumScaleFactor = 0.4
 
-		self.valueTextField.font = Font.textStyle.font
-		self.valueTextField.textAlignment = .right
-		self.valueTextField.borderStyle = .roundedRect
-		self.valueTextField.keyboardType = .numberPad
-		self.valueTextField.returnKeyType = .done
+		self.valueLabel.font = Font.textStyle.font
+		self.valueLabel.textColor = UIColor.white
+		self.valueLabel.textAlignment = .right
 
 		self.setupViewsLayout()
 	}
@@ -52,15 +51,14 @@ extension CountryView {
 		self.addSubview(self.flagImage)
 		NSLayoutConstraint.activate([
 			self.flagImage.topAnchor.constraint(
-				equalTo: safeArea.topAnchor,
-				constant: Metrics.verticalSeparator.rawValue),
+				equalTo: safeArea.topAnchor),
 			self.flagImage.heightAnchor.constraint(
-				equalToConstant: Metrics.imageSize.rawValue),
+				equalToConstant: Metrics.imageSize),
 			self.flagImage.widthAnchor.constraint(
-				equalToConstant: Metrics.imageSize.rawValue),
+				equalToConstant: Metrics.imageSize),
 			self.flagImage.leadingAnchor.constraint(
 				equalTo: self.leadingAnchor,
-				constant: Metrics.verticalSeparator.rawValue),
+				constant: Metrics.verticalSeparator),
 			self.flagImage.centerYAnchor.constraint(equalTo: self.centerYAnchor)
 		])
 
@@ -69,27 +67,27 @@ extension CountryView {
 		NSLayoutConstraint.activate([
 			self.countryLabel.topAnchor.constraint(
 				equalTo: safeArea.topAnchor,
-				constant: Metrics.labelTopSeparator.rawValue),
+				constant: Metrics.smallSizeSeparator),
 			self.countryLabel.leadingAnchor.constraint(
 				equalTo: self.flagImage.trailingAnchor,
-				constant: Metrics.verticalSeparator.rawValue),
+				constant: Metrics.verticalSeparator),
 			self.countryLabel.trailingAnchor.constraint(
 				equalTo: safeArea.trailingAnchor,
-				constant: -Metrics.verticalSeparator.rawValue)
+				constant: -Metrics.verticalSeparator)
 		])
 
-		self.valueTextField.translatesAutoresizingMaskIntoConstraints = false
-		self.addSubview(self.valueTextField)
+		self.valueLabel.translatesAutoresizingMaskIntoConstraints = false
+		self.addSubview(self.valueLabel)
 		NSLayoutConstraint.activate([
-			self.valueTextField.topAnchor.constraint(
+			self.valueLabel.topAnchor.constraint(
 				equalTo: self.countryLabel.bottomAnchor,
-				constant: Metrics.verticalSeparator.rawValue),
-			self.valueTextField.leadingAnchor.constraint(
+				constant: Metrics.verticalSeparator),
+			self.valueLabel.leadingAnchor.constraint(
 				equalTo: self.flagImage.trailingAnchor,
-				constant: Metrics.verticalSeparator.rawValue),
-			self.valueTextField.trailingAnchor.constraint(
+				constant: Metrics.verticalSeparator),
+			self.valueLabel.trailingAnchor.constraint(
 				equalTo: safeArea.trailingAnchor,
-				constant: -Metrics.verticalSeparator.rawValue)
+				constant: -Metrics.verticalSeparator)
 		])
 
 		NSLayoutConstraint.activate([
