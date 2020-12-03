@@ -46,9 +46,6 @@ final class ConverterViewController: UIViewController {
 
 private extension ConverterViewController {
 	func addTargets() {
-
-
-
 		self.numberPadView.button1.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
 		self.numberPadView.button2.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
 		self.numberPadView.button3.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
@@ -60,17 +57,6 @@ private extension ConverterViewController {
 		self.numberPadView.button9.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
 		self.numberPadView.button0.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
 		self.numberPadView.buttonClear.addTarget(self, action: #selector(clear), for: UIControl.Event.touchUpInside)
-	}
-
-	func numberButtonPressed(value: String) {
-		if self.firstValuteView.valueLabel.text == "0" {
-			self.firstValuteView.valueLabel.text = value
-		} else {
-			let valueText = self.firstValuteView.valueLabel.text ?? ""
-			self.firstValuteView.valueLabel.text = valueText + value
-		}
-
-		self.valueChanged()
 	}
 
 	func valueChanged() {
@@ -90,8 +76,14 @@ private extension ConverterViewController {
 
 extension ConverterViewController {
 	@objc func buttonPressed(_ sender: UIButton) {
-		self.numberButtonPressed(value: String(sender.tag))
-	}
+		if self.firstValuteView.valueLabel.text == "0" {
+			self.firstValuteView.valueLabel.text = String(sender.tag)
+		} else {
+			let valueText = self.firstValuteView.valueLabel.text ?? ""
+			self.firstValuteView.valueLabel.text = valueText + String(sender.tag)
+		}
+
+		self.valueChanged()	}
 
 
 	@objc func clear() {
