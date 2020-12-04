@@ -41,6 +41,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9731F6732579550D0074FCD0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				973AC79E257943DE006AEBF7 /* Metrics.swift */,
+				973AC7A1257943F3006AEBF7 /* Colors.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9731F6752579551E0074FCD0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				973AC78025794204006AEBF7 /* ViewController.swift */,
+				973AC7A425794440006AEBF7 /* TableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		973AC77025794204006AEBF7 = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +78,8 @@
 		973AC77B25794204006AEBF7 /* HomeWork-7 */ = {
 			isa = PBXGroup;
 			children = (
-				973AC79E257943DE006AEBF7 /* Metrics.swift */,
-				973AC7A1257943F3006AEBF7 /* Colors.swift */,
-				973AC78025794204006AEBF7 /* ViewController.swift */,
-				973AC7A425794440006AEBF7 /* TableViewCell.swift */,
+				9731F6752579551E0074FCD0 /* Views */,
+				9731F6732579550D0074FCD0 /* Managers */,
 				973AC7922579427D006AEBF7 /* Application */,
 			);
 			path = "HomeWork-7";

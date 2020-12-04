@@ -33,6 +33,7 @@ private extension ViewController {
 		self.textField.placeholder = "Insert link to image"
 		self.textField.textAlignment = NSTextAlignment.left
 		self.textField.borderStyle = UITextField.BorderStyle.roundedRect
+		self.textField.clearButtonMode = UITextField.ViewMode.whileEditing
 
 		self.getButton.backgroundColor = Colors.getButtonColor
 		self.getButton.tintColor = .white
@@ -89,10 +90,36 @@ private extension ViewController {
 		])
 	}
 
+
+}
+
+// MARK: - Network
+
+private extension ViewController {
 	@objc func getImage() {
-		let newIndexPath = IndexPath(row: images.count, section: 0)
-		images.append(UIImage())
-		tableView.insertRows(at: [newIndexPath], with: .fade)
+		let imageUrl = textField.text ?? ""
+
+		guard let url = URL(string: imageUrl) else {
+			self.showAlert(title: "Error", message: "Invalid URL address")
+			return
+		}
+
+		let session = URLSession.shared
+
+		session.dataTask(with: url) { (data, responce, error) in
+			if error != nil {
+				self.showAlert(title: "Error", message: error?.localizedDescription ?? "")
+			}
+
+			if let data = data, let image = UIImage(data: data) {
+				DispatchQueue.main.async {
+					self.images.append(image)
+
+					let newIndexPath = IndexPath(row: self.images.count - 1, section: 0)
+					self.tableView.insertRows(at: [newIndexPath], with: .fade)
+				}
+			}
+		}.resume()
 	}
 }
 
@@ -108,7 +135,7 @@ extension ViewController: UITableViewDataSource {
 												 for: indexPath) as? TableViewCell
 
 		guard let nonOptionalCell = cell else { return UITableViewCell() }
-		nonOptionalCell.initialize(imageUrl: self.textField.text ?? "")
+		nonOptionalCell.initialize(image: images[indexPath.row])
 
 		return nonOptionalCell
 	}
@@ -123,5 +150,16 @@ extension ViewController: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.tableView.deselectRow(at: indexPath, animated: true)
+	}
+}
+
+// MARK: - Alert
+
+private extension ViewController {
+	func showAlert(title: String, message: String) {
+		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+		let ok = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default)
+		alert.addAction(ok)
+		self.present(alert, animated: true)
 	}
 }
