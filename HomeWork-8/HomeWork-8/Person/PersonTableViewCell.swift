@@ -8,9 +8,7 @@
 import UIKit
 
 class PersonTableViewCell: UITableViewCell {
-	class PersonTableViewCell: UITableViewCell {
-		func configure(_ person: Person) {
-			self.textLabel?.text = person.name
-		}
+	func configure(_ person: Person) {
+		self.textLabel?.text = person.name
 	}
 }
