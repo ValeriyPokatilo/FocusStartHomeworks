@@ -13,9 +13,12 @@
 		97812554257CD9E5000948B6 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97812553257CD9E5000948B6 /* PersonTableViewCell.swift */; };
 		97812558257CDA29000948B6 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97812557257CDA29000948B6 /* PersonDetailsViewController.swift */; };
 		9781255B257CDA4E000948B6 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9781255A257CDA4E000948B6 /* DetailsView.swift */; };
+		97812562257CDAA5000948B6 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9781255E257CDAA5000948B6 /* Person+CoreDataClass.swift */; };
+		97812563257CDAA5000948B6 /* Company+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9781255F257CDAA5000948B6 /* Company+CoreDataClass.swift */; };
+		97812564257CDAA5000948B6 /* Company+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97812560257CDAA5000948B6 /* Company+CoreDataProperties.swift */; };
+		97812565257CDAA5000948B6 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97812561257CDAA5000948B6 /* Person+CoreDataProperties.swift */; };
 		97971FD5257CD4390053D1CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97971FD4257CD4390053D1CF /* AppDelegate.swift */; };
 		97971FD7257CD4390053D1CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97971FD6257CD4390053D1CF /* SceneDelegate.swift */; };
-		97971FD9257CD4390053D1CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97971FD8257CD4390053D1CF /* ViewController.swift */; };
 		97971FDF257CD4390053D1CF /* HomeWork_8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97971FDD257CD4390053D1CF /* HomeWork_8.xcdatamodeld */; };
 		97971FE1257CD43E0053D1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97971FE0257CD43E0053D1CF /* Assets.xcassets */; };
 		97971FE4257CD43E0053D1CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97971FE2257CD43E0053D1CF /* LaunchScreen.storyboard */; };
@@ -30,10 +33,13 @@
 		97812553257CD9E5000948B6 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		97812557257CDA29000948B6 /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
 		9781255A257CDA4E000948B6 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		9781255E257CDAA5000948B6 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataClass.swift"; path = "/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-8/HomeWork-8/CoreData/Person+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		9781255F257CDAA5000948B6 /* Company+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Company+CoreDataClass.swift"; path = "/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-8/HomeWork-8/CoreData/Company+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		97812560257CDAA5000948B6 /* Company+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Company+CoreDataProperties.swift"; path = "/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-8/HomeWork-8/CoreData/Company+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		97812561257CDAA5000948B6 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Person+CoreDataProperties.swift"; path = "/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-8/HomeWork-8/CoreData/Person+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		97971FD1257CD4390053D1CF /* HomeWork-8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeWork-8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97971FD4257CD4390053D1CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97971FD6257CD4390053D1CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		97971FD8257CD4390053D1CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		97971FDE257CD4390053D1CF /* HomeWork_8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeWork_8.xcdatamodel; sourceTree = "<group>"; };
 		97971FE0257CD43E0053D1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97971FE3257CD43E0053D1CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,7 +110,6 @@
 				97812556257CDA08000948B6 /* PersonDetails */,
 				97971FF5257CD59A0053D1CF /* Helpers */,
 				97971FED257CD45A0053D1CF /* Application */,
-				97971FD8257CD4390053D1CF /* ViewController.swift */,
 				97971FEC257CD44A0053D1CF /* CoreData */,
 			);
 			path = "HomeWork-8";
@@ -113,6 +118,10 @@
 		97971FEC257CD44A0053D1CF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				9781255F257CDAA5000948B6 /* Company+CoreDataClass.swift */,
+				97812560257CDAA5000948B6 /* Company+CoreDataProperties.swift */,
+				9781255E257CDAA5000948B6 /* Person+CoreDataClass.swift */,
+				97812561257CDAA5000948B6 /* Person+CoreDataProperties.swift */,
 				97971FDD257CD4390053D1CF /* HomeWork_8.xcdatamodeld */,
 				97971FF9257CD5F30053D1CF /* CoreDataManager.swift */,
 			);
@@ -209,14 +218,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				97971FFA257CD5F30053D1CF /* CoreDataManager.swift in Sources */,
-				97971FD9257CD4390053D1CF /* ViewController.swift in Sources */,
 				97812558257CDA29000948B6 /* PersonDetailsViewController.swift in Sources */,
 				97971FD5257CD4390053D1CF /* AppDelegate.swift in Sources */,
 				97971FF7257CD5B50053D1CF /* Metrics.swift in Sources */,
+				97812563257CDAA5000948B6 /* Company+CoreDataClass.swift in Sources */,
 				9781255B257CDA4E000948B6 /* DetailsView.swift in Sources */,
+				97812564257CDAA5000948B6 /* Company+CoreDataProperties.swift in Sources */,
 				97971FDF257CD4390053D1CF /* HomeWork_8.xcdatamodeld in Sources */,
 				97812548257CD8FB000948B6 /* CompanyViewController.swift in Sources */,
 				97971FD7257CD4390053D1CF /* SceneDelegate.swift in Sources */,
+				97812562257CDAA5000948B6 /* Person+CoreDataClass.swift in Sources */,
+				97812565257CDAA5000948B6 /* Person+CoreDataProperties.swift in Sources */,
 				9781254F257CD9C0000948B6 /* PersonViewController.swift in Sources */,
 				97812554257CD9E5000948B6 /* PersonTableViewCell.swift in Sources */,
 				9781254B257CD92B000948B6 /* CompanyTableViewCell.swift in Sources */,

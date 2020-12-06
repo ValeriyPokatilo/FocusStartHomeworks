@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-8/HomeWork-8/CoreData/Company+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-8/HomeWork-8/CoreData/Company+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-8/HomeWork-8/CoreData/Person+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/valeriypokatilo/Documents/FocusStart/HW/FocusStartHomeworks/HomeWork-8/HomeWork-8/CoreData/Person+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:HomeWork-8/HomeWork-8.xcodeproj">
    </FileRef>
    <FileRef
