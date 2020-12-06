@@ -102,7 +102,7 @@ extension CompanyViewController: UITableViewDelegate {
 
 // MARK: - Alert
 
-extension CompanyViewController {
+private extension CompanyViewController {
 	private func showAlert(title: String, message: String) {
 		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 		let save = UIAlertAction(title: "Save", style: .default) { _ in

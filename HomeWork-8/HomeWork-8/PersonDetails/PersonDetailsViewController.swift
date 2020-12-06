@@ -53,8 +53,7 @@ private extension PersonDetailsViewController {
 		if details.nameTextField.text == "" ||
 		details.ageTextField.text == "" ||
 		details.positionTextField.text == ""
-		{
-			self.showAlert(title: "Ошибка", message: "Заполните имя, возраст и образование")
+		{ self.showAlert(title: "Ошибка", message: "Заполните имя, возраст и образование")
 		} else {
 			guard let company = company else { return }
 			guard let nonOptAge = Int(self.details.ageTextField.text ?? "0") else {
@@ -92,7 +91,6 @@ private extension PersonDetailsViewController {
 			}
 
 			self.navigationController?.popViewController(animated: true)
-
 		}
 
 	}

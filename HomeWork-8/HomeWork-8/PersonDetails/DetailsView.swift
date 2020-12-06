@@ -76,7 +76,5 @@ private extension DetailsView {
 				equalTo: self.trailingAnchor,
 				constant: Metrics.standartSizeSeparator)
 		])
-
-
 	}
 }
