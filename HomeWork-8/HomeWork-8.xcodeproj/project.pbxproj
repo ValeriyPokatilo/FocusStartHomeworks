@@ -13,6 +13,7 @@
 		97971FDF257CD4390053D1CF /* HomeWork_8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97971FDD257CD4390053D1CF /* HomeWork_8.xcdatamodeld */; };
 		97971FE1257CD43E0053D1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97971FE0257CD43E0053D1CF /* Assets.xcassets */; };
 		97971FE4257CD43E0053D1CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97971FE2257CD43E0053D1CF /* LaunchScreen.storyboard */; };
+		97971FF7257CD5B50053D1CF /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97971FF6257CD5B50053D1CF /* Metrics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		97971FE0257CD43E0053D1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97971FE3257CD43E0053D1CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97971FE5257CD43E0053D1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97971FF6257CD5B50053D1CF /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		97971FD3257CD4390053D1CF /* HomeWork-8 */ = {
 			isa = PBXGroup;
 			children = (
+				97971FF5257CD59A0053D1CF /* Helpers */,
 				97971FED257CD45A0053D1CF /* Application */,
 				97971FD8257CD4390053D1CF /* ViewController.swift */,
 				97971FEC257CD44A0053D1CF /* CoreData */,
@@ -81,6 +84,14 @@
 				97971FE5257CD43E0053D1CF /* Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		97971FF5257CD59A0053D1CF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				97971FF6257CD5B50053D1CF /* Metrics.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			files = (
 				97971FD9257CD4390053D1CF /* ViewController.swift in Sources */,
 				97971FD5257CD4390053D1CF /* AppDelegate.swift in Sources */,
+				97971FF7257CD5B50053D1CF /* Metrics.swift in Sources */,
 				97971FDF257CD4390053D1CF /* HomeWork_8.xcdatamodeld in Sources */,
 				97971FD7257CD4390053D1CF /* SceneDelegate.swift in Sources */,
 			);
