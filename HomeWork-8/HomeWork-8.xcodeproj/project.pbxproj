@@ -11,6 +11,8 @@
 		9781254B257CD92B000948B6 /* CompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9781254A257CD92B000948B6 /* CompanyTableViewCell.swift */; };
 		9781254F257CD9C0000948B6 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9781254E257CD9C0000948B6 /* PersonViewController.swift */; };
 		97812554257CD9E5000948B6 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97812553257CD9E5000948B6 /* PersonTableViewCell.swift */; };
+		97812558257CDA29000948B6 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97812557257CDA29000948B6 /* PersonDetailsViewController.swift */; };
+		9781255B257CDA4E000948B6 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9781255A257CDA4E000948B6 /* DetailsView.swift */; };
 		97971FD5257CD4390053D1CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97971FD4257CD4390053D1CF /* AppDelegate.swift */; };
 		97971FD7257CD4390053D1CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97971FD6257CD4390053D1CF /* SceneDelegate.swift */; };
 		97971FD9257CD4390053D1CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97971FD8257CD4390053D1CF /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 		9781254A257CD92B000948B6 /* CompanyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTableViewCell.swift; sourceTree = "<group>"; };
 		9781254E257CD9C0000948B6 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		97812553257CD9E5000948B6 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		97812557257CDA29000948B6 /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
+		9781255A257CDA4E000948B6 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		97971FD1257CD4390053D1CF /* HomeWork-8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomeWork-8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97971FD4257CD4390053D1CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97971FD6257CD4390053D1CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,15 @@
 			path = Person;
 			sourceTree = "<group>";
 		};
+		97812556257CDA08000948B6 /* PersonDetails */ = {
+			isa = PBXGroup;
+			children = (
+				97812557257CDA29000948B6 /* PersonDetailsViewController.swift */,
+				9781255A257CDA4E000948B6 /* DetailsView.swift */,
+			);
+			path = PersonDetails;
+			sourceTree = "<group>";
+		};
 		97971FC8257CD4390053D1CF = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +101,7 @@
 			children = (
 				97812546257CD8DB000948B6 /* Company */,
 				9781254D257CD9A2000948B6 /* Person */,
+				97812556257CDA08000948B6 /* PersonDetails */,
 				97971FF5257CD59A0053D1CF /* Helpers */,
 				97971FED257CD45A0053D1CF /* Application */,
 				97971FD8257CD4390053D1CF /* ViewController.swift */,
@@ -196,8 +210,10 @@
 			files = (
 				97971FFA257CD5F30053D1CF /* CoreDataManager.swift in Sources */,
 				97971FD9257CD4390053D1CF /* ViewController.swift in Sources */,
+				97812558257CDA29000948B6 /* PersonDetailsViewController.swift in Sources */,
 				97971FD5257CD4390053D1CF /* AppDelegate.swift in Sources */,
 				97971FF7257CD5B50053D1CF /* Metrics.swift in Sources */,
+				9781255B257CDA4E000948B6 /* DetailsView.swift in Sources */,
 				97971FDF257CD4390053D1CF /* HomeWork_8.xcdatamodeld in Sources */,
 				97812548257CD8FB000948B6 /* CompanyViewController.swift in Sources */,
 				97971FD7257CD4390053D1CF /* SceneDelegate.swift in Sources */,
